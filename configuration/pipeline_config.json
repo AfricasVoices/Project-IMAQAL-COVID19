@@ -1,0 +1,69 @@
+{
+  "PipelineName": "IMAQAL_COVID19",
+  "RawDataSources": [
+    {
+      "SourceType": "RapidPro",
+      "Domain": "textit.in",
+      "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
+      "ContactsFileName": "imaqal_covid19_contacts",
+      "ActivationFlowNames": [
+        "imaqal_mag_c19_s01e01_activation"
+      ],
+      "SurveyFlowNames": [
+        "imaqal_demog",
+        "imaqal_covid19_demog"
+      ],
+      "TestContactUUIDs": [
+        "fad44f22-235a-4821-9780-dfef09076fe1",
+        "3903ad8e-284e-48a0-881b-89c0b06b9334",
+        "45939459-e4d5-4ad6-8650-3e7134b9a035"
+      ]
+    }
+  ],
+  "PhoneNumberUuidTable": {
+    "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
+    "TableName": "IMAQAL"
+  },
+  "RapidProKeyRemappings": [
+    {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
+
+    {"RapidProKey": "Rqa_Mag_C19_S01E01 (Text) - imaqal_mag_c19_s01e01_activation", "PipelineKey": "rqa_mag_c19_s01e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Mag_C19_S01E01 (Run ID) - imaqal_mag_c19_s01e01_activation", "PipelineKey": "rqa_mag_c19_s01e01_id"},
+    {"RapidProKey": "Rqa_Mag_C19_S01E01 (Time) - imaqal_mag_c19_s01e01_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Gender (Value) - imaqal_demog", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Gender (Time) - imaqal_demog", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Value) - imaqal_demog", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Age (Time) - imaqal_demog", "PipelineKey": "age_time"},
+    {"RapidProKey": "Recently_Displaced (Value) - imaqal_demog", "PipelineKey": "recently_displaced_raw"},
+    {"RapidProKey": "Recently_Displaced (Time) - imaqal_demog", "PipelineKey": "recently_displaced_time"},
+    {"RapidProKey": "Household_Language (Value) - imaqal_demog", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Household_Language (Time) - imaqal_demog", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "District (Value) - imaqal_demog", "PipelineKey": "location_raw"},
+    {"RapidProKey": "District (Time) - imaqal_demog", "PipelineKey": "location_time"},
+
+    {"RapidProKey": "Gender (Value) - imaqal_covid19_demog", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Gender (Time) - imaqal_covid19_demog", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Value) - imaqal_covid19_demog", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Age (Time) - imaqal_covid19_demog", "PipelineKey": "age_time"},
+    {"RapidProKey": "Recently_Displaced (Value) - imaqal_covid19_demog", "PipelineKey": "recently_displaced_raw"},
+    {"RapidProKey": "Recently_Displaced (Time) - imaqal_covid19_demog", "PipelineKey": "recently_displaced_time"},
+    {"RapidProKey": "Household_Language (Value) - imaqal_covid19_demog", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Household_Language (Time) - imaqal_covid19_demog", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "District (Value) - imaqal_covid19_demog", "PipelineKey": "location_raw"},
+    {"RapidProKey": "District (Time) - imaqal_covid19_demog", "PipelineKey": "location_time"}
+  ],
+  "ProjectStartDate": "2020-05-11T16:40:00+03:00",
+  "ProjectEndDate": "2100-01-01T00:00:00+03:00",
+  "FilterTestMessages": true,
+  "MoveWSMessages": true,
+  "DriveUpload": {
+    "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
+    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_production.csv",
+    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_messages.csv",
+    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_individuals.csv",
+    "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/imaqal_covid19_automated_analysis"
+  },
+  "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/2020/IMAQAL_COVID19/memory-",
+  "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive/2020/IMAQAL_COVID19/data-"
+}
