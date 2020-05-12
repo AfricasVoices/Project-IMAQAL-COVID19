@@ -25,4 +25,4 @@ class CodeSchemes(object):
     SOMALIA_STATE = _open_scheme("somalia_state.json")
     SOMALIA_ZONE = _open_scheme("somalia_zone.json")
 
-    WS_CORRECT_DATASET = _open_scheme("ws_correct_dataset.json")
+    WS_CORRECT_DATASET_SCHEME = _open_scheme("ws_correct_dataset.json")
