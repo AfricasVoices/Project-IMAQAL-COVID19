@@ -29,17 +29,17 @@ def clean_district_if_no_mogadishu_sub_district(text):
 
 def get_rqa_coding_plans(pipeline_name):
     return [
-        CodingPlan(raw_field="rqa_mag_c19_s01e01_raw",
+        CodingPlan(raw_field="rqa_covid19_mag_s01e01_raw",
                    time_field="sent_on",
-                   run_id_field="rqa_mag_c19_s01e01_run_id",
-                   coda_filename="rqa_mag_c19_s01e01.json",
-                   icr_filename="rqa_mag_c19_s01e01.csv",
+                   run_id_field="rqa_covid19_mag_s01e01_run_id",
+                   coda_filename="rqa_covid19_mag_s01e01.json",
+                   icr_filename="rqa_covid19_mag_s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S01E01,
-                           coded_field="rqa_mag_c19_s01e01_coded",
-                           analysis_file_key="rqa_mag_c19_s01e01_",
+                           coded_field="rqa_covid19_mag_s01e01_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e01_",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
                        )
                    ],
