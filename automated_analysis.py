@@ -17,9 +17,10 @@ from storage.google_cloud import google_cloud_utils
 from storage.google_drive import drive_client_wrapper
 
 from src import AnalysisUtils
-from src.lib import PipelineConfiguration, CodeSchemes
-from src.lib.pipeline_configuration import CodingModes
+from configuration.code_schemes import  CodeSchemes
+from src.lib.configuration_objects import CodingModes
 from src.mapping_utils import MappingUtils
+from src.lib.pipeline_configuration import PipelineConfiguration
 
 log = Logger(__name__)
 
