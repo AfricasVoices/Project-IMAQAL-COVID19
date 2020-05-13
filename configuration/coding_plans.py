@@ -44,7 +44,7 @@ def get_rqa_coding_plans(pipeline_name):
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e01"),
-                   raw_field_fold_strategy=FoldStrategies.concatenate),
+                   raw_field_fold_strategy=FoldStrategies.concatenate)
     ]
 
 
