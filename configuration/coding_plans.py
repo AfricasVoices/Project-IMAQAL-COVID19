@@ -32,7 +32,7 @@ def get_rqa_coding_plans(pipeline_name):
         CodingPlan(raw_field="rqa_covid19_mag_s01e01_raw",
                    time_field="sent_on",
                    run_id_field="rqa_covid19_mag_s01e01_run_id",
-                   coda_filename="rqa_covid19_mag_s01e01.json",
+                   coda_filename="IMAQAL_COVID19_s01e01.json",
                    icr_filename="rqa_covid19_mag_s01e01.csv",
                    coding_configurations=[
                        CodingConfiguration(
