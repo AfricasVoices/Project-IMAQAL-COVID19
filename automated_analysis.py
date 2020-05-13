@@ -622,7 +622,7 @@ if __name__ == "__main__":
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading CSV {i + 1}/{len(paths_to_upload)}: {path}...")
             drive_client_wrapper.update_or_create(
-                path, pipeline_configuration.drive_upload.analysis_graphs_dir, target_folder_is_shared_with_me=True
+                path, pipeline_configuration.drive_upload.automated_analysis_dir, target_folder_is_shared_with_me=True
             )
 
         log.info("Uploading graphs to Drive...")
@@ -630,7 +630,7 @@ if __name__ == "__main__":
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading graph {i + 1}/{len(paths_to_upload)}: {path}...")
             drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/graphs",
+                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/graphs",
                 target_folder_is_shared_with_me=True
             )
 
@@ -639,7 +639,7 @@ if __name__ == "__main__":
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
             drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/maps/regions",
+                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/regions",
                 target_folder_is_shared_with_me=True
             )
 
@@ -648,7 +648,7 @@ if __name__ == "__main__":
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
             drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/maps/districts/",
+                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/districts/",
                 target_folder_is_shared_with_me=True
             )
     else:
