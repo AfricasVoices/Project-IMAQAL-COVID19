@@ -34,28 +34,38 @@
         "Shortcut": "s"
       },
       {
-        "DisplayText": "yes",
+        "CodeID": "code-S-643dc650",
+        "CodeType": "Meta",
+        "MetaCode": "answer",
+        "DisplayText": "meta: answer",
+        "NumericValue": -1000140,
+        "StringValue": "answer",
+        "VisibleInCoda": true,
+        "Shortcut": "a"
+      },
+      {
+        "DisplayText": "yes, no reason",
         "VisibleInCoda": true,
         "NumericValue": 1,
         "CodeID": "code-d6a975c6",
         "CodeType": "Normal",
-        "StringValue": "yes"
+        "StringValue": "yes_no_reason"
       },
       {
-        "DisplayText": "no",
+        "DisplayText": "no, no reason",
         "VisibleInCoda": true,
         "NumericValue": 2,
         "CodeID": "code-88b0d704",
         "CodeType": "Normal",
-        "StringValue": "no"
+        "StringValue": "no_no_reason"
       },
       {
-        "DisplayText": "ambivalent",
+        "DisplayText": "ambivalent, no reason",
         "VisibleInCoda": true,
         "NumericValue": 3,
         "CodeID": "code-b3396e93",
         "CodeType": "Normal",
-        "StringValue": "ambivalent"
+        "StringValue": "ambivalent_no_reason"
       },
       {
         "DisplayText": "yes, idps at risk",
