@@ -34,6 +34,120 @@
         "Shortcut": "s"
       },
       {
+        "CodeID": "code-S-643dc650",
+        "CodeType": "Meta",
+        "MetaCode": "answer",
+        "DisplayText": "meta: answer",
+        "NumericValue": -1000140,
+        "StringValue": "answer",
+        "VisibleInCoda": true,
+        "Shortcut": "a"
+      },
+      {
+        "DisplayText": "yes, no reason",
+        "VisibleInCoda": true,
+        "NumericValue": 1,
+        "CodeID": "code-d6a975c6",
+        "CodeType": "Normal",
+        "StringValue": "yes_no_reason"
+      },
+      {
+        "DisplayText": "no, no reason",
+        "VisibleInCoda": true,
+        "NumericValue": 2,
+        "CodeID": "code-88b0d704",
+        "CodeType": "Normal",
+        "StringValue": "no_no_reason"
+      },
+      {
+        "DisplayText": "ambivalent, no reason",
+        "VisibleInCoda": true,
+        "NumericValue": 3,
+        "CodeID": "code-b3396e93",
+        "CodeType": "Normal",
+        "StringValue": "ambivalent_no_reason"
+      },
+      {
+        "DisplayText": "yes, idps at risk",
+        "VisibleInCoda": true,
+        "NumericValue": 4,
+        "CodeID": "code-a5a60e3e",
+        "CodeType": "Normal",
+        "StringValue": "yes_idps_at_risk"
+      },
+      {
+        "DisplayText": "yes, elderly at risk",
+        "VisibleInCoda": true,
+        "NumericValue": 5,
+        "CodeID": "code-64ad49c9",
+        "CodeType": "Normal",
+        "StringValue": "yes_elderly_at_risk"
+      },
+      {
+        "DisplayText": "yes, inadequate healthcare",
+        "VisibleInCoda": true,
+        "NumericValue": 6,
+        "CodeID": "code-0e522702",
+        "CodeType": "Normal",
+        "StringValue": "yes_inadequate_healthcare"
+      },
+      {
+        "DisplayText": "yes, rumour/misinfo",
+        "VisibleInCoda": true,
+        "NumericValue": 7,
+        "CodeID": "code-a23bf628",
+        "CodeType": "Normal",
+        "StringValue": "yes_rumour_misinfo"
+      },
+      {
+        "DisplayText": "yes, other theme",
+        "VisibleInCoda": true,
+        "NumericValue": 8,
+        "CodeID": "code-64107160",
+        "CodeType": "Normal",
+        "StringValue": "yes_other_theme"
+      },
+      {
+        "DisplayText": "yes, negative stigma",
+        "VisibleInCoda": true,
+        "NumericValue": 9,
+        "CodeID": "code-869b64f4",
+        "CodeType": "Normal",
+        "StringValue": "yes_negative_stigma"
+      },
+      {
+        "DisplayText": "no, negative stigma",
+        "VisibleInCoda": true,
+        "NumericValue": 10,
+        "CodeID": "code-90a7abdf",
+        "CodeType": "Normal",
+        "StringValue": "no_negative_stigma"
+      },
+      {
+        "DisplayText": "no, denial",
+        "VisibleInCoda": true,
+        "NumericValue": 11,
+        "CodeID": "code-395a35d2",
+        "CodeType": "Normal",
+        "StringValue": "no_denial"
+      },
+      {
+        "DisplayText": "no, rumour/misinfo",
+        "VisibleInCoda": true,
+        "NumericValue": 12,
+        "CodeID": "code-8d067db1",
+        "CodeType": "Normal",
+        "StringValue": "no_rumour_misinfo"
+      },
+      {
+        "DisplayText": "no, other theme",
+        "VisibleInCoda": true,
+        "NumericValue": 13,
+        "CodeID": "code-130795fc",
+        "CodeType": "Normal",
+        "StringValue": "no_other_theme"
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
