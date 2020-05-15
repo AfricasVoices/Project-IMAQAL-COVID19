@@ -40,7 +40,7 @@
         "DisplayText": "meta: answer",
         "NumericValue": -1000140,
         "StringValue": "answer",
-        "VisibleInCoda": true,
+        "VisibleInCoda": false,
         "Shortcut": "a"
       },
       {
@@ -77,7 +77,7 @@
       },
       {
         "DisplayText": "yes, elderly at risk",
-        "VisibleInCoda": true,
+        "VisibleInCoda": false,
         "NumericValue": 5,
         "CodeID": "code-64ad49c9",
         "CodeType": "Normal",
@@ -268,11 +268,107 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-6441131a",
+        "CodeType": "Normal",
+        "DisplayText": "yes, lack of awareness creation",
+        "NumericValue": 30,
+        "StringValue": "yes_lack_of_awareness_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-050ed3e7",
+        "CodeType": "Normal",
+        "DisplayText": "yes, community at risk",
+        "NumericValue": 31,
+        "StringValue": "yes_community_at_risk",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-acf32773",
+        "CodeType": "Normal",
+        "DisplayText": "yes, social community/interaction",
+        "NumericValue": 32,
+        "StringValue": "yes_social_community_interaction",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4dcf28e6",
+        "CodeType": "Normal",
+        "DisplayText": "yes, lack of right practice - hygiene",
+        "NumericValue": 33,
+        "StringValue": "yes_lack_of_right_practice_hygiene",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f6b0472e",
+        "CodeType": "Normal",
+        "DisplayText": "yes, denial",
+        "NumericValue": 34,
+        "StringValue": "yes_denial",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-46cc9498",
+        "CodeType": "Normal",
+        "DisplayText": "yes, poor economy",
+        "NumericValue": 35,
+        "StringValue": "yes_poor_economy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-7e6f682e",
+        "CodeType": "Normal",
+        "DisplayText": "yes, not following authorities advice",
+        "NumericValue": 36,
+        "StringValue": "yes_not_following_authorities_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2bac6a76",
+        "CodeType": "Normal",
+        "DisplayText": "yes, inadequate water/sanitation",
+        "NumericValue": 37,
+        "StringValue": "yes_inadequate_water_sanitation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-c92c7444",
+        "CodeType": "Normal",
+        "DisplayText": "no, it has not reached us yet",
+        "NumericValue": 38,
+        "StringValue": "no_it_has_not_reached_us_yet",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a683f417",
+        "CodeType": "Normal",
+        "DisplayText": "no, we follow advice",
+        "NumericValue": 39,
+        "StringValue": "no_we_follow_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-72b3127c",
+        "CodeType": "Normal",
+        "DisplayText": "no, good climate",
+        "NumericValue": 40,
+        "StringValue": "no_good_climate",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dc957fc7",
+        "CodeType": "Normal",
+        "DisplayText": "no, herd immunity",
+        "NumericValue": 41,
+        "StringValue": "no_herd_immunity",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-c92f95c1",
         "CodeType": "Normal",
         "DisplayText": "other theme",
         "NumericValue": 29,
-        "StringValue": "other theme",
+        "StringValue": "other_theme",
         "VisibleInCoda": true
       },
       {
