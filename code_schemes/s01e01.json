@@ -37,7 +37,7 @@
         "CodeID": "code-S-643dc650",
         "CodeType": "Meta",
         "MetaCode": "answer",
-        "DisplayText": "meta: answer",
+        "DisplayText": "meta: answer - DEPRECATED",
         "NumericValue": -1000140,
         "StringValue": "answer",
         "VisibleInCoda": false,
@@ -74,14 +74,6 @@
         "CodeID": "code-a5a60e3e",
         "CodeType": "Normal",
         "StringValue": "yes_idps_at_risk"
-      },
-      {
-        "DisplayText": "yes, elderly at risk",
-        "VisibleInCoda": false,
-        "NumericValue": 5,
-        "CodeID": "code-64ad49c9",
-        "CodeType": "Normal",
-        "StringValue": "yes_elderly_at_risk"
       },
       {
         "DisplayText": "yes, inadequate healthcare",
