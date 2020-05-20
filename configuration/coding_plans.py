@@ -71,10 +71,10 @@ def get_rqa_coding_plans(pipeline_name):
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
-                           code_scheme=CodeSchemes.IMAQAL_COVID19_S01E01,
+                           code_scheme=CodeSchemes.S01E01,
                            coded_field="rqa_covid19_mag_s01e01_coded",
                            analysis_file_key="rqa_covid19_mag_s01e01_",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.IMAQAL_COVID19_S01E01, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e01"),
