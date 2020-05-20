@@ -7,6 +7,8 @@
       "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
       "ContactsFileName": "imaqal_covid19_contacts",
       "ActivationFlowNames": [
+        "covid19_som_s01e01_activation",
+        "covid19_som_s01e02_activation",
         "imaqal_covid19_mag_s01e01_activation"
       ],
       "SurveyFlowNames": [
@@ -26,6 +28,14 @@
   },
   "RapidProKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
+
+    {"RapidProKey": "Covid19_Som_Rqa_S01E01 (Text) - covid19_som_s01e01_activation", "PipelineKey": "diagnostic_rqa_s01e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Covid19_Som_Rqa_S01E01 (Run ID) - covid19_som_s01e01_activation", "PipelineKey": "diagnostic_rqa_s01e01_run_id"},
+    {"RapidProKey": "Covid19_Som_Rqa_S01E01 (Time) - covid19_som_s01e01_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Covid19_Som_Rqa_S01E02 (Text) - covid19_som_s01e02_activation", "PipelineKey": "diagnostic_rqa_s01e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Covid19_Som_Rqa_S01E02 (Run ID) - covid19_som_s01e02_activation", "PipelineKey": "diagnostic_rqa_s01e02_run_id"},
+    {"RapidProKey": "Covid19_Som_Rqa_S01E02 (Time) - covid19_som_s01e02_activation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Rqa_Covid19_Mag_S01E01_Raw (Text) - imaqal_covid19_mag_s01e01_activation", "PipelineKey": "rqa_covid19_mag_s01e01_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E01_Raw (Run ID) - imaqal_covid19_mag_s01e01_activation", "PipelineKey": "rqa_covid19_mag_s01e01_run_id"},
@@ -53,7 +63,7 @@
     {"RapidProKey": "District (Value) - imaqal_covid19_demog", "PipelineKey": "location_raw"},
     {"RapidProKey": "District (Time) - imaqal_covid19_demog", "PipelineKey": "location_time"}
   ],
-  "ProjectStartDate": "2020-05-13T16:00:00+03:00",
+  "ProjectStartDate": "2020-04-03T16:40:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": false,

@@ -15,6 +15,8 @@ DATA_ROOT=$3
 ./checkout_coda_v2.sh "$CODA_V2_ROOT"
 
 DATASETS=(
+    "COVID19_SOM_s01e01"
+    "COVID19_SOM_s01e02"
     "IMAQAL_COVID19_s01e01"
 
     "IMAQAL_gender"

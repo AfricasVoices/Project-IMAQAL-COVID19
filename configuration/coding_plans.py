@@ -29,6 +29,40 @@ def clean_district_if_no_mogadishu_sub_district(text):
 
 def get_rqa_coding_plans(pipeline_name):
     return [
+        CodingPlan(raw_field="diagnostic_rqa_s01e01_raw",
+                   time_field="sent_on",
+                   run_id_field="diagnostic_rqa_s01e01_run_id",
+                   coda_filename="COVID19_SOM_s01e01.json",
+                   icr_filename="diagnostic_s01e01.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.DIAGNOSTIC_S01E01,
+                           coded_field="diagnostic_rqa_s01e01_coded",
+                           analysis_file_key="diagnostic_rqa_s01e01_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DIAGNOSTIC_S01E01, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("covid19 som s01e01"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="diagnostic_rqa_s01e02_raw",
+                   time_field="sent_on",
+                   run_id_field="diagnostic_rqa_s01e02_run_id",
+                   coda_filename="COVID19_SOM_s01e02.json",
+                   icr_filename="diagnostic_s01e02.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.DIAGNOSTIC_S01E02,
+                           coded_field="diagnostic_rqa_s01e02_coded",
+                           analysis_file_key="diagnostic_rqa_s01e02_",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DIAGNOSTIC_S01E02, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("covid19 som s01e02"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
         CodingPlan(raw_field="rqa_covid19_mag_s01e01_raw",
                    time_field="sent_on",
                    run_id_field="rqa_covid19_mag_s01e01_run_id",
