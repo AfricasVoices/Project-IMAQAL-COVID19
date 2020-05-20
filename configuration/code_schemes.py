@@ -10,7 +10,9 @@ def _open_scheme(filename):
 
 
 class CodeSchemes(object):
-    S01E01 = _open_scheme("s01e01.json")
+    DIAGNOSTIC_S01E01 = _open_scheme("diagnostic_s01e01.json")
+    DIAGNOSTIC_S01E02 = _open_scheme("diagnostic_s01e02.json")
+    IMAQAL_COVID19_S01E01 = _open_scheme("s01e01.json")
 
     AGE = _open_scheme("age.json")
     AGE_CATEGORY = _open_scheme("age_category.json")
