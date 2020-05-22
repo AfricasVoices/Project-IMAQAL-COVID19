@@ -188,9 +188,9 @@
       {
         "CodeID": "code-091d9355",
         "CodeType": "Normal",
-        "DisplayText": "religious hope/practice",
+        "DisplayText": "trusting in religion",
         "NumericValue": 20,
-        "StringValue": "religious_hope_practice",
+        "StringValue": "trusting_in_religion",
         "VisibleInCoda": true
       },
       {
@@ -202,34 +202,26 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-a3ca7016",
-        "CodeType": "Normal",
-        "DisplayText": "denial",
-        "NumericValue": 22,
-        "StringValue": "denial",
-        "VisibleInCoda": true
-      },
-      {
         "CodeID": "code-78c32941",
         "CodeType": "Normal",
-        "DisplayText": "community does not understand corona",
-        "NumericValue": 23,
-        "StringValue": "community_does_not_understand_corona",
+        "DisplayText": "they don't understand risk",
+        "NumericValue": 22,
+        "StringValue": "they_dont_understand_risk",
         "VisibleInCoda": true
       },
       {
         "CodeID": "code-261813dc",
         "CodeType": "Normal",
-        "DisplayText": "community_is_very_careful_about_covid",
-        "NumericValue": 24,
-        "StringValue": "community_is_very_careful_about_covid",
+        "DisplayText": "they are careful",
+        "NumericValue": 23,
+        "StringValue": "they_are_careful",
         "VisibleInCoda": true
       },
       {
         "CodeID": "code-4194bdb7",
         "CodeType": "Normal",
         "DisplayText": "(l2) other theme",
-        "NumericValue": 25,
+        "NumericValue": 24,
         "StringValue": "l2_other_theme",
         "VisibleInCoda": true
       },
