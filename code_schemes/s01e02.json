@@ -156,9 +156,73 @@
       {
         "CodeID": "code-9479e1c4",
         "CodeType": "Normal",
-        "DisplayText": "other theme",
-        "NumericValue": 29,
-        "StringValue": "other_theme",
+        "DisplayText": "(l3) other theme",
+        "NumericValue": 16,
+        "StringValue": "l3_other_theme",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0525b876",
+        "CodeType": "Normal",
+        "DisplayText": "practice social distancing/quarantine",
+        "NumericValue": 17,
+        "StringValue": "practice_social_distancing_quarantine",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-5d558edd",
+        "CodeType": "Normal",
+        "DisplayText": "practice hygiene/wear mask",
+        "NumericValue": 18,
+        "StringValue": "practice_hygiene_wear_mask",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-9d43709c",
+        "CodeType": "Normal",
+        "DisplayText": "they follow authorities advice",
+        "NumericValue": 19,
+        "StringValue": "they_follow_authorities_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-091d9355",
+        "CodeType": "Normal",
+        "DisplayText": "trusting in religion",
+        "NumericValue": 20,
+        "StringValue": "trusting_in_religion",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ca3b520a",
+        "CodeType": "Normal",
+        "DisplayText": "need for awareness creation",
+        "NumericValue": 21,
+        "StringValue": "need_for_awareness_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-78c32941",
+        "CodeType": "Normal",
+        "DisplayText": "they don't understand risk",
+        "NumericValue": 22,
+        "StringValue": "they_dont_understand_risk",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-261813dc",
+        "CodeType": "Normal",
+        "DisplayText": "they are careful",
+        "NumericValue": 23,
+        "StringValue": "they_are_careful",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4194bdb7",
+        "CodeType": "Normal",
+        "DisplayText": "(l2) other theme",
+        "NumericValue": 24,
+        "StringValue": "l2_other_theme",
         "VisibleInCoda": true
       },
       {
