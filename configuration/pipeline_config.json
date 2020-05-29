@@ -89,6 +89,7 @@
     "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_individuals.csv",
     "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/automated_analysis"
   },
-  "MemoryProfileUploadURLPrefix": "gs://avf-pipeline-logs-performance-nearline/2020/IMAQAL_COVID19/memory-",
-  "DataArchiveUploadURLPrefix": "gs://pipeline-execution-backup-archive/2020/IMAQAL_COVID19/data-"
+  "MemoryProfileUploadBucket":"gs://avf-pipeline-logs-performance-nearline",
+  "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",
+  "BucketDirPath": "2020/IMAQAL_COVID19/"
 }
