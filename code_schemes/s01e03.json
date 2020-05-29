@@ -154,6 +154,46 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-48a027af",
+        "CodeType": "Normal",
+        "DisplayText": "it doesn't discriminate",
+        "NumericValue": 17,
+        "StringValue": "it_doesnt_discriminate",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-7dd298a3",
+        "CodeType": "Normal",
+        "DisplayText": "it discriminates",
+        "NumericValue": 18,
+        "StringValue": "it_discriminates",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-eca15ae3",
+        "CodeType": "Normal",
+        "DisplayText": "negative stigma",
+        "NumericValue": 19,
+        "StringValue": "negative_stigma",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-d6cdb28f",
+        "CodeType": "Normal",
+        "DisplayText": "i don't know",
+        "NumericValue": 20,
+        "StringValue": "i_dont_know",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f87a5829",
+        "CodeType": "Normal",
+        "DisplayText": "religious fate",
+        "NumericValue": 21,
+        "StringValue": "religious_fate",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-92b78dd7",
         "CodeType": "Normal",
         "DisplayText": "other theme",
