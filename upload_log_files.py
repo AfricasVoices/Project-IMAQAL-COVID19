@@ -35,6 +35,7 @@ def delete_old_log_files(dir_path, uploaded_file_dates):
 
         # Retain the latest modified file locally
         if file_path == latest_modified_file_path:
+            log.debug(f"Retaining the latest modified file {file_path} for quick retrieval")
             continue
 
         # Delete files for days that have a file uploaded in g-cloud
