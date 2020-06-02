@@ -50,31 +50,25 @@ def delete_old_log_files(dir_path, uploaded_file_dates):
         file_date_match = re.search(date_pattern, file_path)
         file_date = file_date_match.group()
 
-        # Retain the latest modified file locally
-        latest_modified_file_path = max(log_file_paths, key=os.path.getmtime)
-        if file_path == latest_modified_file_path:
-            log.debug(f"Retaining the latest modified file {file_path} for quick retrieval")
-            continue
-
-        # Delete files for days that have a file uploaded in g-cloud
-        if file_date in uploaded_file_dates:
-            log.info(f"Deleting {file_path} because files for {file_date} already uploaded to drive")
-            os.remove(os.path.join(dir_path, file_path))
-
-        # Create a list of files for days that latest modified file failed to upload
-        else:
+        # Create a list of files for days that failed to upload
+        if file_date not in uploaded_file_dates:
             if file_date not in files_for_days_that_upload_failed:
                 files_for_days_that_upload_failed[file_date] = []
 
             files_for_days_that_upload_failed[file_date].append(file_path)
 
+        # Delete files for days that have a file uploaded in g-cloud
+        else:
+            if file_path == max(log_file_paths, key=os.path.getmtime): #Retain latest modified file for easy retrieval
+                continue
+            log.info(f"Deleting {file_path} because files for {file_date} already uploaded to drive")
+            os.remove(os.path.join(dir_path, file_path))
+            
     for file_date in files_for_days_that_upload_failed:
         # Check for latest modified file path for each day that failed to upload
-        latest_modified_file_path = max(files_for_days_that_upload_failed[file_date], key=os.path.getmtime)
-
         # Delete other files for that date
         for file_path in files_for_days_that_upload_failed[file_date]:
-            if file_path == latest_modified_file_path:
+            if file_path == max(files_for_days_that_upload_failed[file_date], key=os.path.getmtime):
                 continue
             log.info(f"Deleting {file_path}")
             os.remove(os.path.join(dir_path, file_path))
