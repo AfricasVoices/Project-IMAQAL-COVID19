@@ -59,14 +59,12 @@ def delete_old_log_files(dir_path, uploaded_file_dates):
 
         # Delete files for days that have a file uploaded in g-cloud
         else:
-            if file_path == max(log_file_paths, key=os.path.getmtime): #Retain latest modified file for easy retrieval
-                continue
-            log.info(f"Deleting {file_path} because files for {file_date} already uploaded to drive")
+            log.info(f"Deleting {file_path} because files for {file_date} already uploaded to cloud")
             os.remove(os.path.join(dir_path, file_path))
-            
+
+    # Check for latest modified file path for each day that failed to upload
+    # Delete other files for that date
     for file_date in files_for_days_that_upload_failed:
-        # Check for latest modified file path for each day that failed to upload
-        # Delete other files for that date
         for file_path in files_for_days_that_upload_failed[file_date]:
             if file_path == max(files_for_days_that_upload_failed[file_date], key=os.path.getmtime):
                 continue
