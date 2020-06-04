@@ -29,16 +29,20 @@ def get_uploaded_file_dates(uploaded_files_list, date_pattern):
     return uploaded_file_dates
 
 def get_files_by_date(dir_path, uploaded_file_dates):
+    file_paths = get_file_paths(dir_path)
     files_by_date = {}
-    for file in get_file_paths(dir_path):
-        file_date_match = re.search(date_pattern, file)
-        file_date = file_date_match.group()
-        if file_date in uploaded_file_dates:
-            log.info(f" file already uploaded for {file_date}, skipping...")
-        else:
-            if file_date not in files_by_date:
-                files_by_date[file_date] = []
-            files_by_date[file_date].append(file)
+    if len(file_paths) > 0:
+        for file in file_paths:
+            file_date_match = re.search(date_pattern, file)
+            file_date = file_date_match.group()
+            if file_date in uploaded_file_dates:
+                log.info(f" file already uploaded for {file_date}, skipping...")
+            else:
+                if file_date not in files_by_date:
+                    files_by_date[file_date] = []
+                files_by_date[file_date].append(file)
+    else:
+        log.info(f" No file found in {dir_path}!, skipping...")
 
     return files_by_date
 
@@ -51,24 +55,32 @@ def delete_old_log_files(dir_path, uploaded_file_dates):
         file_date = file_date_match.group()
 
         # Create a list of files for days that failed to upload
-        if file_date not in uploaded_file_dates:
+        if file_date in uploaded_file_dates:
+            if file_path == max(log_file_paths, key=os.path.getmtime):
+                log.info(f"Retaining latest modified file {file_path} for quick retrieval")
+                continue
+
+            log.warning(f"Deleting {file_path} because files for {file_date} already uploaded to cloud")
+            os.remove(os.path.join(dir_path, file_path))
+
+        # Delete files for days that have a file uploaded in g-cloud
+        else:
+            log.debug(f'Files for {file_date} not yet uploaded to cloud, '
+                      f'will delete other files and retain the latest modified file for upload')
             if file_date not in files_for_days_that_upload_failed:
                 files_for_days_that_upload_failed[file_date] = []
 
             files_for_days_that_upload_failed[file_date].append(file_path)
-
-        # Delete files for days that have a file uploaded in g-cloud
-        else:
-            log.info(f"Deleting {file_path} because files for {file_date} already uploaded to cloud")
-            os.remove(os.path.join(dir_path, file_path))
 
     # Check for latest modified file path for each day that failed to upload
     # Delete other files for that date
     for file_date in files_for_days_that_upload_failed:
         for file_path in files_for_days_that_upload_failed[file_date]:
             if file_path == max(files_for_days_that_upload_failed[file_date], key=os.path.getmtime):
+                log.debug(f"Retaining {file_path}")
                 continue
-            log.info(f"Deleting {file_path}")
+
+            log.warning(f"Deleting old file {file_path} for {file_date}")
             os.remove(os.path.join(dir_path, file_path))
 
 if __name__ == "__main__":
