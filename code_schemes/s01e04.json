@@ -154,6 +154,78 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-a9450364",
+        "CodeType": "Normal",
+        "DisplayText": "no effect",
+        "NumericValue": 17,
+        "StringValue": "no_effect",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-e3f59549",
+        "CodeType": "Normal",
+        "DisplayText": "COVID19 is fatal",
+        "NumericValue": 18,
+        "StringValue": "COVID19_is_fatal",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-527f5d4f",
+        "CodeType": "Normal",
+        "DisplayText": "general impact",
+        "NumericValue": 19,
+        "StringValue": "general_impact",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-88317abc",
+        "CodeType": "Normal",
+        "DisplayText": "it has not reached us",
+        "NumericValue": 20,
+        "StringValue": "it_has_not_reached_us",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-943cfaad",
+        "CodeType": "Normal",
+        "DisplayText": "unable to go to work",
+        "NumericValue": 21,
+        "StringValue": "unable_to_go_to_work",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bd70cf7e",
+        "CodeType": "Normal",
+        "DisplayText": "impact on economy/business",
+        "NumericValue": 22,
+        "StringValue": "impact_on_economy_business",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bf6e7b1a",
+        "CodeType": "Normal",
+        "DisplayText": "impact on education",
+        "NumericValue": 23,
+        "StringValue": "impact_on_education",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0f8c56a5",
+        "CodeType": "Normal",
+        "DisplayText": "impact on remittance",
+        "NumericValue": 24,
+        "StringValue": "impact_on_remittance",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-6323bde5",
+        "CodeType": "Normal",
+        "DisplayText": "impact on social interactions",
+        "NumericValue": 25,
+        "StringValue": "impact_on_social_interactions",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-e26397de",
         "CodeType": "Normal",
         "DisplayText": "other theme",
