@@ -50,13 +50,17 @@ def delete_old_log_files(dir_path, uploaded_file_dates):
     log_file_paths = get_file_paths(dir_path)
     files_for_days_that_upload_failed = {}
 
+    most_recent_file_path = None
+    if len(log_file_paths) > 0:
+        most_recent_file_path = max(log_file_paths, key=os.path.getmtime)
+
     for file_path in log_file_paths:
         file_date_match = re.search(date_pattern, file_path)
         file_date = file_date_match.group()
 
         # Create a list of files for days that failed to upload
         if file_date in uploaded_file_dates:
-            if file_path == max(log_file_paths, key=os.path.getmtime):
+            if file_path == most_recent_file_path:
                 log.info(f"Retaining latest modified file {file_path} for quick retrieval")
                 continue
 
@@ -119,7 +123,7 @@ if __name__ == "__main__":
     uploaded_memory_log_dates = get_uploaded_file_dates(uploaded_memory_logs, date_pattern)
 
     uploaded_data_archives = google_cloud_utils.list_blobs(google_cloud_credentials_file_path,
-                                                           pipeline_configuration.memory_profile_upload_bucket,
+                                                           pipeline_configuration.data_archive_upload_bucket,
                                                            pipeline_configuration.bucket_dir_path)
     uploaded_data_archives_dates = get_uploaded_file_dates(uploaded_data_archives, date_pattern)
 
@@ -141,7 +145,7 @@ if __name__ == "__main__":
     log.info(f"Uploading data archive files...")
     data_archive_files_by_date = get_files_by_date(data_archive_dir_path, uploaded_data_archives_dates)
     for file_date in data_archive_files_by_date:
-        latest_data_archive_file_path = max(memory_log_files_by_date[file_date], key=os.path.getmtime)
+        latest_data_archive_file_path = max(data_archive_files_by_date[file_date], key=os.path.getmtime)
         data_archive_upload_location = f"{pipeline_configuration.data_archive_upload_bucket}/" \
             f"{pipeline_configuration.bucket_dir_path}/{os.path.basename(latest_data_archive_file_path)}"
         log.info(f"Uploading data archive from {latest_data_archive_file_path} to {data_archive_upload_location}...")
