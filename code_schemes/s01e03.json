@@ -245,7 +245,7 @@
         "CodeID": "code-dcd7d0f1",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - misinfo on status",
-        "NumericValue": 26,
+        "NumericValue": 27,
         "StringValue": "rumour_stigma_misinfo_misinfo_on_status",
         "VisibleInCoda": true
       },
