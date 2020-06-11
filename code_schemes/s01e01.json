@@ -364,6 +364,46 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-ee733b09",
+        "CodeType": "Normal",
+        "DisplayText": "the virus discriminates",
+        "NumericValue": 42,
+        "StringValue": "the_virus_discriminates",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a9ecfdcc",
+        "CodeType": "Normal",
+        "DisplayText": "treatment/cure/remedy",
+        "NumericValue": 43,
+        "StringValue": "treatment_cure_remedy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-b5594922",
+        "CodeType": "Normal",
+        "DisplayText": "virus description",
+        "NumericValue": 44,
+        "StringValue": "virus_description",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2a349eca",
+        "CodeType": "Normal",
+        "DisplayText": "origin",
+        "NumericValue": 45,
+        "StringValue": "origin",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-00defa83",
+        "CodeType": "Normal",
+        "DisplayText": "misinfo on status",
+        "NumericValue": 46,
+        "StringValue": "misinfo_on_status",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",

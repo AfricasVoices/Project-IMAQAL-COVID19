@@ -233,6 +233,46 @@
         "StringValue": "other_theme",
         "VisibleInCoda": true
       },
+       {
+        "CodeID": "code-d55678d1",
+        "CodeType": "Normal",
+        "DisplayText": "the virus discriminates",
+        "NumericValue": 26,
+        "StringValue": "the_virus_discriminates",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-81b982a8",
+        "CodeType": "Normal",
+        "DisplayText": "treatment/cure/remedy",
+        "NumericValue": 27,
+        "StringValue": "treatment_cure_remedy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-23f9d94a",
+        "CodeType": "Normal",
+        "DisplayText": "virus description",
+        "NumericValue": 28,
+        "StringValue": "virus_description",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-91a7f032",
+        "CodeType": "Normal",
+        "DisplayText": "origin",
+        "NumericValue": 29,
+        "StringValue": "origin",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bce9e099",
+        "CodeType": "Normal",
+        "DisplayText": "misinfo on status",
+        "NumericValue": 30,
+        "StringValue": "misinfo_on_status",
+        "VisibleInCoda": true
+      },
       {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
