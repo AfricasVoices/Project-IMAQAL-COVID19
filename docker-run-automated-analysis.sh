@@ -35,7 +35,7 @@ INPUT_GOOGLE_CLOUD_CREDENTIALS=$2
 INPUT_PIPELINE_CONFIGURATION=$3
 INPUT_MESSAGES_TRACED_DATA=$4
 INPUT_INDIVIDUALS_TRACED_DATA=$5
-OUTPUT_DIR=$6
+AUTOMATED_ANALYSIS_OUTPUT_DIR=$6
 
 # Build an image for this pipeline stage.
 docker build -t "$IMAGE_NAME" .
@@ -72,9 +72,9 @@ echo "Starting container $container_short_id"
 docker start -a -i "$container"
 
 # Copy the output data back out of the container
-echo "Copying $container_short_id:/data/output-graphs/. -> $OUTPUT_DIR"
-mkdir -p "$OUTPUT_DIR"
-docker cp "$container:/data/output-graphs/." "$OUTPUT_DIR"
+echo "Copying $container_short_id:/data/output-graphs/. -> $AUTOMATED_ANALYSIS_OUTPUT_DIR"
+mkdir -p "$AUTOMATED_ANALYSIS_OUTPUT_DIR"
+docker cp "$container:/data/output-graphs/." "$AUTOMATED_ANALYSIS_OUTPUT_DIR"
 
 if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"
