@@ -621,35 +621,36 @@ if __name__ == "__main__":
         paths_to_upload = glob(f"{output_dir}/*.csv")
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading CSV {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, pipeline_configuration.drive_upload.automated_analysis_dir, target_folder_is_shared_with_me=True
+            drive_client_wrapper.update_or_create_batch(
+                path, pipeline_configuration.drive_upload.automated_analysis_dir, target_folder_is_shared_with_me=True,
+                recursive=True
             )
 
         log.info("Uploading graphs to Drive...")
         paths_to_upload = glob(f"{output_dir}/graphs/*.png")
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading graph {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
+            drive_client_wrapper.update_or_create_batch(
                 path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/graphs",
-                target_folder_is_shared_with_me=True
+                target_folder_is_shared_with_me=True, recursive=True
             )
 
         log.info("Uploading region maps to Drive...")
         paths_to_upload = glob(f"{output_dir}/maps/regions/*.png")
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
+            drive_client_wrapper.update_or_create_batch(
                 path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/regions",
-                target_folder_is_shared_with_me=True
+                target_folder_is_shared_with_me=True, recursive=True
             )
 
         log.info("Uploading district maps to Drive...")
         paths_to_upload = glob(f"{output_dir}/maps/districts/*.png")
         for i, path in enumerate(paths_to_upload):
             log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
+            drive_client_wrapper.update_or_create_batch(
                 path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/districts/",
-                target_folder_is_shared_with_me=True
+                target_folder_is_shared_with_me=True, recursive=True
             )
     else:
         log.info("Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
