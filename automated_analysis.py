@@ -287,7 +287,7 @@ if __name__ == "__main__":
             for code in cc.code_scheme.codes:
                 if code.control_code == Codes.STOP:
                     continue
-                themes[f"{cc.analysis_file_key}{code.string_value}"] = make_survey_counts_dict()
+                themes[f"{cc.analysis_file_key}_{code.string_value}"] = make_survey_counts_dict()
 
         # Fill in the counts by iterating over every individual
         for td in individuals:
@@ -301,8 +301,8 @@ if __name__ == "__main__":
                     code = cc.code_scheme.get_code_with_code_id(label["CodeID"])
                     if code.control_code == Codes.STOP:
                         continue
-                    themes[f"{cc.analysis_file_key}{code.string_value}"]["Total Participants"] += 1
-                    update_survey_counts(themes[f"{cc.analysis_file_key}{code.string_value}"], td)
+                    themes[f"{cc.analysis_file_key}_{code.string_value}"]["Total Participants"] += 1
+                    update_survey_counts(themes[f"{cc.analysis_file_key}_{code.string_value}"], td)
                     if code.code_type == CodeTypes.NORMAL:
                         relevant_participant = True
 
@@ -319,7 +319,7 @@ if __name__ == "__main__":
                     if code.code_type != CodeTypes.NORMAL:
                         continue
 
-                    theme = themes[f"{cc.analysis_file_key}{code.string_value}"]
+                    theme = themes[f"{cc.analysis_file_key}_{code.string_value}"]
                     set_survey_percentages(theme, themes["Total Relevant Participants"])
 
     with open(f"{output_dir}/theme_distributions.csv", "w") as f:
@@ -417,7 +417,7 @@ if __name__ == "__main__":
                 if code.code_type != CodeTypes.NORMAL:
                     continue
 
-                theme = f"{cc.analysis_file_key}{code.string_value}"
+                theme = f"{cc.analysis_file_key}_{code.string_value}"
                 log.info(f"Generating a map of per-region participation for {theme}...")
                 demographic_counts = episode[theme]
 
@@ -474,7 +474,7 @@ if __name__ == "__main__":
                 if code.code_type != CodeTypes.NORMAL:
                     continue
 
-                theme = f"{cc.analysis_file_key}{code.string_value}"
+                theme = f"{cc.analysis_file_key}_{code.string_value}"
                 log.info(f"Generating a map of per-district participation for {theme}...")
                 demographic_counts = episode[theme]
 
@@ -546,7 +546,7 @@ if __name__ == "__main__":
                 assert cc.coding_mode == CodingModes.MULTIPLE
                 for ind in individuals:
                     for code in cc.code_scheme.codes:
-                        if ind[f"{cc.analysis_file_key}{code.string_value}"] == Codes.MATRIX_1:
+                        if ind[f"{cc.analysis_file_key}_{code.string_value}"] == Codes.MATRIX_1:
                             label_counts[code.string_value] += 1
 
             data = [{"Label": k, "Number of Participants": v} for k, v in label_counts.items()]
@@ -582,7 +582,7 @@ if __name__ == "__main__":
         for cc in plan.coding_configurations:
             for code in cc.code_scheme.codes:
                 if code.code_type == CodeTypes.NORMAL and code.string_value not in {"knowledge", "attitude", "behaviour"}:
-                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}{code.string_value}"]
+                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}_{code.string_value}"]
 
         if len(normal_themes) == 0:
             log.warning(f"Skipping graphing normal themes by gender for {plan.raw_field} because the scheme does "
@@ -601,7 +601,7 @@ if __name__ == "__main__":
                     "Gender": gender_code.string_value,
                     "Number of Participants": demographic_counts[f"gender:{gender_code.string_value}"],
                     "Fraction of Relevant Participants": None if total_relevant_gender == 0 else
-                        demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
+                    demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
                 })
 
         fig = px.bar(normal_by_gender, x="RQA Theme", y="Number of Participants", color="Gender", barmode="group",
