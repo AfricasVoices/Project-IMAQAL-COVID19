@@ -601,7 +601,7 @@ if __name__ == "__main__":
                     "Gender": gender_code.string_value,
                     "Number of Participants": demographic_counts[f"gender:{gender_code.string_value}"],
                     "Fraction of Relevant Participants": None if total_relevant_gender == 0 else
-                    demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
+                        demographic_counts[f"gender:{gender_code.string_value}"] / total_relevant_gender
                 })
 
         fig = px.bar(normal_by_gender, x="RQA Theme", y="Number of Participants", color="Gender", barmode="group",
