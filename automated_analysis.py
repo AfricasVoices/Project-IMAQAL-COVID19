@@ -1,9 +1,7 @@
 import argparse
-import json
 import csv
 import random
 from collections import OrderedDict
-from glob import glob
 
 import geopandas
 import matplotlib.pyplot as plt
@@ -13,8 +11,7 @@ from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
 from core_data_modules.util import IOUtils
-from storage.google_cloud import google_cloud_utils
-from storage.google_drive import drive_client_wrapper
+
 
 from src import AnalysisUtils
 from configuration.code_schemes import  CodeSchemes
@@ -42,8 +39,8 @@ if __name__ == "__main__":
                         help="Path to a JSONL file to read the TracedData of the messages data from")
     parser.add_argument("individuals_json_input_path", metavar="individuals-json-input-path",
                         help="Path to a JSONL file to read the TracedData of the messages data from")
-    parser.add_argument("output_dir", metavar="output-dir",
-                        help="Directory to write the analysis outputs to")
+    parser.add_argument("automated_analysis_output_dir", metavar="automated-analysis-output-dir",
+                        help="Directory to write the automated analysis outputs to")
 
     args = parser.parse_args()
 
@@ -53,7 +50,7 @@ if __name__ == "__main__":
 
     messages_json_input_path = args.messages_json_input_path
     individuals_json_input_path = args.individuals_json_input_path
-    output_dir = args.output_dir
+    automated_analysis_output_dir = args.automated_analysis_output_dir
 
     IOUtils.ensure_dirs_exist(output_dir)
     IOUtils.ensure_dirs_exist(f"{output_dir}/maps/regions")
@@ -66,12 +63,6 @@ if __name__ == "__main__":
         pipeline_configuration = PipelineConfiguration.from_configuration_file(f)
     Logger.set_project_name(pipeline_configuration.pipeline_name)
     log.debug(f"Pipeline name is {pipeline_configuration.pipeline_name}")
-
-    if pipeline_configuration.drive_upload is not None:
-        log.info(f"Downloading Google Drive service account credentials...")
-        credentials_info = json.loads(google_cloud_utils.download_blob_to_string(
-            google_cloud_credentials_file_path, pipeline_configuration.drive_upload.drive_credentials_file_url))
-        drive_client_wrapper.init_client_from_info(credentials_info)
 
     # Read the messages dataset
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
@@ -114,7 +105,7 @@ if __name__ == "__main__":
         "Total Relevant Participants": len(AnalysisUtils.filter_relevant(individuals, CONSENT_WITHDRAWN_KEY, PipelineConfiguration.RQA_CODING_PLANS))
     }
 
-    with open(f"{output_dir}/engagement_counts.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
         headers = [
             "Episode",
             "Total Messages", "Total Messages with Opt-Ins", "Total Labelled Messages", "Total Relevant Messages",
@@ -158,7 +149,7 @@ if __name__ == "__main__":
             round(rp["Number of Participants with Opt-Ins"] / total_participants * 100, 1)
 
     # Export the participation frequency data to a csv
-    with open(f"{output_dir}/repeat_participations.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/repeat_participations.csv", "w") as f:
         headers = ["Number of Episodes Participated In", "Number of Participants with Opt-Ins",
                    "% of Participants with Opt-Ins"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
@@ -199,7 +190,7 @@ if __name__ == "__main__":
                     continue
                 demographic_distributions[cc.analysis_file_key][code.string_value] += 1
 
-    with open(f"{output_dir}/demographic_distributions.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/demographic_distributions.csv", "w") as f:
         headers = ["Demographic", "Code", "Number of Participants"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
@@ -288,7 +279,7 @@ if __name__ == "__main__":
             for code in cc.code_scheme.codes:
                 if code.control_code == Codes.STOP:
                     continue
-                themes[f"{cc.analysis_file_key}{code.string_value}"] = make_survey_counts_dict()
+                themes[f"{cc.analysis_file_key}_{code.string_value}"] = make_survey_counts_dict()
 
         # Fill in the counts by iterating over every individual
         for td in individuals:
@@ -302,8 +293,8 @@ if __name__ == "__main__":
                     code = cc.code_scheme.get_code_with_code_id(label["CodeID"])
                     if code.control_code == Codes.STOP:
                         continue
-                    themes[f"{cc.analysis_file_key}{code.string_value}"]["Total Participants"] += 1
-                    update_survey_counts(themes[f"{cc.analysis_file_key}{code.string_value}"], td)
+                    themes[f"{cc.analysis_file_key}_{code.string_value}"]["Total Participants"] += 1
+                    update_survey_counts(themes[f"{cc.analysis_file_key}_{code.string_value}"], td)
                     if code.code_type == CodeTypes.NORMAL:
                         relevant_participant = True
 
@@ -320,10 +311,10 @@ if __name__ == "__main__":
                     if code.code_type != CodeTypes.NORMAL:
                         continue
 
-                    theme = themes[f"{cc.analysis_file_key}{code.string_value}"]
+                    theme = themes[f"{cc.analysis_file_key}_{code.string_value}"]
                     set_survey_percentages(theme, themes["Total Relevant Participants"])
 
-    with open(f"{output_dir}/theme_distributions.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/theme_distributions.csv", "w") as f:
         headers = ["Question", "Variable"] + list(make_survey_counts_dict().keys())
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
@@ -369,7 +360,7 @@ if __name__ == "__main__":
                         "Sample Message": msg
                     })
 
-    with open(f"{output_dir}/sample_messages.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/sample_messages.csv", "w") as f:
         headers = ["Episode", "Code Scheme", "Code", "Sample Message"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
@@ -390,7 +381,7 @@ if __name__ == "__main__":
     MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", region_frequencies,
                                     label_position_columns=("ADM1_LX", "ADM1_LY"),
                                     callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
-    plt.savefig(f"{output_dir}/maps/regions/regions_total_participants.png", dpi=1200, bbox_inches="tight")
+    plt.savefig(f"{automated_analysis_output_dir}/maps/regions/regions_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close()
 
     for plan in PipelineConfiguration.RQA_CODING_PLANS:
@@ -408,7 +399,7 @@ if __name__ == "__main__":
             MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", rqa_total_region_frequencies,
                                             label_position_columns=("ADM1_LX", "ADM1_LY"),
                                             callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
-            plt.savefig(f"{output_dir}/maps/regions/region_{cc.analysis_file_key}_1_total_relevant.png",
+            plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{cc.analysis_file_key}_1_total_relevant.png",
                         dpi=1200, bbox_inches="tight")
             plt.close()
 
@@ -418,7 +409,7 @@ if __name__ == "__main__":
                 if code.code_type != CodeTypes.NORMAL:
                     continue
 
-                theme = f"{cc.analysis_file_key}{code.string_value}"
+                theme = f"{cc.analysis_file_key}_{code.string_value}"
                 log.info(f"Generating a map of per-region participation for {theme}...")
                 demographic_counts = episode[theme]
 
@@ -432,7 +423,7 @@ if __name__ == "__main__":
                 MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", theme_region_frequencies,
                                                 label_position_columns=("ADM1_LX", "ADM1_LY"),
                                                 callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
-                plt.savefig(f"{output_dir}/maps/regions/region_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                             dpi=1200, bbox_inches="tight")
                 plt.close()
 
@@ -449,7 +440,7 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots()
     MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", district_frequencies, ax=ax)
-    plt.savefig(f"{output_dir}/maps/districts/district_total_participants.png", dpi=1200, bbox_inches="tight")
+    plt.savefig(f"{automated_analysis_output_dir}/maps/districts/district_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close(fig)
 
     for plan in PipelineConfiguration.RQA_CODING_PLANS:
@@ -465,7 +456,7 @@ if __name__ == "__main__":
 
             fig, ax = plt.subplots()
             MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", rqa_total_district_frequencies, ax=ax)
-            plt.savefig(f"{output_dir}/maps/districts/district_{cc.analysis_file_key}_1_total_relevant.png",
+            plt.savefig(f"{automated_analysis_output_dir}/maps/districts/district_{cc.analysis_file_key}_1_total_relevant.png",
                         dpi=1200, bbox_inches="tight")
             plt.close(fig)
 
@@ -475,7 +466,7 @@ if __name__ == "__main__":
                 if code.code_type != CodeTypes.NORMAL:
                     continue
 
-                theme = f"{cc.analysis_file_key}{code.string_value}"
+                theme = f"{cc.analysis_file_key}_{code.string_value}"
                 log.info(f"Generating a map of per-district participation for {theme}...")
                 demographic_counts = episode[theme]
 
@@ -488,7 +479,7 @@ if __name__ == "__main__":
                 fig, ax = plt.subplots()
                 MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", theme_district_frequencies, ax=ax)
                 plt.savefig(
-                    f"{output_dir}/maps/districts/district_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                    f"{automated_analysis_output_dir}/maps/districts/district_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                     dpi=1200, bbox_inches="tight")
                 plt.close(fig)
 
@@ -560,14 +551,14 @@ if __name__ == "__main__":
                  x="Episode", y="Total Messages with Opt-Ins", template="plotly_white",
                  title="Messages/Episode", width=len(engagement_counts) * 20 + 150)
     fig.update_xaxes(tickangle=-60)
-    fig.write_image(f"{output_dir}/graphs/messages_per_episode.png", scale=IMG_SCALE_FACTOR)
+    fig.write_image(f"{automated_analysis_output_dir}/graphs/messages_per_episode.png", scale=IMG_SCALE_FACTOR)
 
     # Graph the number of participants in each episode
     fig = px.bar([x for x in engagement_counts.values() if x["Episode"] != "Total"],
                  x="Episode", y="Total Participants with Opt-Ins", template="plotly_white",
                  title="Participants/Episode", width=len(engagement_counts) * 20 + 150)
     fig.update_xaxes(tickangle=-60)
-    fig.write_image(f"{output_dir}/graphs/participants_per_episode.png", scale=IMG_SCALE_FACTOR)
+    fig.write_image(f"{automated_analysis_output_dir}/graphs/participants_per_episode.png", scale=IMG_SCALE_FACTOR)
 
     log.info("Graphing the demographic distributions...")
     for demographic, counts in demographic_distributions.items():
@@ -582,7 +573,7 @@ if __name__ == "__main__":
                      x="Label", y="Number of Participants", template="plotly_white",
                      title=f"Season Distribution: {demographic}", width=len(counts) * 20 + 150)
         fig.update_xaxes(type="category", tickangle=-60, dtick=1)
-        fig.write_image(f"{output_dir}/graphs/season_distribution_{demographic}.png", scale=IMG_SCALE_FACTOR)
+        fig.write_image(f"{automated_analysis_output_dir}/graphs/season_distribution_{demographic}.png", scale=IMG_SCALE_FACTOR)
 
     # Plot the per-season distribution of responses for each survey question, per individual
     for plan in PipelineConfiguration.RQA_CODING_PLANS + PipelineConfiguration.SURVEY_CODING_PLANS:
@@ -607,14 +598,14 @@ if __name__ == "__main__":
                 assert cc.coding_mode == CodingModes.MULTIPLE
                 for ind in individuals:
                     for code in cc.code_scheme.codes:
-                        if ind[f"{cc.analysis_file_key}{code.string_value}"] == Codes.MATRIX_1:
+                        if ind[f"{cc.analysis_file_key}_{code.string_value}"] == Codes.MATRIX_1:
                             label_counts[code.string_value] += 1
 
             data = [{"Label": k, "Number of Participants": v} for k, v in label_counts.items()]
             fig = px.bar(data, x="Label", y="Number of Participants", template="plotly_white",
                          title=f"Season Distribution: {cc.analysis_file_key}")
             fig.update_xaxes(tickangle=-60)
-            fig.write_image(f"{output_dir}/graphs/season_distribution_{cc.analysis_file_key}.png", scale=IMG_SCALE_FACTOR)
+            fig.write_image(f"{automated_analysis_output_dir}/graphs/season_distribution_{cc.analysis_file_key}.png", scale=IMG_SCALE_FACTOR)
 
     log.info("Graphing pie chart of normal codes for gender...")
     # TODO: Gender is hard-coded here for COVID19. If we need this in future, but don't want to extend to other
@@ -630,7 +621,7 @@ if __name__ == "__main__":
     fig = px.pie(normal_gender_distribution, names="Gender", values="Number of Participants",
                  title="Season Distribution: gender", template="plotly_white")
     fig.update_traces(textinfo="value")
-    fig.write_image(f"{output_dir}/graphs/season_distribution_gender_pie.png", scale=IMG_SCALE_FACTOR)
+    fig.write_image(f"{automated_analysis_output_dir}/graphs/season_distribution_gender_pie.png", scale=IMG_SCALE_FACTOR)
 
     log.info("Graphing normal themes by gender...")
     # Adapt the theme distributions produced above to extract the normal RQA + gender codes, and graph by gender
@@ -643,7 +634,7 @@ if __name__ == "__main__":
         for cc in plan.coding_configurations:
             for code in cc.code_scheme.codes:
                 if code.code_type == CodeTypes.NORMAL and code.string_value not in {"knowledge", "attitude", "behaviour"}:
-                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}{code.string_value}"]
+                    normal_themes[code.string_value] = episode[f"{cc.analysis_file_key}_{code.string_value}"]
 
         if len(normal_themes) == 0:
             log.warning(f"Skipping graphing normal themes by gender for {plan.raw_field} because the scheme does "
@@ -669,58 +660,12 @@ if __name__ == "__main__":
                      template="plotly_white")
         fig.update_layout(title_text=f"{plan.raw_field} by gender (absolute)")
         fig.update_xaxes(tickangle=-60)
-        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_absolute.png", scale=IMG_SCALE_FACTOR)
+        fig.write_image(f"{automated_analysis_output_dir}/graphs/{plan.raw_field}_by_gender_absolute.png", scale=IMG_SCALE_FACTOR)
 
         fig = px.bar(normal_by_gender, x="RQA Theme", y="Fraction of Relevant Participants", color="Gender", barmode="group",
                      template="plotly_white")
         fig.update_layout(title_text=f"{plan.raw_field} by gender (normalised)")
         fig.update_xaxes(tickangle=-60)
-        fig.write_image(f"{output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
+        fig.write_image(f"{automated_analysis_output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
 
-    if pipeline_configuration.drive_upload is not None:
-        log.info("Uploading CSVs to Drive...")
-        paths_to_upload = glob(f"{output_dir}/*.csv")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading CSV {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, pipeline_configuration.drive_upload.automated_analysis_dir, target_folder_is_shared_with_me=True
-            )
-
-        log.info("Uploading graphs to Drive...")
-        paths_to_upload = glob(f"{output_dir}/graphs/*.png")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading graph {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/graphs",
-                target_folder_is_shared_with_me=True
-            )
-
-        log.info("Uploading region maps to Drive...")
-        paths_to_upload = glob(f"{output_dir}/maps/regions/*.png")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/regions",
-                target_folder_is_shared_with_me=True
-            )
-
-        log.info("Uploading district maps to Drive...")
-        paths_to_upload = glob(f"{output_dir}/maps/districts/*.png")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/districts/",
-                target_folder_is_shared_with_me=True
-            )
-
-        log.info("Uploading Mogadishu maps to Drive...")
-        paths_to_upload = glob(f"{output_dir}/maps/mogadishu/*.png")
-        for i, path in enumerate(paths_to_upload):
-            log.info(f"Uploading map {i + 1}/{len(paths_to_upload)}: {path}...")
-            drive_client_wrapper.update_or_create(
-                path, f"{pipeline_configuration.drive_upload.analysis_graphs_dir}/maps/mogadishu/",
-                target_folder_is_shared_with_me=True, recursive=True
-            )
-    else:
-        log.info("Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
-                 "'DriveUploadPaths')")
+    log.info("automated analysis python script complete")
