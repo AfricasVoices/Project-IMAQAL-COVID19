@@ -39,7 +39,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.DIAGNOSTIC_S01E01,
                            coded_field="diagnostic_rqa_s01e01_coded",
-                           analysis_file_key="diagnostic_rqa_s01e01_",
+                           analysis_file_key="diagnostic_rqa_s01e01",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DIAGNOSTIC_S01E01, x, y)
                        )
                    ],
@@ -56,7 +56,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.DIAGNOSTIC_S01E02,
                            coded_field="diagnostic_rqa_s01e02_coded",
-                           analysis_file_key="diagnostic_rqa_s01e02_",
+                           analysis_file_key="diagnostic_rqa_s01e02",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.DIAGNOSTIC_S01E02, x, y)
                        )
                    ],
@@ -73,7 +73,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S01E01,
                            coded_field="rqa_covid19_mag_s01e01_coded",
-                           analysis_file_key="rqa_covid19_mag_s01e01_",
+                           analysis_file_key="rqa_covid19_mag_s01e01",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E01, x, y)
                        )
                    ],
@@ -90,7 +90,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S01E02,
                            coded_field="rqa_covid19_mag_s01e02_coded",
-                           analysis_file_key="rqa_covid19_mag_s01e02_",
+                           analysis_file_key="rqa_covid19_mag_s01e02",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E02, x, y)
                        )
                    ],
@@ -107,7 +107,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S01E03,
                            coded_field="rqa_covid19_mag_s01e03_coded",
-                           analysis_file_key="rqa_covid19_mag_s01e03_",
+                           analysis_file_key="rqa_covid19_mag_s01e03",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E03, x, y)
                        )
                    ],
@@ -124,7 +124,7 @@ def get_rqa_coding_plans(pipeline_name):
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S01E04,
                            coded_field="rqa_covid19_mag_s01e04_coded",
-                           analysis_file_key="rqa_covid19_mag_s01e04_",
+                           analysis_file_key="rqa_covid19_mag_s01e04",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E04, x, y)
                        )
                    ],
