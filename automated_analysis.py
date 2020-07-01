@@ -52,11 +52,11 @@ if __name__ == "__main__":
     individuals_json_input_path = args.individuals_json_input_path
     automated_analysis_output_dir = args.automated_analysis_output_dir
 
-    IOUtils.ensure_dirs_exist(output_dir)
-    IOUtils.ensure_dirs_exist(f"{output_dir}/maps/regions")
-    IOUtils.ensure_dirs_exist(f"{output_dir}/maps/districts")
-    IOUtils.ensure_dirs_exist(f"{output_dir}/maps/mogadishu")
-    IOUtils.ensure_dirs_exist(f"{output_dir}/graphs")
+    IOUtils.ensure_dirs_exist(automated_analysis_output_dir)
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/regions")
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/districts")
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/mogadishu")
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/graphs")
 
     log.info("Loading Pipeline Configuration File...")
     with open(pipeline_configuration_file_path) as f:
@@ -498,7 +498,7 @@ if __name__ == "__main__":
     fig, ax = plt.subplots()
     MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", mogadishu_frequencies, ax=ax,
                                     label_position_columns=("ADM3_LX", "ADM3_LY"))
-    plt.savefig(f"{output_dir}/maps/mogadishu/mogadishu_total_participants.png", dpi=1200, bbox_inches="tight")
+    plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close(fig)
 
     for plan in PipelineConfiguration.RQA_CODING_PLANS:
@@ -515,7 +515,7 @@ if __name__ == "__main__":
             fig, ax = plt.subplots()
             MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", rqa_total_mogadishu_frequencies, ax=ax,
                                             label_position_columns=("ADM3_LX", "ADM3_LY"))
-            plt.savefig(f"{output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_1_total_relevant.png",
+            plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_1_total_relevant.png",
                         dpi=1200, bbox_inches="tight")
             plt.close(fig)
 
@@ -539,7 +539,7 @@ if __name__ == "__main__":
                 MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", mogadishu_theme_frequencies, ax=ax,
                                                 label_position_columns=("ADM3_LX", "ADM3_LY"))
                 plt.savefig(
-                    f"{output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                    f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                     dpi=1200, bbox_inches="tight")
                 plt.close(fig)
 
