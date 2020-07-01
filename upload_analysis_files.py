@@ -101,6 +101,12 @@ if __name__ == "__main__":
         drive_client_wrapper.update_or_create_batch(
             paths_to_upload, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/districts/",
             target_folder_is_shared_with_me=True, recursive=True)
+
+        paths_to_upload = glob(f"{automated_analysis_input_dir}/maps/mogadishu/*.png")
+        log.info(f"Uploading {len(paths_to_upload)} mogadishu maps to Drive")
+        drive_client_wrapper.update_or_create_batch(
+            paths_to_upload, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/mogadishu/",
+            target_folder_is_shared_with_me=True, recursive=True)
     else:
         log.info(
             "Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "
