@@ -55,6 +55,7 @@ if __name__ == "__main__":
     IOUtils.ensure_dirs_exist(automated_analysis_output_dir)
     IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/regions")
     IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/districts")
+    IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/maps/mogadishu")
     IOUtils.ensure_dirs_exist(f"{automated_analysis_output_dir}/graphs")
 
     log.info("Loading Pipeline Configuration File...")
@@ -479,6 +480,66 @@ if __name__ == "__main__":
                 MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", theme_district_frequencies, ax=ax)
                 plt.savefig(
                     f"{automated_analysis_output_dir}/maps/districts/district_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                    dpi=1200, bbox_inches="tight")
+                plt.close(fig)
+
+                map_index += 1
+
+    log.info("Loading the Mogadishu sub-district geojson...")
+    mogadishu_map = geopandas.read_file("geojson/mogadishu_sub_districts.geojson")
+
+    log.info("Generating a map of Mogadishu participation for the season...")
+    mogadishu_frequencies = dict()
+    for code in CodeSchemes.MOGADISHU_SUB_DISTRICT.codes:
+        if code.code_type == CodeTypes.NORMAL:
+            mogadishu_frequencies[code.string_value] = demographic_distributions["mogadishu_sub_district"][
+                code.string_value]
+
+    fig, ax = plt.subplots()
+    MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", mogadishu_frequencies, ax=ax,
+                                    label_position_columns=("ADM3_LX", "ADM3_LY"))
+    plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_total_participants.png", dpi=1200, bbox_inches="tight")
+    plt.close(fig)
+
+    for plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode = episodes[plan.raw_field]
+
+        for cc in plan.coding_configurations:
+            # Plot a map of the total relevant participants for this coding configuration.
+            rqa_total_mogadishu_frequencies = dict()
+            for sub_district_code in CodeSchemes.MOGADISHU_SUB_DISTRICT.codes:
+                if sub_district_code.code_type == CodeTypes.NORMAL:
+                    rqa_total_mogadishu_frequencies[sub_district_code.string_value] = \
+                        episode["Total Relevant Participants"][f"mogadishu_sub_district:{sub_district_code.string_value}"]
+
+            fig, ax = plt.subplots()
+            MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", rqa_total_mogadishu_frequencies, ax=ax,
+                                            label_position_columns=("ADM3_LX", "ADM3_LY"))
+            plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_1_total_relevant.png",
+                        dpi=1200, bbox_inches="tight")
+            plt.close(fig)
+
+            # Plot maps of each of the normal themes for this coding configuration.
+            map_index = 2  # (index 1 was used in the total relevant map's filename).
+            for code in cc.code_scheme.codes:
+                if code.code_type != CodeTypes.NORMAL:
+                    continue
+
+                theme = f"{cc.analysis_file_key}_{code.string_value}"
+                log.info(f"Generating a map of Mogadishu participation for {theme}...")
+                demographic_counts = episode[theme]
+
+                mogadishu_theme_frequencies = dict()
+                for sub_district_code in CodeSchemes.MOGADISHU_SUB_DISTRICT.codes:
+                    if sub_district_code.code_type == CodeTypes.NORMAL:
+                        mogadishu_theme_frequencies[sub_district_code.string_value] = \
+                            demographic_counts[f"mogadishu_sub_district:{sub_district_code.string_value}"]
+
+                fig, ax = plt.subplots()
+                MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", mogadishu_theme_frequencies, ax=ax,
+                                                label_position_columns=("ADM3_LX", "ADM3_LY"))
+                plt.savefig(
+                    f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                     dpi=1200, bbox_inches="tight")
                 plt.close(fig)
 
