@@ -46,7 +46,7 @@ if [[ "$PROFILE_CPU" = true ]]; then
 fi
 CMD="pipenv run python -u $PROFILE_CPU_CMD automated_analysis.py \
     \"$USER\" /data/pipeline_configuration.json \
-    /data/messages-traced-data.jsonl /data/individuals-traced-data.jsonl /data/automated-analysis
+    /data/messages-traced-data.jsonl /data/individuals-traced-data.jsonl /data/automated-analysis-outputs
 "
 container="$(docker container create ${SYS_PTRACE_CAPABILITY} -w /app "$IMAGE_NAME" /bin/bash -c "$CMD")"
 echo "Created container $container"
@@ -68,9 +68,9 @@ echo "Starting container $container_short_id"
 docker start -a -i "$container"
 
 # Copy the output data back out of the container
-echo "Copying $container_short_id:/data/automated-analysis/. -> $AUTOMATED_ANALYSIS_OUTPUT_DIR"
+echo "Copying $container_short_id:/data/automated-analysis-outputs/. -> $AUTOMATED_ANALYSIS_OUTPUT_DIR"
 mkdir -p "$AUTOMATED_ANALYSIS_OUTPUT_DIR"
-docker cp "$container:/data/automated-analysis/." "$AUTOMATED_ANALYSIS_OUTPUT_DIR"
+docker cp "$container:/data/automated-analysis-outputs/." "$AUTOMATED_ANALYSIS_OUTPUT_DIR"
 
 if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"
