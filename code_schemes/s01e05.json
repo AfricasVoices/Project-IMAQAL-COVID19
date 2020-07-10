@@ -154,6 +154,78 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-3e4a4b57",
+        "CodeType": "Normal",
+        "DisplayText": "educate community",
+        "NumericValue": 16,
+        "StringValue": "educate_community",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0f101d53",
+        "CodeType": "Normal",
+        "DisplayText": "provision of preventive items",
+        "NumericValue": 17,
+        "StringValue": "provision_of_preventive_items",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1d5e06b4",
+        "CodeType": "Normal",
+        "DisplayText": "provision of support",
+        "NumericValue": 18,
+        "StringValue": "provision_of_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4d547fcc",
+        "CodeType": "Normal",
+        "DisplayText": "follow authorities' advice",
+        "NumericValue": 19,
+        "StringValue": "follow_authorities_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-501e5c73",
+        "CodeType": "Normal",
+        "DisplayText": "practice good hygiene/observe general cleanliness",
+        "NumericValue": 20,
+        "StringValue": "practice_good_hygiene_observe_general_cleanliness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-506f1410",
+        "CodeType": "Normal",
+        "DisplayText": "improve the economy",
+        "NumericValue": 21,
+        "StringValue": "improve_the_economy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4b00cce5",
+        "CodeType": "Normal",
+        "DisplayText": "provision of healthcare services",
+        "NumericValue": 22,
+        "StringValue": "provision_of_healthcare_services",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4a565091",
+        "CodeType": "Normal",
+        "DisplayText": "take extra precautions and efforts",
+        "NumericValue": 23,
+        "StringValue": "take_extra_precautions_and_efforts",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-6b3b8320",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 24,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
