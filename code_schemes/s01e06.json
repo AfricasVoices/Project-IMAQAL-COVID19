@@ -146,6 +146,62 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-287da722",
+        "CodeType": "Normal",
+        "DisplayText": "inadequate healthcare services",
+        "NumericValue": 15,
+        "StringValue": "inadequate_healthcare_services",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-520ff01d",
+        "CodeType": "Normal",
+        "DisplayText": "lack of access to medicine",
+        "NumericValue": 16,
+        "StringValue": "lack_of_access_to_medicine",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dba8f3b0",
+        "CodeType": "Normal",
+        "DisplayText": "created fear/stigma",
+        "NumericValue": 17,
+        "StringValue": "created_fear_stigma",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-d99e4e60",
+        "CodeType": "Normal",
+        "DisplayText": "no impact",
+        "NumericValue": 18,
+        "StringValue": "no_impact",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-cd718873",
+        "CodeType": "Normal",
+        "DisplayText": "restriction of movement",
+        "NumericValue": 19,
+        "StringValue": "restriction_of_movement",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-47971383",
+        "CodeType": "Normal",
+        "DisplayText": "general impact",
+        "NumericValue": 20,
+        "StringValue": "general_impact",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a52d73e0",
+        "CodeType": "Normal",
+        "DisplayText": "other",
+        "NumericValue": 21,
+        "StringValue": "other",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
