@@ -72,7 +72,7 @@ if __name__ == "__main__":
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
     log.info(f"Loaded {len(individuals)} individuals")
-
+    '''
     sys.setrecursionlimit(15000)
     # Compute the number of messages, individuals, and relevant messages per episode and overall.
     log.info("Computing the per-episode and per-season engagement counts...")
@@ -327,6 +327,8 @@ if __name__ == "__main__":
                 row.update(survey_counts)
                 writer.writerow(row)
                 last_row_episode = episode
+
+
 
     # Export a random sample of 100 messages for each normal code
     log.info("Exporting samples of up to 100 messages for each normal code...")
@@ -665,5 +667,25 @@ if __name__ == "__main__":
         fig.update_layout(title_text=f"{plan.raw_field} by gender (normalised)")
         fig.update_xaxes(tickangle=-60)
         fig.write_image(f"{automated_analysis_output_dir}/graphs/{plan.raw_field}_by_gender_normalised.png", scale=IMG_SCALE_FACTOR)
+    '''
+    episode_rumour = dict()
+    for episode_plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode_rumour[episode_plan.raw_field] = 0
+        for msg in messages:
+            if msg["consent_withdrawn"] == Codes.TRUE:
+                continue
+
+            if episode_plan.raw_field not in msg:
+                continue
+
+            for cc in episode_plan.coding_configurations:
+                for label in msg[cc.coded_field]:
+
+                    code = label["CodeID"]
+                    if code in ['code-470524f3', 'code-d04669f3',
+                                'code-2a83b28a', 'code-dfbecd3e', 'code-3f99896b']:
+                        episode_rumour[episode_plan.raw_field] += 1
+
+    print(episode_rumour)
 
     log.info("automated analysis python script complete")
