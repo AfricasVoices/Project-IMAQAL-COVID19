@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
     log.info("Exporting production CSV...")
     data = ProductionFile.generate(data, production_csv_output_path)
-
+    '''
     log.info("Applying Manual Codes from Coda...")
     data = ApplyManualCodes.apply_manual_codes(user, data, prev_coded_dir_path)
 
@@ -99,5 +99,5 @@ if __name__ == "__main__":
     IOUtils.ensure_dirs_exist_for_file(individuals_json_output_path)
     with open(individuals_json_output_path, "w") as f:
         TracedDataJsonIO.export_traced_data_iterable_to_jsonl(individuals_data, f)
-
+    '''
     log.info("Python script complete")

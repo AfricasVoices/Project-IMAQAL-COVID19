@@ -65,7 +65,7 @@ if __name__ == "__main__":
         drive_client_wrapper.update_or_create(production_csv_input_path, production_csv_drive_dir,
                                               target_file_name=production_csv_drive_file_name,
                                               target_folder_is_shared_with_me=True, recursive=True)
-
+        '''
         messages_csv_drive_dir = os.path.dirname(pipeline_configuration.drive_upload.messages_upload_path)
         messages_csv_drive_file_name = os.path.basename(pipeline_configuration.drive_upload.messages_upload_path)
         drive_client_wrapper.update_or_create(messages_csv_input_path, messages_csv_drive_dir,
@@ -83,7 +83,7 @@ if __name__ == "__main__":
         drive_client_wrapper.update_or_create_batch(
             paths_to_upload, pipeline_configuration.drive_upload.automated_analysis_dir,
             target_folder_is_shared_with_me=True, recursive=True)
-
+        
         paths_to_upload = glob(f"{automated_analysis_input_dir}/graphs/*.png")
         log.info(f"Uploading {len(paths_to_upload)} graphs to Drive...")
         drive_client_wrapper.update_or_create_batch(
@@ -107,6 +107,7 @@ if __name__ == "__main__":
         drive_client_wrapper.update_or_create_batch(
             paths_to_upload, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/mogadishu/",
             target_folder_is_shared_with_me=True, recursive=True)
+        '''
     else:
         log.info(
             "Skipping uploading to Google Drive (because the pipeline configuration json does not contain the key "

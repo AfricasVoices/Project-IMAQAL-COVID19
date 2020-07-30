@@ -86,13 +86,13 @@ echo "Starting container $container_short_id"
 docker start -a -i "$container"
 
 # Copy the output data back out of the container
-echo "Copying $container_short_id:/data/output-messages.jsonl -> $OUTPUT_MESSAGES_JSONL"
-mkdir -p "$(dirname "$OUTPUT_MESSAGES_JSONL")"
-docker cp "$container:/data/output-messages.jsonl" "$OUTPUT_MESSAGES_JSONL"
+#echo "Copying $container_short_id:/data/output-messages.jsonl -> $OUTPUT_MESSAGES_JSONL"
+#mkdir -p "$(dirname "$OUTPUT_MESSAGES_JSONL")"
+#docker cp "$container:/data/output-messages.jsonl" "$OUTPUT_MESSAGES_JSONL"
 
-echo "Copying $container_short_id:/data/output-individuals.jsonl -> $OUTPUT_INDIVIDUALS_JSONL"
-mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_JSONL")"
-docker cp "$container:/data/output-individuals.jsonl" "$OUTPUT_INDIVIDUALS_JSONL"
+#echo "Copying $container_short_id:/data/output-individuals.jsonl -> $OUTPUT_INDIVIDUALS_JSONL"
+#mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_JSONL")"
+#docker cp "$container:/data/output-individuals.jsonl" "$OUTPUT_INDIVIDUALS_JSONL"
 
 echo "Copying $container_short_id:/data/output-icr/. -> $OUTPUT_ICR_DIR"
 mkdir -p "$OUTPUT_ICR_DIR"
@@ -106,13 +106,13 @@ echo "Copying $container_short_id:/data/output-production.csv -> $OUTPUT_PRODUCT
 mkdir -p "$(dirname "$OUTPUT_PRODUCTION_CSV")"
 docker cp "$container:/data/output-production.csv" "$OUTPUT_PRODUCTION_CSV"
 
-echo "Copying $container_short_id:/data/output-messages.csv -> $OUTPUT_MESSAGES_CSV"
-mkdir -p "$(dirname "$OUTPUT_MESSAGES_CSV")"
-docker cp "$container:/data/output-messages.csv" "$OUTPUT_MESSAGES_CSV"
+#echo "Copying $container_short_id:/data/output-messages.csv -> $OUTPUT_MESSAGES_CSV"
+#mkdir -p "$(dirname "$OUTPUT_MESSAGES_CSV")"
+#docker cp "$container:/data/output-messages.csv" "$OUTPUT_MESSAGES_CSV"
 
-echo "Copying $container_short_id:/data/output-individuals.csv -> $OUTPUT_INDIVIDUALS_CSV"
-mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_CSV")"
-docker cp "$container:/data/output-individuals.csv" "$OUTPUT_INDIVIDUALS_CSV"
+#echo "Copying $container_short_id:/data/output-individuals.csv -> $OUTPUT_INDIVIDUALS_CSV"
+#mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_CSV")"
+#docker cp "$container:/data/output-individuals.csv" "$OUTPUT_INDIVIDUALS_CSV"
 
 if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"
