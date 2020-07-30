@@ -212,7 +212,7 @@
       {
         "CodeID": "code-23f9d94a",
         "CodeType": "Normal",
-        "DisplayText": "rumour/stigma/misinfoo - virus description",
+        "DisplayText": "rumour/stigma/misinfo - virus description",
         "NumericValue": 23,
         "StringValue": "rumour_stigma_misinfo_virus_description",
         "VisibleInCoda": true
