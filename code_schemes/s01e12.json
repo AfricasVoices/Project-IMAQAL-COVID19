@@ -1,6 +1,6 @@
 {
-    "SchemeID": "Scheme-472db786",
-    "Name": "S01E08",
+    "SchemeID": "Scheme-cc403018",
+    "Name": "S01E12",
     "Version": "0.0.0.1",
     "Codes": [
       {
@@ -199,46 +199,6 @@
         "DisplayText": "rumour/stigma/misinfo - misinfo on status",
         "NumericValue": 21,
         "StringValue": "rumour_stigma_misinfo_misinfo_on_status",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-7b3b9b56",
-        "CodeType": "Normal",
-        "DisplayText": "job loss",
-        "NumericValue": 22,
-        "StringValue": "job_loss",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-49ee938a",
-        "CodeType": "Normal",
-        "DisplayText": "inadequate access to healthcare",
-        "NumericValue": 23,
-        "StringValue": "inadequate_access_to_healthcare",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-d16a31ba",
-        "CodeType": "Normal",
-        "DisplayText": "general impact on women",
-        "NumericValue": 24,
-        "StringValue": "general_impact_on_women",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-5bf3d4f3",
-        "CodeType": "Normal",
-        "DisplayText": "no impact",
-        "NumericValue": 25,
-        "StringValue": "no_impact",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-d5ac864e",
-        "CodeType": "Normal",
-        "DisplayText": "restriction on movement",
-        "NumericValue": 26,
-        "StringValue": "restriction_on_movement",
         "VisibleInCoda": true
       },
       {

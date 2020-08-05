@@ -1,6 +1,6 @@
 {
-    "SchemeID": "Scheme-472db786",
-    "Name": "S01E08",
+    "SchemeID": "Scheme-3b4d8ad3",
+    "Name": "S01_SURVEY_Q3_BARRIER_SELF",
     "Version": "0.0.0.1",
     "Codes": [
       {
@@ -34,7 +34,7 @@
         "Shortcut": "s"
       },
       {
-        "CodeID": "code-3546d695",
+        "CodeID": "code-d4804c6c",
         "CodeType": "Normal",
         "DisplayText": "about coronavirus",
         "NumericValue": 1,
@@ -42,7 +42,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-b2139949",
+        "CodeID": "code-4e6c98da",
         "CodeType": "Normal",
         "DisplayText": "symptoms",
         "NumericValue": 2,
@@ -50,7 +50,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-130abe13",
+        "CodeID": "code-5af71d93",
         "CodeType": "Normal",
         "DisplayText": "spread/transmission",
         "NumericValue": 3,
@@ -58,7 +58,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-0ac18866",
+        "CodeID": "code-c3433d75",
         "CodeType": "Normal",
         "DisplayText": "how to prevent",
         "NumericValue": 4,
@@ -66,7 +66,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-e660f22d",
+        "CodeID": "code-ef1c4eec",
         "CodeType": "Normal",
         "DisplayText": "how to treat",
         "NumericValue": 5,
@@ -74,7 +74,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-5f42bc81",
+        "CodeID": "code-2913fa5e",
         "CodeType": "Normal",
         "DisplayText": "government response",
         "NumericValue": 6,
@@ -82,7 +82,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-8d5a049e",
+        "CodeID": "code-7e03af2e",
         "CodeType": "Normal",
         "DisplayText": "somalia update",
         "NumericValue": 7,
@@ -90,7 +90,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-3f99896b",
+        "CodeID": "code-ca9e8dda",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo",
         "NumericValue": 8,
@@ -98,7 +98,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-dd59dae4",
+        "CodeID": "code-a8fb09af",
         "CodeType": "Normal",
         "DisplayText": "collective hope",
         "NumericValue": 9,
@@ -106,7 +106,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-46ac795e",
+        "CodeID": "code-ba37d814",
         "CodeType": "Normal",
         "DisplayText": "anxiety/panic",
         "NumericValue": 10,
@@ -114,7 +114,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-c5dd8028",
+        "CodeID": "code-5046f00f",
         "CodeType": "Normal",
         "DisplayText": "religious hope/practice",
         "NumericValue": 11,
@@ -122,7 +122,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-2da70be2",
+        "CodeID": "code-8fab19a1",
         "CodeType": "Normal",
         "DisplayText": "denial",
         "NumericValue": 12,
@@ -130,7 +130,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-89ae0d4f",
+        "CodeID": "code-3ede1847",
         "CodeType": "Normal",
         "DisplayText": "urgent need",
         "NumericValue": 13,
@@ -138,7 +138,7 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-0634c3d7",
+        "CodeID": "code-fb776c0a",
         "CodeType": "Normal",
         "DisplayText": "(call for) awareness creation",
         "NumericValue": 14,
@@ -146,18 +146,74 @@
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-9ba88f73",
+        "CodeID": "code-ae2cb742",
         "CodeType": "Normal",
-        "DisplayText": "call for right practice",
+        "DisplayText": "(call for) right practice",
         "NumericValue": 15,
         "StringValue": "call_for_right_practice",
+        "VisibleInCoda": true
+      },
+       {
+        "CodeID": "code-3ffd028c",
+        "CodeType": "Normal",
+        "DisplayText": "yes, inadequate sanitation and PPEs",
+        "NumericValue": 16,
+        "StringValue": "yes_inadequate_sanitation_and_ppes",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-963681cf",
+        "CodeType": "Normal",
+        "DisplayText": "yes, lack of acceptance",
+        "NumericValue": 17,
+        "StringValue": "yes_lack_of_acceptance",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2bc30493",
+        "CodeType": "Normal",
+        "DisplayText": "yes, livelihood/social community",
+        "NumericValue": 18,
+        "StringValue": "yes_livelihood_social_community",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4864a9e7",
+        "CodeType": "Normal",
+        "DisplayText": "yes, other",
+        "NumericValue": 19,
+        "StringValue": "yes_other",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-51bf1bc1",
+        "CodeType": "Normal",
+        "DisplayText": "no, nothing",
+        "NumericValue": 20,
+        "StringValue": "no_nothing",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-5abf9a85",
+        "CodeType": "Normal",
+        "DisplayText": "no, follow health advice",
+        "NumericValue": 21,
+        "StringValue": "no_follow_health_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-95de702e",
+        "CodeType": "Normal",
+        "DisplayText": "no, other",
+        "NumericValue": 22,
+        "StringValue": "no_other",
         "VisibleInCoda": true
       },
       {
         "CodeID": "code-d55678d1",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - the virus discriminates",
-        "NumericValue": 16,
+        "NumericValue": 23,
         "StringValue": "rumour_stigma_misinfo_the_virus_discriminates",
         "VisibleInCoda": true
       },
@@ -165,7 +221,7 @@
         "CodeID": "code-81b982a8",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - treatment/cure/remedy",
-        "NumericValue": 17,
+        "NumericValue": 24,
         "StringValue": "rumour_stigma_misinfo_treatment_cure_remedy",
         "VisibleInCoda": true
       },
@@ -173,7 +229,7 @@
         "CodeID": "code-23f9d94a",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - virus description",
-        "NumericValue": 18,
+        "NumericValue": 25,
         "StringValue": "rumour_stigma_misinfo_virus_description",
         "VisibleInCoda": true
       },
@@ -181,7 +237,7 @@
         "CodeID": "code-a2203725",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - negative stigma/anger",
-        "NumericValue": 19,
+        "NumericValue": 26,
         "StringValue": "rumour_stigma_misinfo_negative_stigma_anger",
         "VisibleInCoda": true
       },
@@ -189,7 +245,7 @@
         "CodeID": "code-91a7f032",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - origin",
-        "NumericValue": 20,
+        "NumericValue": 27,
         "StringValue": "rumour_stigma_misinfo_origin",
         "VisibleInCoda": true
       },
@@ -197,48 +253,8 @@
         "CodeID": "code-bce9e099",
         "CodeType": "Normal",
         "DisplayText": "rumour/stigma/misinfo - misinfo on status",
-        "NumericValue": 21,
+        "NumericValue": 28,
         "StringValue": "rumour_stigma_misinfo_misinfo_on_status",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-7b3b9b56",
-        "CodeType": "Normal",
-        "DisplayText": "job loss",
-        "NumericValue": 22,
-        "StringValue": "job_loss",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-49ee938a",
-        "CodeType": "Normal",
-        "DisplayText": "inadequate access to healthcare",
-        "NumericValue": 23,
-        "StringValue": "inadequate_access_to_healthcare",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-d16a31ba",
-        "CodeType": "Normal",
-        "DisplayText": "general impact on women",
-        "NumericValue": 24,
-        "StringValue": "general_impact_on_women",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-5bf3d4f3",
-        "CodeType": "Normal",
-        "DisplayText": "no impact",
-        "NumericValue": 25,
-        "StringValue": "no_impact",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-d5ac864e",
-        "CodeType": "Normal",
-        "DisplayText": "restriction on movement",
-        "NumericValue": 26,
-        "StringValue": "restriction_on_movement",
         "VisibleInCoda": true
       },
       {
@@ -396,7 +412,7 @@
       },
       {
         "DisplayText": "meta: about conversation",
-        "VisibleInCoda": false,
+        "VisibleInCoda": true,
         "CodeID": "code-AC-9ed22631",
         "NumericValue": -100120,
         "CodeType": "Meta",
@@ -410,7 +426,7 @@
         "MetaCode": "chasing_reply",
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
-        "VisibleInCoda": false
+        "VisibleInCoda": true
       }
     ]
 }

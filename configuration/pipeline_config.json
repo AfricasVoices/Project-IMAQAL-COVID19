@@ -16,7 +16,11 @@
         "imaqal_covid19_mag_s01e05_activation",
         "imaqal_covid19_mag_s01e06_activation",
         "imaqal_covid19_mag_s01e07_activation",
-        "imaqal_covid19_mag_s01e08_activation"
+        "imaqal_covid19_mag_s01e08_activation",
+        "imaqal_covid19_mag_s01e09_activation",
+        "imaqal_covid19_mag_s01e10_activation",
+        "imaqal_covid19_mag_s01e11_activation",
+        "imaqal_covid19_mag_s01e12_activation"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
@@ -75,6 +79,22 @@
     {"RapidProKey": "Rqa_Covid19_Mag_S01E08_Raw (Text) - imaqal_covid19_mag_s01e08_activation", "PipelineKey": "rqa_covid19_mag_s01e08_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E08_Raw (Run ID) - imaqal_covid19_mag_s01e08_activation", "PipelineKey": "rqa_covid19_mag_s01e08_run_id"},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E08_Raw (Time) - imaqal_covid19_mag_s01e08_activation", "PipelineKey": "sent_on"},
+    
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E09_Raw (Text) - imaqal_covid19_mag_s01e09_activation", "PipelineKey": "rqa_covid19_mag_s01e09_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E09_Raw (Run ID) - imaqal_covid19_mag_s01e09_activation", "PipelineKey": "rqa_covid19_mag_s01e09_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E09_Raw (Time) - imaqal_covid19_mag_s01e09_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E10_Raw (Text) - imaqal_covid19_mag_s01e10_activation", "PipelineKey": "rqa_covid19_mag_s01e10_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E10_Raw (Run ID) - imaqal_covid19_mag_s01e10_activation", "PipelineKey": "rqa_covid19_mag_s01e10_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E10_Raw (Time) - imaqal_covid19_mag_s01e10_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E11_Raw (Text) - imaqal_covid19_mag_s01e11_activation", "PipelineKey": "rqa_covid19_mag_s01e11_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E11_Raw (Run ID) - imaqal_covid19_mag_s01e11_activation", "PipelineKey": "rqa_covid19_mag_s01e11_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E11_Raw (Time) - imaqal_covid19_mag_s01e11_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E12_Raw (Text) - imaqal_covid19_mag_s01e12_activation", "PipelineKey": "rqa_covid19_mag_s01e12_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E12_Raw (Run ID) - imaqal_covid19_mag_s01e12_activation", "PipelineKey": "rqa_covid19_mag_s01e12_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S01E12_Raw (Time) - imaqal_covid19_mag_s01e12_activation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "Gender (Value) - imaqal_demog", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Gender (Time) - imaqal_demog", "PipelineKey": "gender_time"},
