@@ -11,6 +11,10 @@ while [[ $# -gt 0 ]]; do
             PROFILE_CPU=true
             CPU_PROFILE_OUTPUT_PATH="$2"
             shift 2;;
+        --profile-memory)
+            PROFILE_MEMORY=true
+            MEMORY_PROFILE_OUTPUT_PATH="$2"
+            shift 2;;
         --)
             shift
             break;;
@@ -22,7 +26,7 @@ done
 # Check that the correct number of arguments were provided.
 if [[ $# -ne 4 ]]; then
     echo "Usage: ./docker-run-fetch-raw-data.sh
-    [--profile-cpu <profile-output-path>]
+    [--profile-cpu <profile-output-path>] [--profile-memory <profile-output-path>]
     <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path>
     <raw-data-dir>"
     exit
@@ -35,14 +39,19 @@ INPUT_PIPELINE_CONFIGURATION=$3
 OUTPUT_RAW_DATA_DIR=$4
 
 # Build an image for this pipeline stage.
-docker build -t "$IMAGE_NAME" .
+docker build --build-arg INSTALL_MEMORY_PROFILER="$PROFILE_MEMORY" -t "$IMAGE_NAME" .
 
 # Create a container from the image that was just built.
 if [[ "$PROFILE_CPU" = true ]]; then
     PROFILE_CPU_CMD="-m pyinstrument -o /data/cpu.prof --renderer html --"
     SYS_PTRACE_CAPABILITY="--cap-add SYS_PTRACE"
 fi
-CMD="pipenv run python -u $PROFILE_CPU_CMD fetch_raw_data.py \
+
+if [[ "$PROFILE_MEMORY" = true ]]; then
+    PROFILE_MEMORY_CMD="mprof run -o /data/memory.prof"
+fi
+
+CMD="pipenv run $PROFILE_MEMORY_CMD python -u $PROFILE_CPU_CMD fetch_raw_data.py \
     \"$USER\" /credentials/google-cloud-credentials.json \
     /data/pipeline-configuration.json /data/Raw\ Data
 "
@@ -73,6 +82,12 @@ if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"
     mkdir -p "$(dirname "$CPU_PROFILE_OUTPUT_PATH")"
     docker cp "$container:/data/cpu.prof" "$CPU_PROFILE_OUTPUT_PATH"
+fi
+
+if [[ "$PROFILE_MEMORY" = true ]]; then
+    echo "Copying $container_short_id:/data/memory.prof -> $MEMORY_PROFILE_OUTPUT_PATH"
+    mkdir -p "$(dirname "$MEMORY_PROFILE_OUTPUT_PATH")"
+    docker cp "$container:/data/memory.prof" "$MEMORY_PROFILE_OUTPUT_PATH"
 fi
 
 # Tear down the container, now that all expected output files have been copied out successfully

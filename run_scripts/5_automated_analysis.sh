@@ -9,6 +9,10 @@ while [[ $# -gt 0 ]]; do
 
             CPU_PROFILE_ARG="--profile-cpu $CPU_PROFILE_OUTPUT_PATH"
             shift 2;;
+        --profile-memory)
+            MEMORY_PROFILE_OUTPUT_PATH="$2"
+            MEMORY_PROFILE_ARG="--profile-memory $MEMORY_PROFILE_OUTPUT_PATH"
+            shift 2;;
         --)
             shift
             break;;
@@ -30,7 +34,7 @@ DATA_ROOT=$3
 mkdir -p "$DATA_ROOT/Outputs"
 
 cd ..
-./docker-run-automated-analysis.sh ${CPU_PROFILE_ARG} \
+./docker-run-automated-analysis.sh ${MEMORY_PROFILE_ARG} ${CPU_PROFILE_ARG} \
   "$USER" "$PIPELINE_CONFIGURATION_FILE_PATH" \
   "$DATA_ROOT/Outputs/messages_traced_data.jsonl" "$DATA_ROOT/Outputs/individuals_traced_data.jsonl" \
   "$DATA_ROOT/Outputs/Automated Analysis/"

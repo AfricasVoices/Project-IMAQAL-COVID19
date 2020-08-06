@@ -29,14 +29,16 @@ echo "Starting run with id '$RUN_ID'"
 
 ./1_coda_get.sh "$CODA_PULL_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
-./2_fetch_raw_data.sh "$USER" "$AVF_BUCKET_CREDENTIALS_PATH" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
+./2_fetch_raw_data.sh --profile-memory "$PERFORMANCE_LOGS_DIR/fetch-raw-data-memory-$RUN_ID.profile" \
+    "$USER" "$AVF_BUCKET_CREDENTIALS_PATH" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
-./3_generate_outputs.sh --profile-memory "$PERFORMANCE_LOGS_DIR/memory-$RUN_ID.profile" \
+./3_generate_outputs.sh --profile-memory "$PERFORMANCE_LOGS_DIR/generate-outputs-memory-$RUN_ID.profile" \
     "$USER" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
 ./4_coda_add.sh "$CODA_PUSH_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
-./5_automated_analysis.sh "$USER" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
+./5_automated_analysis.sh --profile-memory "$PERFORMANCE_LOGS_DIR/automated-analysis-memory-$RUN_ID.profile" \
+    "$USER" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
 ./6_backup_data_root.sh "$DATA_ROOT" "$DATA_BACKUPS_DIR/data-$RUN_ID.tar.gzip"
 

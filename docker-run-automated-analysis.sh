@@ -11,6 +11,10 @@ while [[ $# -gt 0 ]]; do
             PROFILE_CPU=true
             CPU_PROFILE_OUTPUT_PATH="$2"
             shift 2;;
+        --profile-memory)
+            PROFILE_MEMORY=true
+            MEMORY_PROFILE_OUTPUT_PATH="$2"
+            shift 2;;
         --)
             shift
             break;;
@@ -23,7 +27,7 @@ done
 # Check that the correct number of arguments were provided.
 if [[ $# -ne 5 ]]; then
     echo "Usage: ./docker-run-automated-analysis.sh
-    [--profile-cpu <profile-output-path>]
+    [--profile-cpu <cpu-profile-output-path>] [--profile-memory <memory-profile-output-path>]
     <user> <pipeline-configuration-file-path> <messages-traced-data>
     <individuals-traced-data> <automated-analysis-output-dir>"
     exit
@@ -37,14 +41,19 @@ INPUT_INDIVIDUALS_TRACED_DATA=$4
 AUTOMATED_ANALYSIS_OUTPUT_DIR=$5
 
 # Build an image for this pipeline stage.
-docker build -t "$IMAGE_NAME" .
+docker build --build-arg INSTALL_MEMORY_PROFILER="$PROFILE_MEMORY" -t "$IMAGE_NAME" .
 
 # Create a container from the image that was just built.
 if [[ "$PROFILE_CPU" = true ]]; then
     PROFILE_CPU_CMD="-m pyinstrument -o /data/cpu.prof --renderer html --"
     SYS_PTRACE_CAPABILITY="--cap-add SYS_PTRACE"
 fi
-CMD="pipenv run python -u $PROFILE_CPU_CMD automated_analysis.py \
+
+if [[ "$PROFILE_MEMORY" = true ]]; then
+    PROFILE_MEMORY_CMD="mprof run -o /data/memory.prof"
+fi
+
+CMD="pipenv run $PROFILE_MEMORY_CMD python -u $PROFILE_CPU_CMD automated_analysis.py \
     \"$USER\" /data/pipeline_configuration.json \
     /data/messages-traced-data.jsonl /data/individuals-traced-data.jsonl /data/automated-analysis-outputs
 "
@@ -76,6 +85,12 @@ if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"
     mkdir -p "$(dirname "$CPU_PROFILE_OUTPUT_PATH")"
     docker cp "$container:/data/cpu.prof" "$CPU_PROFILE_OUTPUT_PATH"
+fi
+
+if [[ "$PROFILE_MEMORY" = true ]]; then
+    echo "Copying $container_short_id:/data/memory.prof -> $MEMORY_PROFILE_OUTPUT_PATH"
+    mkdir -p "$(dirname "$MEMORY_PROFILE_OUTPUT_PATH")"
+    docker cp "$container:/data/memory.prof" "$MEMORY_PROFILE_OUTPUT_PATH"
 fi
 
 # Tear down the container, now that all expected output files have been copied out successfully
