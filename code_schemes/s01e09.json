@@ -236,9 +236,9 @@
       {
         "CodeID": "code-c02d313f",
         "CodeType": "Normal",
-        "DisplayText": "other",
+        "DisplayText": "other theme",
         "NumericValue": 26,
-        "StringValue": "other",
+        "StringValue": "other_theme",
         "VisibleInCoda": true
       },
       {
