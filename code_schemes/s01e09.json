@@ -202,6 +202,46 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-cf12a514",
+        "CodeType": "Normal",
+        "DisplayText": "lack of access to preventive items",
+        "NumericValue": 22,
+        "StringValue": "lack_of_access_to_preventive_items",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-c237c071",
+        "CodeType": "Normal",
+        "DisplayText": "financial constraints/cannot afford",
+        "NumericValue": 23,
+        "StringValue": "financial_constraints_cannot_afford",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-38da06a3",
+        "CodeType": "Normal",
+        "DisplayText": "have access to preventive items",
+        "NumericValue": 24,
+        "StringValue": "have_access_to_preventive_items",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dada575a",
+        "CodeType": "Normal",
+        "DisplayText": "follow healthcare advice",
+        "NumericValue": 25,
+        "StringValue": "follow_healthcare_advice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-c02d313f",
+        "CodeType": "Normal",
+        "DisplayText": "other",
+        "NumericValue": 26,
+        "StringValue": "other",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
