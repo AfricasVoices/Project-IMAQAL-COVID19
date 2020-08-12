@@ -122,7 +122,7 @@
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
-  "AutomatedAnalysisConfiguration": {
+  "AutomatedAnalysis": {
     "GenerateRegionThemeDistributionMaps": false,
     "GenerateDistrictThemeDistributionMaps": false,
     "GenerateMogadishuThemeDistributionMaps": false
