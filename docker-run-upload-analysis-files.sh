@@ -6,22 +6,23 @@ PROJECT_NAME="$(<configuration/docker_image_project_name.txt)"
 IMAGE_NAME=$PROJECT_NAME-upload-analysis-files
 
 # Check that the correct number of arguments were provided.
-if [[ $# -ne 8 ]]; then
+if [[ $# -ne 9 ]]; then
     echo "Usage: ./docker-run-upload-analysis-files.sh
-    <user> <google-cloud-credentials-file-path> <pipeline-configuration-file-path> <run-id> <production-csv-path>
+    <user> <pipeline-run-mode> <google-cloud-credentials-file-path> <pipeline-configuration-file-path> <run-id> <production-csv-path>
     <messages-csv-path> <individuals-csv-path> <automated-analysis-dir-path>"
     exit
 fi
 
 # Assign the program arguments to bash variables.
 USER=$1
-INPUT_GOOGLE_CLOUD_CREDENTIALS=$2
-INPUT_PIPELINE_CONFIGURATION=$3
-RUN_ID=$4
-INPUT_PRODUCTION_CSV=$5
-INPUT_MESSAGES_CSV=$6
-INPUT_INDIVIDUALS_CSV=$7
-AUTOMATED_ANALYSIS_DIR=$8
+PIPELINE_RUN_MODE=$2
+INPUT_GOOGLE_CLOUD_CREDENTIALS=$3
+INPUT_PIPELINE_CONFIGURATION=$4
+RUN_ID=$5
+INPUT_PRODUCTION_CSV=$6
+INPUT_MESSAGES_CSV=$7
+INPUT_INDIVIDUALS_CSV=$8
+AUTOMATED_ANALYSIS_DIR=$9
 
 
 # Build an image for this pipeline stage.
@@ -29,7 +30,7 @@ docker build -t "$IMAGE_NAME" .
 
 # Create a container from the image that was just built.
 CMD="pipenv run python -u upload_analysis_files.py \
-    \"$USER\" /credentials/google-cloud-credentials.json /data/pipeline_configuration.json \"$RUN_ID\" \
+    \"$USER\" \"$PIPELINE_RUN_MODE\" /credentials/google-cloud-credentials.json /data/pipeline_configuration.json \"$RUN_ID\" \
     /data/production.csv /data/messages.csv /data/individuals.csv /data/automated-analysis
 "
 container="$(docker container create -w /app "$IMAGE_NAME" /bin/bash -c "$CMD")"
@@ -46,14 +47,16 @@ docker cp "$INPUT_GOOGLE_CLOUD_CREDENTIALS" "$container:/credentials/google-clou
 echo "Copying $INPUT_PRODUCTION_CSV -> $container_short_id:/data/production.csv"
 docker cp "$INPUT_PRODUCTION_CSV" "$container:/data/production.csv"
 
-echo "Copying $INPUT_MESSAGES_CSV -> $container_short_id:/data/messages.csv"
-docker cp "$INPUT_MESSAGES_CSV" "$container:/data/messages.csv"
+if [[ $PIPELINE_RUN_MODE = "all-stages" ]]; then
+    echo "Copying $INPUT_MESSAGES_CSV -> $container_short_id:/data/messages.csv"
+    docker cp "$INPUT_MESSAGES_CSV" "$container:/data/messages.csv"
 
-echo "Copying $INPUT_INDIVIDUALS_CSV -> $container_short_id:/data/individuals.csv"
-docker cp "$INPUT_INDIVIDUALS_CSV" "$container:/data/individuals.csv"
+    echo "Copying $INPUT_INDIVIDUALS_CSV -> $container_short_id:/data/individuals.csv"
+    docker cp "$INPUT_INDIVIDUALS_CSV" "$container:/data/individuals.csv"
 
-echo "Copying $AUTOMATED_ANALYSIS_DIR -> $container_short_id:/data/automated-analysis"
-docker cp "$AUTOMATED_ANALYSIS_DIR" "$container:/data/automated-analysis"
+    echo "Copying $AUTOMATED_ANALYSIS_DIR -> $container_short_id:/data/automated-analysis"
+    docker cp "$AUTOMATED_ANALYSIS_DIR" "$container:/data/automated-analysis"
+fi
 
 # Run the container
 echo "Starting container $container_short_id"
