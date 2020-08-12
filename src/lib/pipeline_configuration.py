@@ -19,7 +19,8 @@ class PipelineConfiguration(object):
 
     def __init__(self, pipeline_name, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                  rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages, move_ws_messages,
-                 memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path, drive_upload=None):
+                 memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path,
+                 automated_analysis, drive_upload=None):
         """
         :param pipeline_name: The name of this pipeline.
         :type pipeline_name: str
@@ -49,9 +50,10 @@ class PipelineConfiguration(object):
         :type data_archive_upload_bucket: str
         :param bucket_dir_path: The GS bucket folder path to store the data archive & memory log files to.
         :type bucket_dir_path: str
-        :param drive_upload: Configuration for uploading to Google Drive, or None.
-                             If None, does not upload to Google Drive.
-        :type drive_upload: DriveUploadPaths | None
+        :param bucket_dir_path: The GS bucket folder path to store the data archive & memory log files to.
+        :type bucket_dir_path: str
+        :param automated_analysis: Different Automated analysis Script Configurations
+        :type automated_analysis: AutomatedAnalysis
         """
         self.pipeline_name = pipeline_name
         self.raw_data_sources = raw_data_sources
@@ -65,6 +67,7 @@ class PipelineConfiguration(object):
         self.drive_upload = drive_upload
         self.memory_profile_upload_bucket = memory_profile_upload_bucket
         self.data_archive_upload_bucket = data_archive_upload_bucket
+        self.automated_analysis = automated_analysis
         self.bucket_dir_path = bucket_dir_path
 
         PipelineConfiguration.RQA_CODING_PLANS = coding_plans.get_rqa_coding_plans(self.pipeline_name)
@@ -109,9 +112,12 @@ class PipelineConfiguration(object):
         filter_test_messages = configuration_dict["FilterTestMessages"]
         move_ws_messages = configuration_dict["MoveWSMessages"]
 
+        automated_analysis = AutomatedAnalysis.from_configuration_dict(configuration_dict["AutomatedAnalysis"])
+
         drive_upload_paths = None
         if "DriveUpload" in configuration_dict:
             drive_upload_paths = DriveUpload.from_configuration_dict(configuration_dict["DriveUpload"])
+
 
         memory_profile_upload_bucket = configuration_dict["MemoryProfileUploadBucket"]
         data_archive_upload_bucket = configuration_dict["DataArchiveUploadBucket"]
@@ -120,7 +126,7 @@ class PipelineConfiguration(object):
         return cls(pipeline_name, raw_data_sources, phone_number_uuid_table, timestamp_remappings,
                    rapid_pro_key_remappings, project_start_date, project_end_date, filter_test_messages,
                    move_ws_messages, memory_profile_upload_bucket, data_archive_upload_bucket, bucket_dir_path,
-                   drive_upload_paths)
+                   automated_analysis, drive_upload_paths)
 
     @classmethod
     def from_configuration_file(cls, f):
@@ -445,3 +451,37 @@ class DriveUpload(object):
         validators.validate_string(self.messages_upload_path, "messages_upload_path")
         validators.validate_string(self.individuals_upload_path, "individuals_upload_path")
         validators.validate_string(self.automated_analysis_dir, "automated_analysis_dir")
+
+class AutomatedAnalysis(object):
+    def __init__(self, generate_region_theme_distribution_maps, generate_district_theme_distribution_maps,
+                 generate_mogadishu_theme_distribution_maps):
+        """
+        :param generate_region_theme_distribution_maps: Whether to generate somali region theme distribution maps.
+        :type generate_region_theme_distribution_maps: bool
+        :param generate_district_theme_distribution_maps: Whether to generate somali district theme distribution maps.
+        :type generate_district_theme_distribution_maps: bool
+        :param generate_mogadishu_theme_distribution_maps: Whether to generate mogadishu sub-district theme distribution maps.
+        :type generate_mogadishu_theme_distribution_maps: bool
+        """
+        self.generate_region_theme_distribution_maps = generate_region_theme_distribution_maps
+        self.generate_district_theme_distribution_maps = generate_district_theme_distribution_maps
+        self.generate_mogadishu_theme_distribution_maps = generate_mogadishu_theme_distribution_maps
+
+        self.validate()
+
+    @classmethod
+    def from_configuration_dict(cls, configuration_dict):
+        generate_region_theme_distribution_maps = configuration_dict["GenerateRegionThemeDistributionMaps"]
+        generate_district_theme_distribution_maps = configuration_dict["GenerateDistrictThemeDistributionMaps"]
+        generate_mogadishu_theme_distribution_maps = configuration_dict["GenerateMogadishuThemeDistributionMaps"]
+
+        return cls (generate_region_theme_distribution_maps, generate_district_theme_distribution_maps,
+                   generate_mogadishu_theme_distribution_maps)
+
+    def validate(self):
+        validators.validate_bool(self.generate_region_theme_distribution_maps,
+                                 "generate_region_theme_distribution_maps")
+        validators.validate_bool(self.generate_district_theme_distribution_maps,
+                                 "generate_district_theme_distribution_maps")
+        validators.validate_bool(self.generate_mogadishu_theme_distribution_maps,
+                                 "generate_mogadishu_theme_distribution_maps")
