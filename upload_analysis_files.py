@@ -112,7 +112,7 @@ if __name__ == "__main__":
                 paths_to_upload, f"{pipeline_configuration.drive_upload.automated_analysis_dir}/maps/mogadishu/",
                 target_folder_is_shared_with_me=True, recursive=True)
         else:
-            assert pipeline_run_mode == "auto-code-only", "generate analysis files must be either auto-code-only or all-stages"
+            assert pipeline_run_mode == "auto-code-only", "pipeline run mode must be either auto-code-only or all-stages"
             production_csv_drive_dir = os.path.dirname(pipeline_configuration.drive_upload.production_upload_path)
             production_csv_drive_file_name = os.path.basename(
                 pipeline_configuration.drive_upload.production_upload_path)

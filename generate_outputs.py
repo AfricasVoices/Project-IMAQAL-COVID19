@@ -112,7 +112,7 @@ if __name__ == "__main__":
         with open(individuals_json_output_path, "w") as f:
             TracedDataJsonIO.export_traced_data_iterable_to_jsonl(individuals_data, f)
     else:
-        assert pipeline_run_mode == "auto-code-only", "generate analysis files must be either auto-code-only or all-stages"
+        assert pipeline_run_mode == "auto-code-only", "pipeline run mode must be either auto-code-only or all-stages"
         log.info("Writing Auto-Coding TracedData to file...")
         IOUtils.ensure_dirs_exist_for_file(auto_coding_json_output_path)
         with open(auto_coding_json_output_path, "w") as f:
