@@ -25,10 +25,10 @@ done
 
 
 # Check that the correct number of arguments were provided.
-if [[ $# -ne 11 ]]; then
+if [[ $# -ne 13 ]]; then
     echo "Usage: ./docker-run-generate-outputs.sh
     [--profile-cpu <profile-output-path>] [--profile-memory <profile-output-path>]
-    <user> <pipeline-configuration-file-path>
+    <user> <pipeline-run-mode> <pipeline-configuration-file-path>
     <raw-data-dir> <prev-coded-dir> <messages-json-output-path> <individuals-json-output-path>
     <icr-output-dir> <coded-output-dir> <messages-output-csv> <individuals-output-csv> <production-output-csv>"
     exit
@@ -36,16 +36,18 @@ fi
 
 # Assign the program arguments to bash variables.
 USER=$1
-INPUT_PIPELINE_CONFIGURATION=$2
-INPUT_RAW_DATA_DIR=$3
-PREV_CODED_DIR=$4
-OUTPUT_MESSAGES_JSONL=$5
-OUTPUT_INDIVIDUALS_JSONL=$6
-OUTPUT_ICR_DIR=$7
-OUTPUT_CODED_DIR=$8
-OUTPUT_MESSAGES_CSV=$9
-OUTPUT_INDIVIDUALS_CSV=${10}
-OUTPUT_PRODUCTION_CSV=${11}
+PIPELINE_RUN_MODE=$2
+INPUT_PIPELINE_CONFIGURATION=$3
+INPUT_RAW_DATA_DIR=$4
+PREV_CODED_DIR=$5
+OUTPUT_AUTO_CODING_TRACED_JSONL=$6
+OUTPUT_MESSAGES_JSONL=$7
+OUTPUT_INDIVIDUALS_JSONL=$8
+OUTPUT_ICR_DIR=$9
+OUTPUT_CODED_DIR=${10}
+OUTPUT_MESSAGES_CSV=${11}
+OUTPUT_INDIVIDUALS_CSV=${12}
+OUTPUT_PRODUCTION_CSV=${13}
 
 # Build an image for this pipeline stage.
 docker build --build-arg INSTALL_MEMORY_PROFILER="$PROFILE_MEMORY" -t "$IMAGE_NAME" .
@@ -59,8 +61,8 @@ if [[ "$PROFILE_MEMORY" = true ]]; then
     PROFILE_MEMORY_CMD="mprof run -o /data/memory.prof"
 fi
 CMD="pipenv run $PROFILE_MEMORY_CMD python -u $PROFILE_CPU_CMD generate_outputs.py \
-    \"$USER\" /data/pipeline_configuration.json /data/raw-data /data/prev-coded \
-    /data/output-messages.jsonl /data/output-individuals.jsonl /data/output-icr /data/coded \
+    \"$USER\" \"$PIPELINE_RUN_MODE\" /data/pipeline_configuration.json /data/raw-data /data/prev-coded \
+     /data/auto-coding-traced-data.jsonl /data/output-messages.jsonl /data/output-individuals.jsonl /data/output-icr /data/coded \
     /data/output-messages.csv /data/output-individuals.csv /data/output-production.csv \
 "
 container="$(docker container create ${SYS_PTRACE_CAPABILITY} -w /app "$IMAGE_NAME" /bin/bash -c "$CMD")"
@@ -86,14 +88,6 @@ echo "Starting container $container_short_id"
 docker start -a -i "$container"
 
 # Copy the output data back out of the container
-echo "Copying $container_short_id:/data/output-messages.jsonl -> $OUTPUT_MESSAGES_JSONL"
-mkdir -p "$(dirname "$OUTPUT_MESSAGES_JSONL")"
-docker cp "$container:/data/output-messages.jsonl" "$OUTPUT_MESSAGES_JSONL"
-
-echo "Copying $container_short_id:/data/output-individuals.jsonl -> $OUTPUT_INDIVIDUALS_JSONL"
-mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_JSONL")"
-docker cp "$container:/data/output-individuals.jsonl" "$OUTPUT_INDIVIDUALS_JSONL"
-
 echo "Copying $container_short_id:/data/output-icr/. -> $OUTPUT_ICR_DIR"
 mkdir -p "$OUTPUT_ICR_DIR"
 docker cp "$container:/data/output-icr/." "$OUTPUT_ICR_DIR"
@@ -106,13 +100,32 @@ echo "Copying $container_short_id:/data/output-production.csv -> $OUTPUT_PRODUCT
 mkdir -p "$(dirname "$OUTPUT_PRODUCTION_CSV")"
 docker cp "$container:/data/output-production.csv" "$OUTPUT_PRODUCTION_CSV"
 
-echo "Copying $container_short_id:/data/output-messages.csv -> $OUTPUT_MESSAGES_CSV"
-mkdir -p "$(dirname "$OUTPUT_MESSAGES_CSV")"
-docker cp "$container:/data/output-messages.csv" "$OUTPUT_MESSAGES_CSV"
+if [[ $PIPELINE_RUN_MODE = "all-stages" ]]; then
+    echo "Copying $container_short_id:/data/output-messages.jsonl -> $OUTPUT_MESSAGES_JSONL"
+    mkdir -p "$(dirname "$OUTPUT_MESSAGES_JSONL")"
+    docker cp "$container:/data/output-messages.jsonl" "$OUTPUT_MESSAGES_JSONL"
 
-echo "Copying $container_short_id:/data/output-individuals.csv -> $OUTPUT_INDIVIDUALS_CSV"
-mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_CSV")"
-docker cp "$container:/data/output-individuals.csv" "$OUTPUT_INDIVIDUALS_CSV"
+    echo "Copying $container_short_id:/data/output-individuals.jsonl -> $OUTPUT_INDIVIDUALS_JSONL"
+    mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_JSONL")"
+    docker cp "$container:/data/output-individuals.jsonl" "$OUTPUT_INDIVIDUALS_JSONL"
+
+    echo "Copying $container_short_id:/data/output-messages.csv -> $OUTPUT_MESSAGES_CSV"
+    mkdir -p "$(dirname "$OUTPUT_MESSAGES_CSV")"
+    docker cp "$container:/data/output-messages.csv" "$OUTPUT_MESSAGES_CSV"
+
+    echo "Copying $container_short_id:/data/output-individuals.csv -> $OUTPUT_INDIVIDUALS_CSV"
+    mkdir -p "$(dirname "$OUTPUT_INDIVIDUALS_CSV")"
+    docker cp "$container:/data/output-individuals.csv" "$OUTPUT_INDIVIDUALS_CSV"
+
+elif [[ $PIPELINE_RUN_MODE = "auto-code-only" ]]; then
+    echo "copying auto-coding-traced-data.jsonl to "$OUTPUT_AUTO_CODING_TRACED_JSONL" "
+    mkdir -p "$(dirname "$OUTPUT_AUTO_CODING_TRACED_JSONL")"
+    docker cp "$container:/data/auto-coding-traced-data.jsonl" "$OUTPUT_AUTO_CODING_TRACED_JSONL"
+
+else
+    echo "WARNING: pipeline run mode must be either auto-code-only or all-stages"
+    exit 0
+fi
 
 if [[ "$PROFILE_CPU" = true ]]; then
     echo "Copying $container_short_id:/data/cpu.prof -> $CPU_PROFILE_OUTPUT_PATH"

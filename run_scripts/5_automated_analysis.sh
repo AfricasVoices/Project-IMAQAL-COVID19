@@ -27,7 +27,12 @@ USER=$1
 PIPELINE_CONFIGURATION_FILE_PATH=$2
 DATA_ROOT=$3
 
-mkdir -p "$DATA_ROOT/Outputs"
+if [ -d "$DATA_ROOT/Outputs/Automated Analysis" ]
+then
+    rm -r "$DATA_ROOT/Outputs/Automated Analysis"
+fi
+
+mkdir -p "$DATA_ROOT/Outputs/Automated Analysis"
 
 cd ..
 ./docker-run-automated-analysis.sh ${CPU_PROFILE_ARG} \
