@@ -32,7 +32,11 @@ PIPELINE_RUN_MODE=$2
 PIPELINE_CONFIGURATION_FILE_PATH=$3
 DATA_ROOT=$4
 
-mkdir -p "$DATA_ROOT/Coded Coda Files"
+if [ -d "$DATA_ROOT/Outputs" ]
+then
+    rm -r "$DATA_ROOT/Outputs"
+fi
+
 mkdir -p "$DATA_ROOT/Outputs"
 
 cd ..
