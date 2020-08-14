@@ -202,6 +202,54 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-c5a4def1",
+        "CodeType": "Normal",
+        "DisplayText": "government support",
+        "NumericValue": 22,
+        "StringValue": "government_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-9ddc68fe",
+        "CodeType": "Normal",
+        "DisplayText": "cooperation/working together",
+        "NumericValue": 23,
+        "StringValue": "cooperation_working_together",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0ec1063b",
+        "CodeType": "Normal",
+        "DisplayText": "job creation",
+        "NumericValue": 24,
+        "StringValue": "job_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0332dbf7",
+        "CodeType": "Normal",
+        "DisplayText": "reopen businesses/economy",
+        "NumericValue": 25,
+        "StringValue": "reopen_businesses_economy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-9cbaad8a",
+        "CodeType": "Normal",
+        "DisplayText": "general impacts of coronavirus",
+        "NumericValue": 26,
+        "StringValue": "general_impacts_of_coronavirus",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-226d30e4",
+        "CodeType": "Normal",
+        "DisplayText": "provision of food/assistance",
+        "NumericValue": 27,
+        "StringValue": "provision_of_food_assistance",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
