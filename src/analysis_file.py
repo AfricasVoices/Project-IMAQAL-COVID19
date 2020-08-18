@@ -45,11 +45,11 @@ class AnalysisFile(object):
                             assert cc.coding_mode == CodingModes.MULTIPLE
                             show_matrix_keys = []
                             for code in cc.code_scheme.codes:
-                                show_matrix_keys.append(f"{cc.analysis_file_key}{code.string_value}")
+                                show_matrix_keys.append(f"{cc.analysis_file_key}_{code.string_value}")
 
                             for label in td[cc.coded_field]:
                                 code_string_value = cc.code_scheme.get_code_with_code_id(label["CodeID"]).string_value
-                                analysis_dict[f"{cc.analysis_file_key}{code_string_value}"] = Codes.MATRIX_1
+                                analysis_dict[f"{cc.analysis_file_key}_{code_string_value}"] = Codes.MATRIX_1
 
                             for key in show_matrix_keys:
                                 if key not in analysis_dict:
