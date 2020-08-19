@@ -77,9 +77,11 @@ if __name__ == "__main__":
     data = TranslateRapidProKeys.translate_rapid_pro_keys(user, data, pipeline_configuration)
 
     if pipeline_configuration.move_ws_messages:
-        log.info("Pre-filtering empty messages...")
+        log.info("Pre-filtering empty message objects...")
         # This is a performance optimisation to save execution time + memory when moving WS messages, by removing
-        # the need to mark and process a high volume of empty messages as 'NR' in WS correction.
+        # the need to mark and process a high volume of empty message objects as 'NR' in WS correction.
+        # Empty message objects represent flow runs where the participants never sent a message e.g. from an advert
+        # flow run where we asked someone a question but didn't receive a response.
         data = MessageFilters.filter_empty_messages(data,
                                                     [plan.raw_field for plan in PipelineConfiguration.RQA_CODING_PLANS])
 
