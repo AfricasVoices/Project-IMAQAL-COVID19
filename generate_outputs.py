@@ -1,5 +1,4 @@
 import argparse
-import random
 
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
@@ -7,7 +6,7 @@ from core_data_modules.util import IOUtils
 
 from src import LoadData, TranslateRapidProKeys, AutoCode, ProductionFile, \
     ApplyManualCodes, AnalysisFile, WSCorrection
-from src.lib import PipelineConfiguration
+from src.lib import PipelineConfiguration, MessageFilters
 
 log = Logger(__name__)
 
@@ -78,6 +77,14 @@ if __name__ == "__main__":
     data = TranslateRapidProKeys.translate_rapid_pro_keys(user, data, pipeline_configuration)
 
     if pipeline_configuration.move_ws_messages:
+        log.info("Pre-filtering empty message objects...")
+        # This is a performance optimisation to save execution time + memory when moving WS messages, by removing
+        # the need to mark and process a high volume of empty message objects as 'NR' in WS correction.
+        # Empty message objects represent flow runs where the participants never sent a message e.g. from an advert
+        # flow run where we asked someone a question but didn't receive a response.
+        data = MessageFilters.filter_empty_messages(data,
+                                                    [plan.raw_field for plan in PipelineConfiguration.RQA_CODING_PLANS])
+
         log.info("Moving WS messages...")
         data = WSCorrection.move_wrong_scheme_messages(user, data, prev_coded_dir_path)
     else:
