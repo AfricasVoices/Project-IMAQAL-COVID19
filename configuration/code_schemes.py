@@ -12,6 +12,7 @@ def _open_scheme(filename):
 class CodeSchemes(object):
     DIAGNOSTIC_S01E01 = _open_scheme("diagnostic_s01e01.json")
     DIAGNOSTIC_S01E02 = _open_scheme("diagnostic_s01e02.json")
+    DIAGNOSTIC_S01E03 = _open_scheme("diagnostic_s01e03.json")
     S01E01 = _open_scheme("s01e01.json")
     S01E02 = _open_scheme("s01e02.json")
     S01E03 = _open_scheme("s01e03.json")
