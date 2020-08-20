@@ -202,6 +202,54 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-d88517a9",
+        "CodeType": "Normal",
+        "DisplayText": "encourage and support of girls education",
+        "NumericValue": 22,
+        "StringValue": "encourage_and_support_of_girls_education",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-9cb68c50",
+        "CodeType": "Normal",
+        "DisplayText": "impact on education",
+        "NumericValue": 23,
+        "StringValue": "impact_on_education",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-83006139",
+        "CodeType": "Normal",
+        "DisplayText": "reopen schools",
+        "NumericValue": 24,
+        "StringValue": "reopen_schools",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-8821b677",
+        "CodeType": "Normal",
+        "DisplayText": "general impacts",
+        "NumericValue": 25,
+        "StringValue": "general_impacts",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-35e9db4b",
+        "CodeType": "Normal",
+        "DisplayText": "regressive attitude",
+        "NumericValue": 26,
+        "StringValue": "regressive_attitude",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0adf6cc3",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 27,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
