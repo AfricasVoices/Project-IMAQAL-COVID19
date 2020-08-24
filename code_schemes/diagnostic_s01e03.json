@@ -218,6 +218,38 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-e60680a8",
+        "CodeType": "Normal",
+        "DisplayText": "about coronavirus - dangerous",
+        "NumericValue": 24,
+        "StringValue": "about_coronavirus_dangerous",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1f693efa",
+        "CodeType": "Normal",
+        "DisplayText": "virus existence",
+        "NumericValue": 25,
+        "StringValue": "virus_existence",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2b67e5da",
+        "CodeType": "Normal",
+        "DisplayText": "impact on community",
+        "NumericValue": 26,
+        "StringValue": "impact_on_community",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-acff242d",
+        "CodeType": "Normal",
+        "DisplayText": "it has not reached us",
+        "NumericValue": 27,
+        "StringValue": "it_has_not_reached_us",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
