@@ -172,49 +172,49 @@
       {
         "CodeID": "code-d55678d1",
         "CodeType": "Normal",
-        "DisplayText": "the virus discriminates",
+        "DisplayText": "rumour/stigma/misinfo - the virus discriminates",
         "NumericValue": 18,
-        "StringValue": "the_virus_discriminates",
+        "StringValue": "rumour_stigma_misinfo_the_virus_discriminates",
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-d55678d1",
+        "CodeID": "code-81b982a8",
         "CodeType": "Normal",
-        "DisplayText": "treatment/cure/remedy",
+        "DisplayText": "rumour/stigma/misinfo - treatment/cure/remedy",
         "NumericValue": 19,
-        "StringValue": "treatment_cure_remedy",
+        "StringValue": "rumour_stigma_misinfo_treatment_cure_remedy",
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-d55678d1",
+        "CodeID": "code-23f9d94a",
         "CodeType": "Normal",
-        "DisplayText": "virus description",
+        "DisplayText": "rumour/stigma/misinfo - virus description",
         "NumericValue": 20,
-        "StringValue": "virus_description",
+        "StringValue": "rumour_stigma_misinfo_virus_description",
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-d55678d1",
+        "CodeID": "code-a2203725",
         "CodeType": "Normal",
-        "DisplayText": "negative stigma/anger",
+        "DisplayText": "rumour/stigma/misinfo - negative stigma/anger",
         "NumericValue": 21,
-        "StringValue": "negative_stigma_anger",
+        "StringValue": "rumour_stigma_misinfo_negative_stigma_anger",
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-d55678d1",
+        "CodeID": "code-91a7f032",
         "CodeType": "Normal",
-        "DisplayText": "origin",
+        "DisplayText": "rumour/stigma/misinfo - origin",
         "NumericValue": 22,
-        "StringValue": "origin",
+        "StringValue": "rumour_stigma_misinfo_origin",
         "VisibleInCoda": true
       },
       {
-        "CodeID": "code-d55678d1",
+        "CodeID": "code-bce9e099",
         "CodeType": "Normal",
-        "DisplayText": "misinfo on status",
+        "DisplayText": "rumour/stigma/misinfo - misinfo on status",
         "NumericValue": 23,
-        "StringValue": "misinfo_on_status",
+        "StringValue": "rumour_stigma_misinfo_misinfo_on_status",
         "VisibleInCoda": true
       },
       {
