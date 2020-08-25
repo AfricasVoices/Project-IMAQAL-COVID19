@@ -6,13 +6,11 @@ import sys
 
 import geopandas
 import matplotlib.pyplot as plt
-import plotly.express as px
 from core_data_modules.cleaners import Codes
 from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
 from core_data_modules.util import IOUtils
-
 
 from src import AnalysisUtils
 from configuration.code_schemes import  CodeSchemes
@@ -65,12 +63,16 @@ if __name__ == "__main__":
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
     with open(messages_json_input_path) as f:
         messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
+        for i in range (len(messages)):
+            messages[i] = dict(messages[i].items())
     log.info(f"Loaded {len(messages)} messages")
 
     # Read the individuals dataset
     log.info(f"Loading the individuals dataset from {individuals_json_input_path}...")
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
+        for i in range (len(individuals)):
+            individuals[i] = dict(individuals[i].items())
     log.info(f"Loaded {len(individuals)} individuals")
 
     sys.setrecursionlimit(15000)
