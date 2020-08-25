@@ -107,7 +107,7 @@ class MappingUtils(object):
                     xy = (admin_region[callout_position_columns[0]], admin_region[callout_position_columns[1]])
                     xytext = (admin_region[label_position_columns[0]], admin_region[label_position_columns[1]])
 
-                plt.annotate(s=frequencies[admin_region[admin_id_column]],
+                plt.annotate(text=frequencies[admin_region[admin_id_column]],
                              xy=xy, xytext=xytext,
                              arrowprops=dict(facecolor="black", arrowstyle="-", linewidth=0.1, shrinkA=0, shrinkB=0),
                              ha="center", va="center", fontsize=3.8)
