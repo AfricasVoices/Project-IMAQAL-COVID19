@@ -59,6 +59,7 @@ if __name__ == "__main__":
     Logger.set_project_name(pipeline_configuration.pipeline_name)
     log.debug(f"Pipeline name is {pipeline_configuration.pipeline_name}")
 
+    sys.setrecursionlimit(30000)
     # Read the messages dataset
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
     with open(messages_json_input_path) as f:
@@ -75,7 +76,6 @@ if __name__ == "__main__":
             individuals[i] = dict(individuals[i].items())
     log.info(f"Loaded {len(individuals)} individuals")
 
-    sys.setrecursionlimit(15000)
     # Compute the number of messages, individuals, and relevant messages per episode and overall.
     log.info("Computing the per-episode and per-season engagement counts...")
     engagement_counts = OrderedDict()  # of episode name to counts
