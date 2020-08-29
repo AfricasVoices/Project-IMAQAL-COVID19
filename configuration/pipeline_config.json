@@ -21,7 +21,8 @@
         "imaqal_covid19_mag_s01e10_activation",
         "imaqal_covid19_mag_s01e11_activation",
         "imaqal_covid19_mag_s01e12_activation",
-        "imaqal_covid19_diagnostic_s01e03_activation"
+        "imaqal_covid19_diagnostic_s01e03_activation",
+        "imaqal_covid19_mag_s01e13_activation"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
