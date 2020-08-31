@@ -202,6 +202,38 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-1caccf75",
+        "CodeType": "Normal",
+        "DisplayText": "are not stigmatized",
+        "NumericValue": 22,
+        "StringValue": "are_not_stigmatized",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-e2d6cb7f",
+        "CodeType": "Normal",
+        "DisplayText": "should not be stigmatized",
+        "NumericValue": 23,
+        "StringValue": "should_not_be_stigmatized",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4e53263f",
+        "CodeType": "Normal",
+        "DisplayText": "are stigmatized",
+        "NumericValue": 24,
+        "StringValue": "are_stigmatized",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1c981191",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 25,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
