@@ -47,13 +47,21 @@ DATASETS=(
 )
 
 cd "$CODA_V2_ROOT/data_tools"
-git checkout "94a55d9218fb072ef2c15ee2c27c4214b036bd2f"  # (master which supports LastUpdated)
+git checkout "e895887b3abceb63bab672a262d5c1dd73dcad92"  # (master which supports incremental get)
 
 mkdir -p "$DATA_ROOT/Coded Coda Files"
 
 for DATASET in ${DATASETS[@]}
 do
-    echo "Getting messages data from ${DATASET}..."
+    FILE="$DATA_ROOT/Coded Coda Files/$DATASET.json"
 
-    pipenv run python get.py "$AUTH" "${DATASET}" messages >"$DATA_ROOT/Coded Coda Files/$DATASET.json"
+    if [ -e "$FILE" ]; then
+        echo "Getting messages data from ${DATASET} (incremental update)..."
+        MESSAGES=$(pipenv run python get.py --previous-export-file-path "$FILE" "$AUTH" "${DATASET}" messages)
+        echo "$MESSAGES" >"$FILE"
+    else
+        echo "Getting messages data from ${DATASET} (full download)..."
+        pipenv run python get.py "$AUTH" "${DATASET}" messages >"$FILE"
+    fi
+
 done
