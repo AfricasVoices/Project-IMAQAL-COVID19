@@ -26,6 +26,13 @@ class CodeSchemes(object):
     S01E11 = _open_scheme("s01e11.json")
     S01E12 = _open_scheme("s01e12.json")
     S01E13 = _open_scheme("s01e13.json")
+    S01E14 = _open_scheme("s01e14.json")
+    S01E15 = _open_scheme("s01e15.json")
+    S01E16 = _open_scheme("s01e16.json")
+    S01E17 = _open_scheme("s01e17.json")
+    S01E18 = _open_scheme("s01e18.json")
+    S01E19 = _open_scheme("s01e19.json")
+    S01E20 = _open_scheme("s01e20.json")
 
     AGE = _open_scheme("age.json")
     AGE_CATEGORY = _open_scheme("age_category.json")

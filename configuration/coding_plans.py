@@ -300,6 +300,125 @@ def get_rqa_coding_plans(pipeline_name):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e13"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e14_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e14_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e14.json",
+                   icr_filename="rqa_covid19_mag_s01e14.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E14,
+                           coded_field="rqa_covid19_mag_s01e14_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e14",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E14, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e14"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e15_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e15_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e15.json",
+                   icr_filename="rqa_covid19_mag_s01e15.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E15,
+                           coded_field="rqa_covid19_mag_s01e15_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e15",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E15, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e15"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e16_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e16_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e16.json",
+                   icr_filename="rqa_covid19_mag_s01e16.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E16,
+                           coded_field="rqa_covid19_mag_s01e16_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e16",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E16, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e16"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e17_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e17_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e17.json",
+                   icr_filename="rqa_covid19_mag_s01e17.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E17,
+                           coded_field="rqa_covid19_mag_s01e17_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e17",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E17, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e17"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e18_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e18_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e18.json",
+                   icr_filename="rqa_covid19_mag_s01e18.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E18,
+                           coded_field="rqa_covid19_mag_s01e18_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e18",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E18, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e18"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e19_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e19_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e19.json",
+                   icr_filename="rqa_covid19_mag_s01e19.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E19,
+                           coded_field="rqa_covid19_mag_s01e19_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e19",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E19, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e19"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e20_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e20_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e20.json",
+                   icr_filename="rqa_covid19_mag_s01e20.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E20,
+                           coded_field="rqa_covid19_mag_s01e20_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e20",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E20, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e20"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
     ]
 
 
