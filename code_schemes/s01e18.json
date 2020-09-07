@@ -1,6 +1,6 @@
 {
-    "SchemeID": "Scheme-8f00de12",
-    "Name": "S01E13",
+    "SchemeID": "Scheme-798437ee",
+    "Name": "S01E18",
     "Version": "0.0.0.1",
     "Codes": [
       {
@@ -199,70 +199,6 @@
         "DisplayText": "rumour/stigma/misinfo - misinfo on status",
         "NumericValue": 21,
         "StringValue": "rumour_stigma_misinfo_misinfo_on_status",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-2c40cdf0",
-        "CodeType": "Normal",
-        "DisplayText": "lack of healthcare",
-        "NumericValue": 22,
-        "StringValue": "lack_of_healthcare",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-e9a6db7e",
-        "CodeType": "Normal",
-        "DisplayText": "lack of support",
-        "NumericValue": 23,
-        "StringValue": "lack_of_support",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-a7c8e0ce",
-        "CodeType": "Normal",
-        "DisplayText": "discrimination",
-        "NumericValue": 24,
-        "StringValue": "discrimination",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-95a534e6",
-        "CodeType": "Normal",
-        "DisplayText": "lack of access of basic needs",
-        "NumericValue": 25,
-        "StringValue": "lack_of_access_of_basic_needs",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-99c02cdd",
-        "CodeType": "Normal",
-        "DisplayText": "lack of jobs",
-        "NumericValue": 26,
-        "StringValue": "lack_of_jobs",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-8e0ad190",
-        "CodeType": "Normal",
-        "DisplayText": "poor economic conditions",
-        "NumericValue": 27,
-        "StringValue": "poor_economic_conditions",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-4340e599",
-        "CodeType": "Normal",
-        "DisplayText": "sanitation",
-        "NumericValue": 28,
-        "StringValue": "sanitation",
-        "VisibleInCoda": true
-      },
-      {
-        "CodeID": "code-d759d6e1",
-        "CodeType": "Normal",
-        "DisplayText": "other theme",
-        "NumericValue": 29,
-        "StringValue": "other_theme",
         "VisibleInCoda": true
       },
       {
