@@ -108,6 +108,12 @@ class TranslateRapidProKeys(object):
                 user, data, remapping.time_key, remapping.show_pipeline_key_to_remap_to,
                 remapping.range_start_inclusive, remapping.range_end_exclusive, remapping.time_to_adjust_to
             )
+            # Correct diagnostic s01e03 messages recovered from the All networks downtime issue
+            cls._remap_radio_show_by_time_range(
+                user, data, "received_on", "diagnostic_s01e03_raw",
+                isoparse("2020-08-26T17:00:00+03:00"),
+                isoparse("2020-08-27T13:00:00+03:00")
+            )
 
     @classmethod
     def remap_key_names(cls, user, data, pipeline_configuration):

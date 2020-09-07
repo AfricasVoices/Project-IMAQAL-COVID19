@@ -40,6 +40,13 @@
         "3903ad8e-284e-48a0-881b-89c0b06b9334",
         "45939459-e4d5-4ad6-8650-3e7134b9a035"
       ]
+    },
+    {
+      "SourceType": "RecoveryCSVURLs",
+      "ContactsFileName": "imaqal_covid19_contacts",
+      "ActivationFlowNames": [
+        "gs://avf-project-datasets/2020/IMAQAL-COVID19/recovered_all_networks_diagnostic_s01e03_de_identified.csv"
+      ]
     }
   ],
   "PhoneNumberUuidTable": {
