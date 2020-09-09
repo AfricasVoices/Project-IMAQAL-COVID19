@@ -59,7 +59,7 @@
       "RangeStartInclusive": "2020-08-26T17:00:00+03:00",
       "RangeEndExclusive": "2020-08-27T13:00:00+03:00"
     }
-    ],
+  ],
   "RapidProKeyRemappings": [
     {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
 
