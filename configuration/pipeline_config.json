@@ -155,6 +155,10 @@
     {"RapidProKey": "Rqa_Covid19_Mag_S01E20_Raw (Run ID) - imaqal_covid19_mag_s01e20_activation", "PipelineKey": "rqa_covid19_mag_s01e20_run_id"},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E20_Raw (Time) - imaqal_covid19_mag_s01e20_activation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "message", "PipelineKey": "recovered_raw", "IsActivationMessage": true},
+    {"RapidProKey": "received_on", "PipelineKey": "sent_on"},
+    {"RapidProKey": "run_id", "PipelineKey": "recovered_run_id"},
+
     {"RapidProKey": "Gender (Value) - imaqal_demog", "PipelineKey": "gender_raw"},
     {"RapidProKey": "Gender (Time) - imaqal_demog", "PipelineKey": "gender_time"},
     {"RapidProKey": "Age (Value) - imaqal_demog", "PipelineKey": "age_raw"},
