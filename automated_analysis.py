@@ -410,8 +410,12 @@ if __name__ == "__main__":
                                     dpi=1200, bbox_inches="tight")
                         plt.close()
 
-        if pipeline_configuration.automated_analysis.generate_region_theme_distribution_maps:
-            # Plot maps of each of the normal themes for this coding configuration.
+    # Plot maps of each of the normal themes for each coding plan if `generate_region_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_region_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
             for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
                 for code in rqa_cc.code_scheme.codes:
@@ -477,8 +481,12 @@ if __name__ == "__main__":
                                     dpi=1200, bbox_inches="tight")
                         plt.close(fig)
 
-        if pipeline_configuration.automated_analysis.generate_district_theme_distribution_maps:
-            # Plot maps of each of the normal themes for this coding configuration.
+    # Plot maps of each of the normal themes for each coding plan if `generate_district_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_district_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
             for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
                 for code in rqa_cc.code_scheme.codes:
@@ -503,8 +511,8 @@ if __name__ == "__main__":
                     plt.close(fig)
 
                     map_index += 1
-        log.info("Skipping generating a map of per-district theme participation because "
-                 "`generate_district_theme_distribution_maps` is set to False")
+    log.info("Skipping generating a map of per-district theme participation because "
+             "`generate_district_theme_distribution_maps` is set to False")
 
     log.info("Loading the Mogadishu sub-district geojson...")
     mogadishu_map = geopandas.read_file("geojson/mogadishu_sub_districts.geojson")
@@ -545,8 +553,12 @@ if __name__ == "__main__":
                                     dpi=1200, bbox_inches="tight")
                         plt.close(fig)
 
-        if pipeline_configuration.automated_analysis.generate_mogadishu_theme_distribution_maps:
-            # Plot maps of each of the normal themes for this coding configuration.
+    # Plot maps of each of the normal themes for each coding plan if `generate_mogadishu_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_mogadishu_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
             for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
                 for code in rqa_cc.code_scheme.codes:
@@ -572,7 +584,7 @@ if __name__ == "__main__":
                     plt.close(fig)
 
                     map_index += 1
-        log.info("Skipping generating a map of mogadishu theme participation because "
-                 "`generate_mogadishu_theme_distribution_maps` is set to False")
+    log.info("Skipping generating a map of mogadishu theme participation because "
+             "`generate_mogadishu_theme_distribution_maps` is set to False")
 
     log.info("automated analysis python script complete")
