@@ -234,6 +234,14 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-998d0a32",
+        "CodeType": "Normal",
+        "DisplayText": "consume livestock products",
+        "NumericValue": 29,
+        "StringValue": "consume_livestock_products",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-22cda656",
         "CodeType": "Normal",
         "DisplayText": "protects the environment",
