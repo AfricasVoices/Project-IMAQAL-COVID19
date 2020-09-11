@@ -202,6 +202,62 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-57cdd2ee",
+        "CodeType": "Normal",
+        "DisplayText": "provide support",
+        "NumericValue": 22,
+        "StringValue": "provide_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-b4bdf141",
+        "CodeType": "Normal",
+        "DisplayText": "encouragement",
+        "NumericValue": 23,
+        "StringValue": "encouragement",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-53128241",
+        "CodeType": "Normal",
+        "DisplayText": "practice farming/cultivation",
+        "NumericValue": 24,
+        "StringValue": "practice_farming_cultivation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-629ae1b9",
+        "CodeType": "Normal",
+        "DisplayText": "livestock treatment/veterinary service",
+        "NumericValue": 25,
+        "StringValue": "livestock_treatment_veterinary_service",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-22cda656",
+        "CodeType": "Normal",
+        "DisplayText": "protects the environment",
+        "NumericValue": 26,
+        "StringValue": "protects_the_environment",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2dfa5986",
+        "CodeType": "Normal",
+        "DisplayText": "livestock;the buttress of the society",
+        "NumericValue": 27,
+        "StringValue": "livestock_the_buttress_of_the_society",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-60293927",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 28,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
