@@ -202,6 +202,86 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-e8d6b53a",
+        "CodeType": "Normal",
+        "DisplayText": "awareness creation",
+        "NumericValue": 22,
+        "StringValue": "awareness_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4bef9147",
+        "CodeType": "Normal",
+        "DisplayText": "unity and cooperation",
+        "NumericValue": 23,
+        "StringValue": "unity_and_cooperation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a4186cc0",
+        "CodeType": "Normal",
+        "DisplayText": "provision of support",
+        "NumericValue": 24,
+        "StringValue": "provision_of_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-11f6c5b2",
+        "CodeType": "Normal",
+        "DisplayText": "prevention of violence",
+        "NumericValue": 25,
+        "StringValue": "prevention_of_violence",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2a48881d",
+        "CodeType": "Normal",
+        "DisplayText": "improve the security",
+        "NumericValue": 26,
+        "StringValue": "improve_the_security",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-029890d0",
+        "CodeType": "Normal",
+        "DisplayText": "provision of justice",
+        "NumericValue": 27,
+        "StringValue": "provision_of_justice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-00f4fd29",
+        "CodeType": "Normal",
+        "DisplayText": "protect women`s rights",
+        "NumericValue": 28,
+        "StringValue": "protect_womens_rights",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-7d628602",
+        "CodeType": "Normal",
+        "DisplayText": "practice the religion",
+        "NumericValue": 29,
+        "StringValue": "practice_the_religion",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f31ffe2e",
+        "CodeType": "Normal",
+        "DisplayText": "negative attitude",
+        "NumericValue": 30,
+        "StringValue": "negative_attitude",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-08db7218",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 31,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
