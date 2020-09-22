@@ -384,33 +384,44 @@ if __name__ == "__main__":
     plt.savefig(f"{automated_analysis_output_dir}/maps/regions/regions_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close()
 
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        episode = episodes[plan.raw_field]
+    for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode = episodes[rqa_plan.raw_field]
 
-        for cc in plan.coding_configurations:
-            # Plot a map of the total relevant participants for this coding configuration.
-            rqa_total_region_frequencies = dict()
-            for region_code in CodeSchemes.SOMALIA_REGION.codes:
-                if region_code.code_type == CodeTypes.NORMAL:
-                    rqa_total_region_frequencies[region_code.string_value] = \
-                        episode["Total Relevant Participants"][f"region:{region_code.string_value}"]
+        for rqa_cc in rqa_plan.coding_configurations:
+            for survey_plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+                for survey_cc in survey_plan.coding_configurations:
+                    if survey_cc.code_scheme != CodeSchemes.SOMALIA_REGION:
+                        continue
 
-            fig, ax = plt.subplots()
-            MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", rqa_total_region_frequencies,
-                                            label_position_columns=("ADM1_LX", "ADM1_LY"),
-                                            callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
-            plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{cc.analysis_file_key}_1_total_relevant.png",
-                        dpi=1200, bbox_inches="tight")
-            plt.close()
+                    if survey_cc.include_in_theme_distribution == Codes.TRUE:
+                        # Plot a map of the total relevant participants for this coding configuration.
+                        rqa_total_region_frequencies = dict()
+                        for region_code in CodeSchemes.SOMALIA_REGION.codes:
+                            if region_code.code_type == CodeTypes.NORMAL:
+                                rqa_total_region_frequencies[region_code.string_value] = \
+                                    episode["Total Relevant Participants"][f"region:{region_code.string_value}"]
 
-            if pipeline_configuration.automated_analysis.generate_region_theme_distribution_maps:
-                # Plot maps of each of the normal themes for this coding configuration.
+                        fig, ax = plt.subplots()
+                        MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", rqa_total_region_frequencies,
+                                                        label_position_columns=("ADM1_LX", "ADM1_LY"),
+                                                        callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
+                        plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{rqa_cc.analysis_file_key}_1_total_relevant.png",
+                                    dpi=1200, bbox_inches="tight")
+                        plt.close()
+
+    # Plot maps of each of the normal themes for each coding plan if `generate_region_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_region_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
+            for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
-                for code in cc.code_scheme.codes:
+                for code in rqa_cc.code_scheme.codes:
                     if code.code_type != CodeTypes.NORMAL:
                         continue
 
-                    theme = f"{cc.analysis_file_key}_{code.string_value}"
+                    theme = f"{rqa_cc.analysis_file_key}_{code.string_value}"
                     log.info(f"Generating a map of per-region participation for {theme}...")
                     demographic_counts = episode[theme]
 
@@ -424,13 +435,13 @@ if __name__ == "__main__":
                     MappingUtils.plot_frequency_map(regions_map, "ADM1_AVF", theme_region_frequencies,
                                                     label_position_columns=("ADM1_LX", "ADM1_LY"),
                                                     callout_position_columns=("ADM1_CALLX", "ADM1_CALLY"), ax=ax)
-                    plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                    plt.savefig(f"{automated_analysis_output_dir}/maps/regions/region_{rqa_cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                                 dpi=1200, bbox_inches="tight")
                     plt.close()
 
                     map_index += 1
-            log.info("Skipping generating a map of per-region theme participation because "
-                     "`generate_region_theme_distribution_maps` is set to False")
+        log.info("Skipping generating a map of per-region theme participation because "
+                 "`generate_region_theme_distribution_maps` is set to False")
 
     log.info("Loading the Somalia districts geojson...")
     districts_map = geopandas.read_file("geojson/somalia_districts.geojson")
@@ -446,32 +457,42 @@ if __name__ == "__main__":
     plt.savefig(f"{automated_analysis_output_dir}/maps/districts/district_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close(fig)
 
+    for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode = episodes[rqa_plan.raw_field]
 
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        episode = episodes[plan.raw_field]
+        for rqa_cc in rqa_plan.coding_configurations:
+            for survey_plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+                for survey_cc in survey_plan.coding_configurations:
+                    if survey_cc.code_scheme != CodeSchemes.SOMALIA_DISTRICT:
+                        continue
+                    if survey_cc.include_in_theme_distribution == Codes.TRUE:
 
-        for cc in plan.coding_configurations:
-            # Plot a map of the total relevant participants for this coding configuration.
-            rqa_total_district_frequencies = dict()
-            for district_code in CodeSchemes.SOMALIA_DISTRICT.codes:
-                if district_code.code_type == CodeTypes.NORMAL:
-                    rqa_total_district_frequencies[district_code.string_value] = \
-                        episode["Total Relevant Participants"][f"district:{district_code.string_value}"]
+                        # Plot a map of the total relevant participants for this coding configuration.
+                        rqa_total_district_frequencies = dict()
+                        for district_code in CodeSchemes.SOMALIA_DISTRICT.codes:
+                            if district_code.code_type == CodeTypes.NORMAL:
+                                rqa_total_district_frequencies[district_code.string_value] = \
+                                    episode["Total Relevant Participants"][f"district:{district_code.string_value}"]
 
-            fig, ax = plt.subplots()
-            MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", rqa_total_district_frequencies, ax=ax)
-            plt.savefig(f"{automated_analysis_output_dir}/maps/districts/district_{cc.analysis_file_key}_1_total_relevant.png",
-                        dpi=1200, bbox_inches="tight")
-            plt.close(fig)
+                        fig, ax = plt.subplots()
+                        MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", rqa_total_district_frequencies, ax=ax)
+                        plt.savefig(f"{automated_analysis_output_dir}/maps/districts/district_{rqa_cc.analysis_file_key}_1_total_relevant.png",
+                                    dpi=1200, bbox_inches="tight")
+                        plt.close(fig)
 
-            if pipeline_configuration.automated_analysis.generate_district_theme_distribution_maps:
-                # Plot maps of each of the normal themes for this coding configuration.
+    # Plot maps of each of the normal themes for each coding plan if `generate_district_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_district_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
+            for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
-                for code in cc.code_scheme.codes:
+                for code in rqa_cc.code_scheme.codes:
                     if code.code_type != CodeTypes.NORMAL:
                         continue
 
-                    theme = f"{cc.analysis_file_key}_{code.string_value}"
+                    theme = f"{rqa_cc.analysis_file_key}_{code.string_value}"
                     log.info(f"Generating a map of per-district participation for {theme}...")
                     demographic_counts = episode[theme]
 
@@ -484,13 +505,13 @@ if __name__ == "__main__":
                     fig, ax = plt.subplots()
                     MappingUtils.plot_frequency_map(districts_map, "ADM2_AVF", theme_district_frequencies, ax=ax)
                     plt.savefig(
-                        f"{automated_analysis_output_dir}/maps/districts/district_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                        f"{automated_analysis_output_dir}/maps/districts/district_{rqa_cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                         dpi=1200, bbox_inches="tight")
                     plt.close(fig)
 
                     map_index += 1
-            log.info("Skipping generating a map of per-district theme participation because "
-                     "`generate_district_theme_distribution_maps` is set to False")
+    log.info("Skipping generating a map of per-district theme participation because "
+             "`generate_district_theme_distribution_maps` is set to False")
 
     log.info("Loading the Mogadishu sub-district geojson...")
     mogadishu_map = geopandas.read_file("geojson/mogadishu_sub_districts.geojson")
@@ -508,32 +529,42 @@ if __name__ == "__main__":
     plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_total_participants.png", dpi=1200, bbox_inches="tight")
     plt.close(fig)
 
-    for plan in PipelineConfiguration.RQA_CODING_PLANS:
-        episode = episodes[plan.raw_field]
+    for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+        episode = episodes[rqa_plan.raw_field]
+        for rqa_cc in rqa_plan.coding_configurations:
+            for survey_plan in PipelineConfiguration.SURVEY_CODING_PLANS:
+                for survey_cc in survey_plan.coding_configurations:
+                    if survey_cc.code_scheme != CodeSchemes.MOGADISHU_SUB_DISTRICT:
+                        continue
+                    if  survey_cc.include_in_theme_distribution == Codes.TRUE:
 
-        for cc in plan.coding_configurations:
-            # Plot a map of the total relevant participants for this coding configuration.
-            rqa_total_mogadishu_frequencies = dict()
-            for sub_district_code in CodeSchemes.MOGADISHU_SUB_DISTRICT.codes:
-                if sub_district_code.code_type == CodeTypes.NORMAL:
-                    rqa_total_mogadishu_frequencies[sub_district_code.string_value] = \
-                        episode["Total Relevant Participants"][f"mogadishu_sub_district:{sub_district_code.string_value}"]
+                        # Plot a map of the total relevant participants for this coding configuration.
+                        rqa_total_mogadishu_frequencies = dict()
+                        for sub_district_code in CodeSchemes.MOGADISHU_SUB_DISTRICT.codes:
+                            if sub_district_code.code_type == CodeTypes.NORMAL:
+                                rqa_total_mogadishu_frequencies[sub_district_code.string_value] = \
+                                    episode["Total Relevant Participants"][f"mogadishu_sub_district:{sub_district_code.string_value}"]
 
-            fig, ax = plt.subplots()
-            MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", rqa_total_mogadishu_frequencies, ax=ax,
-                                            label_position_columns=("ADM3_LX", "ADM3_LY"))
-            plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_1_total_relevant.png",
-                        dpi=1200, bbox_inches="tight")
-            plt.close(fig)
+                        fig, ax = plt.subplots()
+                        MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", rqa_total_mogadishu_frequencies, ax=ax,
+                                                        label_position_columns=("ADM3_LX", "ADM3_LY"))
+                        plt.savefig(f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{rqa_cc.analysis_file_key}_1_total_relevant.png",
+                                    dpi=1200, bbox_inches="tight")
+                        plt.close(fig)
 
-            if pipeline_configuration.automated_analysis.generate_mogadishu_theme_distribution_maps:
-                # Plot maps of each of the normal themes for this coding configuration.
+    # Plot maps of each of the normal themes for each coding plan if `generate_mogadishu_theme_distribution_maps`
+    # is set to True" in pipeline configuration.
+    if pipeline_configuration.automated_analysis.generate_mogadishu_theme_distribution_maps:
+        for rqa_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            episode = episodes[rqa_plan.raw_field]
+
+            for rqa_cc in rqa_plan.coding_configurations:
                 map_index = 2  # (index 1 was used in the total relevant map's filename).
-                for code in cc.code_scheme.codes:
+                for code in rqa_cc.code_scheme.codes:
                     if code.code_type != CodeTypes.NORMAL:
                         continue
 
-                    theme = f"{cc.analysis_file_key}_{code.string_value}"
+                    theme = f"{rqa_cc.analysis_file_key}_{code.string_value}"
                     log.info(f"Generating a map of Mogadishu participation for {theme}...")
                     demographic_counts = episode[theme]
 
@@ -547,12 +578,12 @@ if __name__ == "__main__":
                     MappingUtils.plot_frequency_map(mogadishu_map, "ADM3_AVF", mogadishu_theme_frequencies, ax=ax,
                                                     label_position_columns=("ADM3_LX", "ADM3_LY"))
                     plt.savefig(
-                        f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{cc.analysis_file_key}_{map_index}_{code.string_value}.png",
+                        f"{automated_analysis_output_dir}/maps/mogadishu/mogadishu_{rqa_cc.analysis_file_key}_{map_index}_{code.string_value}.png",
                         dpi=1200, bbox_inches="tight")
                     plt.close(fig)
 
                     map_index += 1
-            log.info("Skipping generating a map of mogadishu theme participation because "
-                     "`generate_mogadishu_theme_distribution_maps` is set to False")
+    log.info("Skipping generating a map of mogadishu theme participation because "
+             "`generate_mogadishu_theme_distribution_maps` is set to False")
 
     log.info("automated analysis python script complete")
