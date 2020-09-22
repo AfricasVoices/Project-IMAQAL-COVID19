@@ -394,7 +394,6 @@ if __name__ == "__main__":
                         continue
 
                     if survey_cc.include_in_theme_distribution == Codes.TRUE:
-
                         # Plot a map of the total relevant participants for this coding configuration.
                         rqa_total_region_frequencies = dict()
                         for region_code in CodeSchemes.SOMALIA_REGION.codes:
