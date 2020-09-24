@@ -67,7 +67,7 @@ if __name__ == "__main__":
         for i in range (len(messages)):
             messages[i] = dict(messages[i].items())
     log.info(f"Loaded {len(messages)} messages")
-
+    '''
     # Read the individuals dataset
     log.info(f"Loading the individuals dataset from {individuals_json_input_path}...")
     with open(individuals_json_input_path) as f:
@@ -367,7 +367,7 @@ if __name__ == "__main__":
 
         for sample in samples:
             writer.writerow(sample)
-
+    '''
     # Export raw messages labelled with Meta gratitude and about conversation programmatically known as success_story
     log.info("Exporting success story raw messages for each episode...")
     success_story_messages = []  # of dict of code_string_value to avf-uid and raw messages
@@ -404,7 +404,7 @@ if __name__ == "__main__":
 
         for msg in success_story_messages:
             writer.writerow(msg)
-
+    '''
     log.info("Loading the Somali regions geojson...")
     regions_map = geopandas.read_file("geojson/somalia_regions.geojson")
 
@@ -622,5 +622,5 @@ if __name__ == "__main__":
                     map_index += 1
     log.info("Skipping generating a map of mogadishu theme participation because "
              "`generate_mogadishu_theme_distribution_maps` is set to False")
-
+    '''
     log.info("automated analysis python script complete")
