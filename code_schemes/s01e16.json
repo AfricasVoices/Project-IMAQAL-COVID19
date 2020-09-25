@@ -202,6 +202,86 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-aa462ba9",
+        "CodeType": "Normal",
+        "DisplayText": "healthcare services",
+        "NumericValue": 22,
+        "StringValue": "healthcare_services",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-cea49fb0",
+        "CodeType": "Normal",
+        "DisplayText": "financial support",
+        "NumericValue": 23,
+        "StringValue": "financial_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-05f061bb",
+        "CodeType": "Normal",
+        "DisplayText": "basic necessities",
+        "NumericValue": 24,
+        "StringValue": "basic_necessities",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4d7723d0",
+        "CodeType": "Normal",
+        "DisplayText": "education and skills",
+        "NumericValue": 25,
+        "StringValue": "education_and_skills",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4912e78f",
+        "CodeType": "Normal",
+        "DisplayText": "job creation",
+        "NumericValue": 26,
+        "StringValue": "job_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-c20c0589",
+        "CodeType": "Normal",
+        "DisplayText": "assistive aids/items",
+        "NumericValue": 27,
+        "StringValue": "assistive_aids_or_items",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-b4460fe9",
+        "CodeType": "Normal",
+        "DisplayText": "improved hygiene",
+        "NumericValue": 28,
+        "StringValue": "improved_hygiene",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ccab2c01",
+        "CodeType": "Normal",
+        "DisplayText": "general support",
+        "NumericValue": 29,
+        "StringValue": "general_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-d97a2d19",
+        "CodeType": "Normal",
+        "DisplayText": "stop discrimination",
+        "NumericValue": 30,
+        "StringValue": "stop_discrimination",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-16a20243",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 31,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
