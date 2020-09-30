@@ -389,7 +389,7 @@ if __name__ == "__main__":
                             "Raw Message": msg[plan.raw_field]
                         })
 
-    with open(f"{automated_analysis_output_dir}/success_story_messages.csv", "w") as f:
+    with open(f"{automated_analysis_output_dir}/impact_messages.csv", "w") as f:
         headers = ["Dataset", "UID", "Code", "Raw Message"]
         writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
         writer.writeheader()
