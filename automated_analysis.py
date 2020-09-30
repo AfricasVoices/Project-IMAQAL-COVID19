@@ -367,7 +367,36 @@ if __name__ == "__main__":
 
         for sample in samples:
             writer.writerow(sample)
-    
+
+    # Export raw messages labelled with Meta gratitude and about conversation programmatically known as impact/success story
+    log.info("Exporting success story raw messages for each episode...")
+    impact_messages = []  # of dict of code_string_value to avf-uid and raw messages
+    success_story_string_values = ["gratitude", "about_conversation"]
+    for plan in PipelineConfiguration.RQA_CODING_PLANS:
+        for cc in plan.coding_configurations:
+            for msg in messages:
+                if not AnalysisUtils.labelled(msg, CONSENT_WITHDRAWN_KEY, plan):
+                    continue
+
+                for label in msg[cc.coded_field]:
+                    code = cc.code_scheme.get_code_with_code_id(label["CodeID"])
+
+                    if code.string_value in success_story_string_values:
+                        impact_messages.append({
+                            "Dataset": plan.raw_field,  # TODO update coding plans with dataset name variable
+                            "UID": msg['uid'],
+                            "Code": code.string_value,
+                            "Raw Message": msg[plan.raw_field]
+                        })
+
+    with open(f"{automated_analysis_output_dir}/impact_messages.csv", "w") as f:
+        headers = ["Dataset", "UID", "Code", "Raw Message"]
+        writer = csv.DictWriter(f, fieldnames=headers, lineterminator="\n")
+        writer.writeheader()
+
+        for msg in impact_messages:
+            writer.writerow(msg)
+
     log.info("Loading the Somali regions geojson...")
     regions_map = geopandas.read_file("geojson/somalia_regions.geojson")
 
