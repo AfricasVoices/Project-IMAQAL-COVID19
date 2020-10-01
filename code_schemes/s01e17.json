@@ -202,6 +202,70 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-e96b7ffb",
+        "CodeType": "Normal",
+        "DisplayText": "setup committee",
+        "NumericValue": 22,
+        "StringValue": "setup_committee",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-20befcdc",
+        "CodeType": "Normal",
+        "DisplayText": "financial support",
+        "NumericValue": 23,
+        "StringValue": "financial_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1a60c927",
+        "CodeType": "Normal",
+        "DisplayText": "create awareness",
+        "NumericValue": 24,
+        "StringValue": "create_awareness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-d84f9012",
+        "CodeType": "Normal",
+        "DisplayText": "general support",
+        "NumericValue": 25,
+        "StringValue": "general_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-fb9e59a3",
+        "CodeType": "Normal",
+        "DisplayText": "provision of healthcare",
+        "NumericValue": 26,
+        "StringValue": "provision_of_healthcare",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-6fcd03ac",
+        "CodeType": "Normal",
+        "DisplayText": "mismanagement of resources",
+        "NumericValue": 27,
+        "StringValue": "mismanagement_of_resources",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1ca02447",
+        "CodeType": "Normal",
+        "DisplayText": "no support provided",
+        "NumericValue": 28,
+        "StringValue": "no_support_provided",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-90042ef8",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 30,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
@@ -370,6 +434,15 @@
         "MetaCode": "chasing_reply",
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
+        "VisibleInCoda": false
+      },
+      {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
         "VisibleInCoda": false
       }
     ]
