@@ -202,6 +202,54 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-6316443b",
+        "CodeType": "Normal",
+        "DisplayText": "fear of virus",
+        "NumericValue": 22,
+        "StringValue": "fear_of_virus",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-04530197",
+        "CodeType": "Normal",
+        "DisplayText": "economic hardships",
+        "NumericValue": 23,
+        "StringValue": "economic_hardships",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-878f5ecf",
+        "CodeType": "Normal",
+        "DisplayText": "they are discouraged",
+        "NumericValue": 24,
+        "StringValue": "they_are_discouraged",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-e96b7ffb",
+        "CodeType": "Normal",
+        "DisplayText": "poor security",
+        "NumericValue": 25,
+        "StringValue": "poor_security",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-23884918",
+        "CodeType": "Normal",
+        "DisplayText": "nothing",
+        "NumericValue": 26,
+        "StringValue": "nothing",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-3aef7c51",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 27,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
