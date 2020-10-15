@@ -202,6 +202,62 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-b5a17b0c",
+        "CodeType": "Normal",
+        "DisplayText": "agriculture",
+        "NumericValue": 22,
+        "StringValue": "agriculture",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-132ca785",
+        "CodeType": "Normal",
+        "DisplayText": "job creation",
+        "NumericValue": 23,
+        "StringValue": "job_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4ce377eb",
+        "CodeType": "Normal",
+        "DisplayText": "hand work",
+        "NumericValue": 24,
+        "StringValue": "hand_work",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ec1c1d0b",
+        "CodeType": "Normal",
+        "DisplayText": "unity and cooperation",
+        "NumericValue": 25,
+        "StringValue": "unity_and_cooperation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-54570dc6",
+        "CodeType": "Normal",
+        "DisplayText": "need support",
+        "NumericValue": 26,
+        "StringValue": "need_support",
+        "VisibleInCoda": true
+      },
+       {
+        "CodeID": "code-7649a54f",
+        "CodeType": "Normal",
+        "DisplayText": "no opportunities",
+        "NumericValue": 27,
+        "StringValue": "no_opportunities",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-cf8b9163",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 28,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
@@ -371,6 +427,24 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": false
+      },
+      {
+        "NumericValue": -100130,
+        "CodeID": "code-CR-8e99616b",
+        "CodeType": "Meta",
+        "MetaCode": "chasing_reply",
+        "StringValue": "chasing_reply",
+        "DisplayText": "meta: chasing reply",
+        "VisibleInCoda": true
+      },
+      {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
     ]
 }
