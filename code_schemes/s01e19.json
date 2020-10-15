@@ -436,6 +436,15 @@
         "StringValue": "chasing_reply",
         "DisplayText": "meta: chasing reply",
         "VisibleInCoda": true
+      },
+      {
+        "NumericValue": -100140,
+        "CodeID": "code-I-b13a41f6",
+        "CodeType": "Meta",
+        "MetaCode": "impact",
+        "StringValue": "impact",
+        "DisplayText": "meta: impact",
+        "VisibleInCoda": true
       }
     ]
 }
