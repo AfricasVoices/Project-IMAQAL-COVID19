@@ -429,15 +429,6 @@
         "VisibleInCoda": false
       },
       {
-        "NumericValue": -100130,
-        "CodeID": "code-CR-8e99616b",
-        "CodeType": "Meta",
-        "MetaCode": "chasing_reply",
-        "StringValue": "chasing_reply",
-        "DisplayText": "meta: chasing reply",
-        "VisibleInCoda": true
-      },
-      {
         "NumericValue": -100140,
         "CodeID": "code-I-b13a41f6",
         "CodeType": "Meta",
