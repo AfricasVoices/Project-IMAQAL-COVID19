@@ -118,9 +118,9 @@ if [[ $PIPELINE_RUN_MODE = "all-stages" ]]; then
     docker cp "$container:/data/output-individuals.csv" "$OUTPUT_INDIVIDUALS_CSV"
 
 elif [[ $PIPELINE_RUN_MODE = "auto-code-only" ]]; then
-    echo "copying auto-coding-traced-data.jsonl to "$OUTPUT_AUTO_CODING_TRACED_JSONL" "
-    mkdir -p "$(dirname "$OUTPUT_AUTO_CODING_TRACED_JSONL")"
-    docker cp "$container:/data/auto-coding-traced-data.jsonl" "$OUTPUT_AUTO_CODING_TRACED_JSONL"
+    #echo "copying auto-coding-traced-data.jsonl to "$OUTPUT_AUTO_CODING_TRACED_JSONL" "
+    #mkdir -p "$(dirname "$OUTPUT_AUTO_CODING_TRACED_JSONL")"
+    #docker cp "$container:/data/auto-coding-traced-data.jsonl" "$OUTPUT_AUTO_CODING_TRACED_JSONL"
 
 else
     echo "WARNING: pipeline run mode must be either auto-code-only or all-stages"
