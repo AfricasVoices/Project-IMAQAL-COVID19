@@ -290,6 +290,28 @@
             ]
         },
         {
+            "CodeID": "code-98e438bb",
+            "CodeType": "Normal",
+            "DisplayText": "imaqal covid19 s01e21",
+            "StringValue": "imaqal covid19 s01e21",
+            "NumericValue": 89,
+            "VisibleInCoda": true,
+            "MatchValues": [
+                "imaqal covid19 s01e21"
+            ]
+        },
+        {
+            "CodeID": "code-c53b469c",
+            "CodeType": "Normal",
+            "DisplayText": "imaqal covid19 s01e22",
+            "StringValue": "imaqal covid19 s01e22",
+            "NumericValue": 90,
+            "VisibleInCoda": true,
+            "MatchValues": [
+                "imaqal covid19 s01e22"
+            ]
+        },
+        {
             "CodeID": "code-cb80874e",
             "CodeType": "Normal",
             "DisplayText": "covid19 som s01e01",
