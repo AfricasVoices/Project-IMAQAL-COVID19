@@ -173,7 +173,7 @@ if __name__ == "__main__":
             for code in cc.code_scheme.codes:
                 if code.control_code == Codes.STOP:
                     continue
-                demographic_distributions[cc.analysis_file_key][code.code_id] = 0
+                demographic_distributions[cc.analysis_file_key][code.string_value] = 0
             total_relevant[cc.analysis_file_key] = 0
 
     for ind in individuals:
@@ -187,7 +187,7 @@ if __name__ == "__main__":
 
                 assert cc.coding_mode == CodingModes.SINGLE
                 code = cc.code_scheme.get_code_with_code_id(ind[cc.coded_field]["CodeID"])
-                demographic_distributions[cc.analysis_file_key][code.code_id] += 1
+                demographic_distributions[cc.analysis_file_key][code.string_value] += 1
                 if code.code_type == CodeTypes.NORMAL:
                     total_relevant[cc.analysis_file_key] += 1
 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
         for plan in PipelineConfiguration.DEMOG_CODING_PLANS:
             for cc in plan.coding_configurations:
-                if cc.analysis_file_key is None:
+                if cc.analysis_file_key is None or cc.include_in_theme_distribution == Codes.FALSE:
                     continue
 
                 for i, code in enumerate(cc.code_scheme.codes):
@@ -207,7 +207,7 @@ if __name__ == "__main__":
                     if code.control_code == Codes.STOP:
                         continue
 
-                    participants_with_opt_ins = demographic_distributions[cc.analysis_file_key][code.code_id]
+                    participants_with_opt_ins = demographic_distributions[cc.analysis_file_key][code.string_value]
                     row = {
                         "Demographic": cc.analysis_file_key if i == 0 else "",
                         "Code": code.string_value,
