@@ -202,6 +202,54 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-15098140",
+        "CodeType": "Normal",
+        "DisplayText": "stop discrimination",
+        "NumericValue": 22,
+        "StringValue": "stop_discrimination",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a90f6411",
+        "CodeType": "Normal",
+        "DisplayText": "awareness creation",
+        "NumericValue": 23,
+        "StringValue": "awareness_creation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-32629f01",
+        "CodeType": "Normal",
+        "DisplayText": "financial support",
+        "NumericValue": 24,
+        "StringValue": "financial_support",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a0ee8c5e",
+        "CodeType": "Normal",
+        "DisplayText": "follow right practice",
+        "NumericValue": 25,
+        "StringValue": "follow_right_practice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-7c0f6afe",
+        "CodeType": "Normal",
+        "DisplayText": "encouragement",
+        "NumericValue": 26,
+        "StringValue": "encouragement",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1c6afbfd",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 27,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
