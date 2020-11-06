@@ -202,6 +202,78 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-29db7910",
+        "CodeType": "Normal",
+        "DisplayText": "backbone of the society",
+        "NumericValue": 22,
+        "StringValue": "backbone_of_the_society",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ffab21fb",
+        "CodeType": "Normal",
+        "DisplayText": "give them their rights",
+        "NumericValue": 23,
+        "StringValue": "give_them_their_rights",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-01e13337",
+        "CodeType": "Normal",
+        "DisplayText": "unity and cooperation",
+        "NumericValue": 24,
+        "StringValue": "unity_and_cooperation",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-93d3734f",
+        "CodeType": "Normal",
+        "DisplayText": "educate women",
+        "NumericValue": 25,
+        "StringValue": "educate_women",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f859e414",
+        "CodeType": "Normal",
+        "DisplayText": "consider them",
+        "NumericValue": 26,
+        "StringValue": "consider_them",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-11f3b661",
+        "CodeType": "Normal",
+        "DisplayText": "should stay home",
+        "NumericValue": 27,
+        "StringValue": "should_stay_home",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ca5cae64",
+        "CodeType": "Normal",
+        "DisplayText": "religion does not allow",
+        "NumericValue": 28,
+        "StringValue": "religion_does_not_allow",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1dd38ee6",
+        "CodeType": "Normal",
+        "DisplayText": "politics is not for women",
+        "NumericValue": 29,
+        "StringValue": "politics_is_not_for_women",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-8cc2b40c",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 30,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
