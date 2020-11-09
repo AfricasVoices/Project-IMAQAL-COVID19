@@ -452,6 +452,23 @@ def get_rqa_coding_plans(pipeline_name):
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e22"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
+
+        CodingPlan(raw_field="rqa_covid19_mag_s01e23_raw",
+                   time_field="sent_on",
+                   run_id_field="rqa_covid19_mag_s01e23_run_id",
+                   coda_filename="IMAQAL_COVID19_s01e23.json",
+                   icr_filename="rqa_covid19_mag_s01e23.csv",
+                   coding_configurations=[
+                       CodingConfiguration(
+                           coding_mode=CodingModes.MULTIPLE,
+                           code_scheme=CodeSchemes.S01E23,
+                           coded_field="rqa_covid19_mag_s01e23_coded",
+                           analysis_file_key="rqa_covid19_mag_s01e23",
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S01E23, x, y)
+                       )
+                   ],
+                   ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s01e23"),
+                   raw_field_fold_strategy=FoldStrategies.concatenate),
 ]
 
 def get_demog_coding_plans(pipeline_name):
