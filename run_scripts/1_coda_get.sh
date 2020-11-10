@@ -40,6 +40,7 @@ DATASETS=(
     "IMAQAL_COVID19_s01e20"
     "IMAQAL_COVID19_s01e21"
     "IMAQAL_COVID19_s01e22"
+    "IMAQAL_COVID19_s01e23"
 
     "IMAQAL_gender"
     "IMAQAL_location"
