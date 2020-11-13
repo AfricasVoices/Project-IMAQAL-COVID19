@@ -202,6 +202,70 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-a30bf6b8",
+        "CodeType": "Normal",
+        "DisplayText": "yes, important information",
+        "NumericValue": 22,
+        "StringValue": "yes_important_information",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-760812b6",
+        "CodeType": "Normal",
+        "DisplayText": "yes, awareness is important",
+        "NumericValue": 23,
+        "StringValue": "yes_awareness_is_important",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2e673ee5",
+        "CodeType": "Normal",
+        "DisplayText": "yes, it's useful",
+        "NumericValue": 24,
+        "StringValue": "yes_its_useful",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-751fa1cf",
+        "CodeType": "Normal",
+        "DisplayText": "yes, they encourage",
+        "NumericValue": 25,
+        "StringValue": "yes_they_encourage",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-4cefa370",
+        "CodeType": "Normal",
+        "DisplayText": "yes, no reason",
+        "NumericValue": 26,
+        "StringValue": "yes_no_reason",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a7ec7919",
+        "CodeType": "Normal",
+        "DisplayText": "no, it's not useful",
+        "NumericValue": 27,
+        "StringValue": "no_its_not_useful",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f54afeda",
+        "CodeType": "Normal",
+        "DisplayText": "no, no reason",
+        "NumericValue": 28,
+        "StringValue": "no_no_reason",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f389289f",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 29,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
