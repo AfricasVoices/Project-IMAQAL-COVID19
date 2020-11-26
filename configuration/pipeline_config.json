@@ -7,12 +7,6 @@
       "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
       "ContactsFileName": "imaqal_covid19_contacts",
       "ActivationFlowNames": [
-        "covid19_som_s01e01_activation",
-        "covid19_som_s01e02_activation",
-        "imaqal_covid19_mag_s01e01_activation",
-        "imaqal_covid19_mag_s01e02_activation",
-        "imaqal_covid19_mag_s01e03_activation",
-        "imaqal_covid19_mag_s01e04_activation",
         "imaqal_covid19_mag_s01e05_activation",
         "imaqal_covid19_mag_s01e06_activation",
         "imaqal_covid19_mag_s01e07_activation",
