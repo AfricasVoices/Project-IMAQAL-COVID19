@@ -473,14 +473,13 @@ def get_rqa_coding_plans(pipeline_name):
         CodingPlan(raw_field="imaqal_covid19_s01_closeout_raw",
                    time_field="sent_on",
                    run_id_field="imaqal_covid19_s01_closeout_run_id",
-                   coda_filename="IMAQAL_COVID19_s01e23.json",
+                   coda_filename="IMAQAL_COVID19_s01_closeout.json",
                    icr_filename="imaqal_covid19_s01_closeout.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.IMAQAL_COVID19_S01_CLOSEOUT,
                            coded_field="imaqal_covid19_s01_closeout_coded",
-                           #analysis_file_key="imaqal_covid19_s01_closeout_",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.IMAQAL_COVID19_S01_CLOSEOUT, x, y)
                        )
                    ],
