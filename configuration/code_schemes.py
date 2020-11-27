@@ -36,6 +36,8 @@ class CodeSchemes(object):
     S01E21 = _open_scheme("s01e21.json")
     S01E22 = _open_scheme("s01e22.json")
     S01E23 = _open_scheme("s01e23.json")
+    IMAQAL_COVID19_S01_CLOSEOUT = _open_scheme("imaqal_covid19_s01_closeout.json")
+
 
     AGE = _open_scheme("age.json")
     AGE_CATEGORY = _open_scheme("age_category.json")

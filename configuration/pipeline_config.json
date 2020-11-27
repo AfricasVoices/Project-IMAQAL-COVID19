@@ -32,7 +32,8 @@
         "imaqal_covid19_mag_s01e20_activation",
         "imaqal_covid19_mag_s01e21_activation",
         "imaqal_covid19_mag_s01e22_activation",
-        "imaqal_covid19_mag_s01e23_activation"
+        "imaqal_covid19_mag_s01e23_activation",
+        "imaqal_covid19_s01_closeout_activation"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
@@ -169,6 +170,10 @@
     {"RapidProKey": "Rqa_Covid19_Mag_S01E23_Raw (Text) - imaqal_covid19_mag_s01e23_activation", "PipelineKey": "rqa_covid19_mag_s01e23_raw", "IsActivationMessage": true},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E23_Raw (Run ID) - imaqal_covid19_mag_s01e23_activation", "PipelineKey": "rqa_covid19_mag_s01e23_run_id"},
     {"RapidProKey": "Rqa_Covid19_Mag_S01E23_Raw (Time) - imaqal_covid19_mag_s01e23_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Imaqal_Covid19_S01_Closeout_raw (Text) - imaqal_covid19_s01_closeout_activation", "PipelineKey": "imaqal_covid19_s01_closeout_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Imaqal_Covid19_S01_Closeout_raw (Run ID) - imaqal_covid19_s01_closeout_activation", "PipelineKey": "imaqal_covid19_s01_closeout_run_id"},
+    {"RapidProKey": "Imaqal_Covid19_S01_Closeout_raw (Time) - imaqal_covid19_s01_closeout_activation", "PipelineKey": "sent_on"},
 
     {"RapidProKey": "message", "PipelineKey": "recovered_raw", "IsActivationMessage": true},
     {"RapidProKey": "received_on", "PipelineKey": "sent_on"},
