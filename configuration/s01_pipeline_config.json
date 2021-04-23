@@ -1,5 +1,5 @@
 {
-  "PipelineName": "IMAQAL_COVID19",
+  "PipelineName": "imaqal_covid19_all_seasons",
   "RawDataSources": [
     {
       "SourceType": "RapidPro",
@@ -212,9 +212,9 @@
   },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_production.csv",
-    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_messages.csv",
-    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/imaqal_covid19_individuals.csv",
+    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/s01/production.csv",
+    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/s01/messages.csv",
+    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/s01/individuals.csv",
     "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/automated_analysis"
   },
   "MemoryProfileUploadBucket":"gs://avf-pipeline-logs-performance-nearline",
