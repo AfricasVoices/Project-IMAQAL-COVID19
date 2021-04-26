@@ -75,7 +75,7 @@
     {"RapidProKey": "District (Value) - imaqal_covid19_demog", "PipelineKey": "location_raw"},
     {"RapidProKey": "District (Time) - imaqal_covid19_demog", "PipelineKey": "location_time"}
   ],
-  "ProjectStartDate": "2021-05-23T08:00:00+03:00",
+  "ProjectStartDate": "2021-04-23T08:00:00+03:00",
   "ProjectEndDate": "2100-01-01T00:00:00+03:00",
   "FilterTestMessages": true,
   "MoveWSMessages": true,
