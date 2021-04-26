@@ -488,51 +488,51 @@ S01_RQA_CODING_PLAN = [
 ]
 
 S02_RQA_CODING_PLAN = [
-    CodingPlan(raw_field="rqa_covid19_promo_s02e01_raw",
+    CodingPlan(raw_field="covid19_promo_s02e01_raw",
                time_field="sent_on",
-               run_id_field="rqa_covid19_promo_s02e01_run_id",
+               run_id_field="covid19_promo_s02e01_run_id",
                coda_filename="IMAQAL_COVID19_promo_s02e01.json",
                icr_filename="covid19_promo_s02e01.csv",
                coding_configurations=[
                    CodingConfiguration(
                        coding_mode=CodingModes.MULTIPLE,
                        code_scheme=CodeSchemes.S02E01_PROMO,
-                       coded_field="rqa_covid19_promo_s02e01_coded",
-                       analysis_file_key="rqa_covid19_promo_s02e01",
+                       coded_field="covid19_promo_s02e01_coded",
+                       analysis_file_key="covid19_promo_s02e01",
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E01_PROMO, x, y)
                    )
                ],
                ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s02e01 promo"),
                raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(raw_field="rqa_covid19_promo_s02e02_raw",
+    CodingPlan(raw_field="covid19_promo_s02e02_raw",
                    time_field="sent_on",
-                   run_id_field="rqa_covid19_promo_s02e02_run_id",
+                   run_id_field="covid19_promo_s02e02_run_id",
                    coda_filename="IMAQAL_COVID19_promo_s02e02.json",
                    icr_filename="covid19_promo_s02e02.csv",
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
                            code_scheme=CodeSchemes.S02E02_PROMO,
-                           coded_field="rqa_covid19_promo_s02e02_coded",
-                           analysis_file_key="rqa_covid19_promo_s02e02",
+                           coded_field="covid19_promo_s02e02_coded",
+                           analysis_file_key="covid19_promo_s02e02",
                            fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E02_PROMO, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s02e02 promo"),
                    raw_field_fold_strategy=FoldStrategies.concatenate),
 
-    CodingPlan(raw_field="rqa_covid19_promo_s02e03_raw",
+    CodingPlan(raw_field="covid19_promo_s02e03_raw",
                        time_field="sent_on",
-                       run_id_field="rqa_covid19_promo_s02e03_run_id",
+                       run_id_field="covid19_promo_s02e03_run_id",
                        coda_filename="IMAQAL_COVID19_promo_s02e03.json",
                        icr_filename="covid19_promo_s02e03.csv",
                        coding_configurations=[
                            CodingConfiguration(
                                coding_mode=CodingModes.MULTIPLE,
                                code_scheme=CodeSchemes.S02E03_PROMO,
-                               coded_field="rqa_covid19_promo_s02e03_coded",
-                               analysis_file_key="rqa_covid19_promo_s02e03",
+                               coded_field="covid19_promo_s02e03_coded",
+                               analysis_file_key="covid19_promo_s02e03",
                                fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E03_PROMO, x, y)
                            )
                        ],
