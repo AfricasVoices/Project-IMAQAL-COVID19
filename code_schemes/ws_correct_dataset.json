@@ -61,34 +61,34 @@
         {
             "CodeID": "code-a0c9f592",
             "CodeType": "Normal",
-            "DisplayText": "imaqal covid19 s02e01",
-            "StringValue": "imaqal_covid19_s02e01",
+            "DisplayText": "imaqal covid19 s02e01 promo",
+            "StringValue": "imaqal_covid19_s02e01_promo",
             "NumericValue": 93,
             "VisibleInCoda": true,
             "MatchValues": [
-                "imaqal covid19 s02e01"
+                "imaqal covid19 s02e01 promo"
             ]
         },
         {
             "CodeID": "code-2555fb3a",
             "CodeType": "Normal",
-            "DisplayText": "imaqal covid19 s02e02",
-            "StringValue": "imaqal_covid19_s02e02",
+            "DisplayText": "imaqal covid19 s02e02 promo",
+            "StringValue": "imaqal_covid19_s02e02_promo",
             "NumericValue": 94,
             "VisibleInCoda": true,
             "MatchValues": [
-                "imaqal covid19 s02e02"
+                "imaqal covid19 s02e02 promo"
             ]
         },
         {
             "CodeID": "code-5e78257b",
             "CodeType": "Normal",
-            "DisplayText": "imaqal covid19 s02e03",
-            "StringValue": "imaqal_covid19_s02e03",
+            "DisplayText": "imaqal covid19 s02e03 promo",
+            "StringValue": "imaqal_covid19_s02e03_promo",
             "NumericValue": 95,
             "VisibleInCoda": true,
             "MatchValues": [
-                "imaqal covid19 s02e03"
+                "imaqal covid19 s02e03_promo"
             ]
         },
         {
