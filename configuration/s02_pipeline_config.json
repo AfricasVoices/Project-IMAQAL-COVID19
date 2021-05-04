@@ -1,0 +1,97 @@
+{
+  "PipelineName": "IMAQAL_COVID19_s02",
+  "RawDataSources": [
+    {
+      "SourceType": "RapidPro",
+      "Domain": "textit.in",
+      "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
+      "ContactsFileName": "imaqal_covid19_contacts",
+      "ActivationFlowNames": [
+        "imaqal_covid19_promo_s02e01_activation",
+        "imaqal_covid19_promo_s02e02_activation",
+        "imaqal_covid19_promo_s02e03_activation",
+        "imaqal_covid19_mag_s02e04_activation"
+      ],
+      "SurveyFlowNames": [
+        "imaqal_demog",
+        "imaqal_covid19_demog"
+      ],
+      "TestContactUUIDs": [
+        "fad44f22-235a-4821-9780-dfef09076fe1",
+        "3903ad8e-284e-48a0-881b-89c0b06b9334",
+        "45939459-e4d5-4ad6-8650-3e7134b9a035"
+      ]
+    },
+    {
+      "SourceType": "RecoveryCSV",
+      "ActivationFlowURLs": [
+      ]
+    }
+  ],
+  "PhoneNumberUuidTable": {
+    "FirebaseCredentialsFileURL": "gs://avf-credentials/avf-id-infrastructure-firebase-adminsdk-6xps8-b9173f2bfd.json",
+    "TableName": "IMAQAL"
+  },
+  "TimestampRemappings": [
+  ],
+  "RapidProKeyRemappings": [
+    {"RapidProKey": "avf_phone_id", "PipelineKey": "uid"},
+
+    {"RapidProKey": "Covid19_Promo_S02E01_Raw (Text) - imaqal_covid19_promo_s02e01_activation", "PipelineKey": "covid19_promo_s02e01_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Covid19_Promo_S02E01_Raw (Run ID) - imaqal_covid19_promo_s02e01_activation", "PipelineKey": "covid19_promo_s02e01_run_id"},
+    {"RapidProKey": "Covid19_Promo_S02E01_Raw (Time) - imaqal_covid19_promo_s02e01_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Covid19_Promo_S02E02_Raw (Text) - imaqal_covid19_promo_s02e02_activation", "PipelineKey": "covid19_promo_s02e02_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Covid19_Promo_S02E02_Raw (Run ID) - imaqal_covid19_promo_s02e02_activation", "PipelineKey": "covid19_promo_s02e02_run_id"},
+    {"RapidProKey": "Covid19_Promo_S02E02_Raw (Time) - imaqal_covid19_promo_s02e02_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Covid19_Promo_S02E03_Raw (Text) - imaqal_covid19_promo_s02e03_activation", "PipelineKey": "covid19_promo_s02e03_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Covid19_Promo_S02E03_Raw (Run ID) - imaqal_covid19_promo_s02e03_activation", "PipelineKey": "covid19_promo_s02e03_run_id"},
+    {"RapidProKey": "Covid19_Promo_S02E03_Raw (Time) - imaqal_covid19_promo_s02e03_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Text) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "rqa_covid19_mag_s02e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Run ID) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "rqa_covid19_mag_s02e04_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Time) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "sent_on"},
+
+    {"RapidProKey": "Gender (Value) - imaqal_demog", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Gender (Time) - imaqal_demog", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Value) - imaqal_demog", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Age (Time) - imaqal_demog", "PipelineKey": "age_time"},
+    {"RapidProKey": "Recently_Displaced (Value) - imaqal_demog", "PipelineKey": "recently_displaced_raw"},
+    {"RapidProKey": "Recently_Displaced (Time) - imaqal_demog", "PipelineKey": "recently_displaced_time"},
+    {"RapidProKey": "Household_Language (Value) - imaqal_demog", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Household_Language (Time) - imaqal_demog", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "District (Value) - imaqal_demog", "PipelineKey": "location_raw"},
+    {"RapidProKey": "District (Time) - imaqal_demog", "PipelineKey": "location_time"},
+
+    {"RapidProKey": "Gender (Value) - imaqal_covid19_demog", "PipelineKey": "gender_raw"},
+    {"RapidProKey": "Gender (Time) - imaqal_covid19_demog", "PipelineKey": "gender_time"},
+    {"RapidProKey": "Age (Value) - imaqal_covid19_demog", "PipelineKey": "age_raw"},
+    {"RapidProKey": "Age (Time) - imaqal_covid19_demog", "PipelineKey": "age_time"},
+    {"RapidProKey": "Recently_Displaced (Value) - imaqal_covid19_demog", "PipelineKey": "recently_displaced_raw"},
+    {"RapidProKey": "Recently_Displaced (Time) - imaqal_covid19_demog", "PipelineKey": "recently_displaced_time"},
+    {"RapidProKey": "Household_Language (Value) - imaqal_covid19_demog", "PipelineKey": "household_language_raw"},
+    {"RapidProKey": "Household_Language (Time) - imaqal_covid19_demog", "PipelineKey": "household_language_time"},
+    {"RapidProKey": "District (Value) - imaqal_covid19_demog", "PipelineKey": "location_raw"},
+    {"RapidProKey": "District (Time) - imaqal_covid19_demog", "PipelineKey": "location_time"}
+  ],
+  "ProjectStartDate": "2021-04-23T08:00:00+03:00",
+  "ProjectEndDate": "2100-01-01T00:00:00+03:00",
+  "FilterTestMessages": true,
+  "MoveWSMessages": true,
+  "AutomatedAnalysis": {
+    "GenerateRegionThemeDistributionMaps": false,
+    "GenerateDistrictThemeDistributionMaps": false,
+    "GenerateMogadishuThemeDistributionMaps": false
+  },
+  "DriveUpload": {
+    "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
+    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/s02/production.csv",
+    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/s02/messages.csv",
+    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/s02/individuals.csv",
+    "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/s02/automated_analysis"
+  },
+  "MemoryProfileUploadBucket":"gs://avf-pipeline-logs-performance-nearline",
+  "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",
+  "BucketDirPath": "2021/IMAQAL_COVID19/"
+}

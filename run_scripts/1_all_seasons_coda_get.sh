@@ -3,7 +3,7 @@
 set -e
 
 if [[ $# -ne 3 ]]; then
-    echo "Usage: ./1_coda_get.sh <coda-auth-file> <coda-v2-root> <data-root>"
+    echo "Usage: ./1_all_seasons_coda_get.sh <coda-auth-file> <coda-v2-root> <data-root>"
     echo "Downloads coded messages datasets from Coda to '<data-root>/Coded Coda Files'"
     exit
 fi
@@ -42,6 +42,10 @@ DATASETS=(
     "IMAQAL_COVID19_s01e22"
     "IMAQAL_COVID19_s01e23"
     "IMAQAL_COVID19_s01_closeout"
+    "IMAQAL_COVID19_promo_s02e01"
+    "IMAQAL_COVID19_promo_s02e02"
+    "IMAQAL_COVID19_promo_s02e03"
+    "IMAQAL_COVID19_s02e04"
 
     "IMAQAL_gender"
     "IMAQAL_location"
