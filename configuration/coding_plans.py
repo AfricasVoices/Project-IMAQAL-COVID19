@@ -496,10 +496,10 @@ S02_RQA_CODING_PLAN = [
                coding_configurations=[
                    CodingConfiguration(
                        coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.S02E01_PROMO,
+                       code_scheme=CodeSchemes.PROMO_S02E01,
                        coded_field="covid19_promo_s02e01_coded",
                        analysis_file_key="covid19_promo_s02e01",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E01_PROMO, x, y)
+                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.PROMO_S02E01, x, y)
                    )
                ],
                ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s02e01 promo"),
@@ -513,10 +513,10 @@ S02_RQA_CODING_PLAN = [
                    coding_configurations=[
                        CodingConfiguration(
                            coding_mode=CodingModes.MULTIPLE,
-                           code_scheme=CodeSchemes.S02E02_PROMO,
+                           code_scheme=CodeSchemes.PROMO_S02E02,
                            coded_field="covid19_promo_s02e02_coded",
                            analysis_file_key="covid19_promo_s02e02",
-                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E02_PROMO, x, y)
+                           fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.PROMO_S02E02, x, y)
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s02e02 promo"),
@@ -530,10 +530,10 @@ S02_RQA_CODING_PLAN = [
                        coding_configurations=[
                            CodingConfiguration(
                                coding_mode=CodingModes.MULTIPLE,
-                               code_scheme=CodeSchemes.S02E03_PROMO,
+                               code_scheme=CodeSchemes.PROMO_S02E03,
                                coded_field="covid19_promo_s02e03_coded",
                                analysis_file_key="covid19_promo_s02e03",
-                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.S02E03_PROMO, x, y)
+                               fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.PROMO_S02E03, x, y)
                            )
                        ],
                        ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 s02e03 promo"),

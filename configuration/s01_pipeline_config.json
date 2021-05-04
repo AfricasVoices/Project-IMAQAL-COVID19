@@ -1,5 +1,5 @@
 {
-  "PipelineName": "imaqal_covid19_all_seasons",
+  "PipelineName": "IMAQAL_COVID19_all_seasons",
   "RawDataSources": [
     {
       "SourceType": "RapidPro",
