@@ -559,12 +559,12 @@ S02_RQA_CODING_PLAN = [
 
 
 def get_rqa_coding_plans(pipeline_name):
-    if pipeline_name == "imaqal_covid19_s01":
+    if pipeline_name == "IMAQAL_COVID19_s01":
         return S01_RQA_CODING_PLAN
-    elif pipeline_name == "imaqal_covid19_s02":
+    elif pipeline_name == "IMAQAL_COVID19_s02":
         return S02_RQA_CODING_PLAN
     else:
-        assert pipeline_name == "imaqal_covid19_all_seasons"
+        assert pipeline_name == "IMAQAL_COVID19_all_seasons"
         return S01_RQA_CODING_PLAN + S02_RQA_CODING_PLAN
 
 
