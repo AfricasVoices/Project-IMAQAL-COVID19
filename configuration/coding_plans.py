@@ -581,7 +581,6 @@ def get_demog_coding_plans(pipeline_name):
                            coded_field="gender_coded",
                            analysis_file_key="gender",
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
-                           include_in_theme_distribution= True
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("gender"),
@@ -606,7 +605,6 @@ def get_demog_coding_plans(pipeline_name):
                            coded_field="age_category_coded",
                            analysis_file_key="age_category",
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
-                           include_in_theme_distribution= True
                        )
                    ],
                    code_imputation_function=code_imputation_functions.impute_age_category,
@@ -624,7 +622,6 @@ def get_demog_coding_plans(pipeline_name):
                            coded_field="recently_displaced_coded",
                            analysis_file_key="recently_displaced",
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
-                           include_in_theme_distribution= True
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("recently displaced"),
@@ -640,7 +637,6 @@ def get_demog_coding_plans(pipeline_name):
                            coded_field="household_language_coded",
                            analysis_file_key="household_language",
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
-                           include_in_theme_distribution= True
                        )
                    ],
                    ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("hh language"),
@@ -674,7 +670,6 @@ def get_demog_coding_plans(pipeline_name):
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
                            coded_field="region_coded",
                            analysis_file_key="region",
-                           include_in_theme_distribution= True
                        ),
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
@@ -682,7 +677,6 @@ def get_demog_coding_plans(pipeline_name):
                            fold_strategy=FoldStrategies.assert_label_ids_equal,
                            coded_field="state_coded",
                            analysis_file_key="state",
-                           include_in_theme_distribution= True
                        ),
                        CodingConfiguration(
                            coding_mode=CodingModes.SINGLE,
