@@ -131,7 +131,7 @@ if __name__ == "__main__":
             coding_plans_to_analysis_configurations(PipelineConfiguration.SURVEY_CODING_PLANS),
             f
         )
-    
+
     log.info("Computing repeat participations...")
     with open(f"{automated_analysis_output_dir}/repeat_participations.csv", "w") as f:
         repeat_participations.export_repeat_participations_csv(
