@@ -10,6 +10,7 @@ from core_data_modules.analysis import AnalysisConfiguration, engagement_counts,
     repeat_participations, sample_messages, traffic_analysis, analysis_utils, traffic_analysis
 from core_data_modules.analysis.mapping import participation_maps, somalia_mapper
 from core_data_modules.cleaners import Codes
+from core_data_modules.data_models.code_scheme import CodeTypes
 from core_data_modules.logging import Logger
 from core_data_modules.traced_data.io import TracedDataJsonIO
 from core_data_modules.util import IOUtils
@@ -21,8 +22,23 @@ from src.lib.pipeline_configuration import PipelineConfiguration
 
 log = Logger(__name__)
 
+IMG_SCALE_FACTOR = 10  # Increase this to increase the resolution of the outputted PNGs
 CONSENT_WITHDRAWN_KEY = "consent_withdrawn"
 SENT_ON_KEY = "sent_on"
+
+
+def coding_plans_to_analysis_configurations(coding_plans):
+    analysis_configurations = []
+    for plan in coding_plans:
+        for cc in plan.coding_configurations:
+            if not cc.include_in_theme_distribution:
+                continue
+
+            analysis_configurations.append(
+                AnalysisConfiguration(cc.analysis_file_key, plan.raw_field, cc.coded_field, cc.code_scheme)
+            )
+    return analysis_configurations
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Runs automated analysis over the outputs produced by "
@@ -65,7 +81,7 @@ if __name__ == "__main__":
     log.info(f"Loading the messages dataset from {messages_json_input_path}...")
     with open(messages_json_input_path) as f:
         messages = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
-        for i in range (len(messages)):
+        for i in range(len(messages)):
             messages[i] = dict(messages[i].items())
     log.info(f"Loaded {len(messages)} messages")
 
@@ -73,15 +89,14 @@ if __name__ == "__main__":
     log.info(f"Loading the individuals dataset from {individuals_json_input_path}...")
     with open(individuals_json_input_path) as f:
         individuals = TracedDataJsonIO.import_jsonl_to_traced_data_iterable(f)
-        for i in range (len(individuals)):
+        for i in range(len(individuals)):
             individuals[i] = dict(individuals[i].items())
     log.info(f"Loaded {len(individuals)} individuals")
 
     def coding_plans_to_analysis_configurations(coding_plans):
         analysis_configurations = []
         for plan in coding_plans:
-            ccs = plan.coding_configurations
-            for cc in ccs:
+            for cc in plan.coding_configurations:
                 if not cc.include_in_theme_distribution:
                     continue
 
@@ -89,6 +104,7 @@ if __name__ == "__main__":
                     AnalysisConfiguration(cc.analysis_file_key, plan.raw_field, cc.coded_field, cc.code_scheme)
                 )
         return analysis_configurations
+
 
     log.info("Computing engagement counts...")
     with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
@@ -113,6 +129,14 @@ if __name__ == "__main__":
             individuals, CONSENT_WITHDRAWN_KEY,
             coding_plans_to_analysis_configurations(PipelineConfiguration.RQA_CODING_PLANS),
             coding_plans_to_analysis_configurations(PipelineConfiguration.SURVEY_CODING_PLANS),
+            f
+        )
+    
+    log.info("Computing repeat participations...")
+    with open(f"{automated_analysis_output_dir}/repeat_participations.csv", "w") as f:
+        repeat_participations.export_repeat_participations_csv(
+            individuals, CONSENT_WITHDRAWN_KEY,
+            coding_plans_to_analysis_configurations(PipelineConfiguration.RQA_CODING_PLANS),
             f
         )
 
