@@ -1,9 +1,120 @@
 {
     "SchemeID": "Scheme-48465fdf",
-    "Name": "S02E01 Promo",
+    "Name": "Promo S02E01",
     "Version": "0.0.0.1",
     "Codes": [
-
+      {
+        "CodeID": "code-01762641",
+        "CodeType": "Normal",
+        "DisplayText": "impact on education",
+        "NumericValue": 1,
+        "StringValue": "impact_on_education",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1d7a2749",
+        "CodeType": "Normal",
+        "DisplayText": "impact on economy",
+        "NumericValue": 2,
+        "StringValue": "impact_on_economy",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0b7d245b",
+        "CodeType": "Normal",
+        "DisplayText": "vax positive views",
+        "NumericValue": 3,
+        "StringValue": "vax_positive_views",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-7cdcc809",
+        "CodeType": "Normal",
+        "DisplayText": "vax negative views",
+        "NumericValue": 4,
+        "StringValue": "vax_negative_views",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dd01b59b",
+        "CodeType": "Normal",
+        "DisplayText": "vax questions",
+        "NumericValue": 5,
+        "StringValue": "vax_questions",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-5229ff68",
+        "CodeType": "Normal",
+        "DisplayText": "follow right practice",
+        "NumericValue": 6,
+        "StringValue": "follow_right_practice",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-558f57e0",
+        "CodeType": "Normal",
+        "DisplayText": "it's dangerous and fatal",
+        "NumericValue": 7,
+        "StringValue": "it_is_dangerous_and_fatal",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-50501ff0",
+        "CodeType": "Normal",
+        "DisplayText": "trust in God",
+        "NumericValue": 8,
+        "StringValue": "trust_in_God",
+        "VisibleInCoda": true
+      },
+       {
+        "CodeID": "code-abd71072",
+        "CodeType": "Normal",
+        "DisplayText": "denial (COVID-19 doesn't exist)",
+        "NumericValue": 9,
+        "StringValue": "denial_covid19_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-d9fea6f2",
+        "CodeType": "Normal",
+        "DisplayText": "general impact",
+        "NumericValue": 10,
+        "StringValue": "general_impact",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a3c6e69d",
+        "CodeType": "Normal",
+        "DisplayText": "the virus discriminates or does not affect muslims",
+        "NumericValue": 11,
+        "StringValue": "the_virus_discriminates_or_does_not_affect_muslims",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-3a0b2ed9",
+        "CodeType": "Normal",
+        "DisplayText": "other misinfo",
+        "NumericValue": 12,
+        "StringValue": "other_misinfo",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bae30795",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 13,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-3546d695",
+        "CodeType": "Normal",
+        "DisplayText": "about coronavirus",
+        "NumericValue": 14,
+        "StringValue": "about_coronavirus",
+        "VisibleInCoda": true
+      },
       {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
@@ -95,6 +206,16 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-Q-a5d3700d",
+        "CodeType": "Meta",
+        "MetaCode": "question",
+        "DisplayText": "meta: question",
+        "NumericValue": -100010,
+        "StringValue": "question",
+        "VisibleInCoda": true,
+        "Shortcut": "q"
+      },
+      {
         "CodeID": "code-G-97cb3199",
         "CodeType": "Meta",
         "MetaCode": "greeting",
@@ -138,6 +259,26 @@
         "NumericValue": -100070,
         "StringValue": "exclusion_complaint",
         "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-E-720cdb66",
+        "CodeType": "Meta",
+        "MetaCode": "escalate",
+        "DisplayText": "meta: ESCALATE",
+        "NumericValue": -100080,
+        "StringValue": "escalate",
+        "VisibleInCoda": true,
+        "Shortcut": "e"
+      },
+      {
+        "CodeID": "code-S-461bfcdf",
+        "CodeType": "Meta",
+        "MetaCode": "statement",
+        "DisplayText": "meta: statement",
+        "NumericValue": -100090,
+        "StringValue": "statement",
+        "VisibleInCoda": true,
+        "Shortcut": "s"
       },
       {
         "MetaCode": "other",
