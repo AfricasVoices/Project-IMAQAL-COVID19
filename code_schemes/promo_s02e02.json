@@ -3,7 +3,62 @@
     "Name": "S02E02 Promo",
     "Version": "0.0.0.1",
     "Codes": [
-
+      {
+        "CodeID": "code-00d29fb5",
+        "CodeType": "Normal",
+        "DisplayText": "follow covid19 guidelines",
+        "NumericValue": 1,
+        "StringValue": "follow_covid19_guidelines",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-75286937",
+        "CodeType": "Normal",
+        "DisplayText": "maintain hygiene",
+        "NumericValue": 2,
+        "StringValue": "maintain_hygiene",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-c25a0a9f",
+        "CodeType": "Normal",
+        "DisplayText": "take covid19 vaccine",
+        "NumericValue": 3,
+        "StringValue": "take_covid19_vaccine",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-51701624",
+        "CodeType": "Normal",
+        "DisplayText": "beware and take precautions",
+        "NumericValue": 4,
+        "StringValue": "beware_and_take_precautions",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-3b7ad9e5",
+        "CodeType": "Normal",
+        "DisplayText": "create awareness",
+        "NumericValue": 5,
+        "StringValue": "create_awareness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a82a401c",
+        "CodeType": "Normal",
+        "DisplayText": "stay at home",
+        "NumericValue": 6,
+        "StringValue": "stay_at_home",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-eba8f379",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 7,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
       {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
@@ -86,6 +141,16 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-Q-a5d3700d",
+        "CodeType": "Meta",
+        "MetaCode": "question",
+        "DisplayText": "meta: question",
+        "NumericValue": -100010,
+        "StringValue": "question",
+        "VisibleInCoda": true,
+        "Shortcut": "q"
+      },
+      {
         "CodeID": "code-SQ-5e8f0122",
         "CodeType": "Meta",
         "MetaCode": "showtime_question",
@@ -138,6 +203,26 @@
         "NumericValue": -100070,
         "StringValue": "exclusion_complaint",
         "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-E-720cdb66",
+        "CodeType": "Meta",
+        "MetaCode": "escalate",
+        "DisplayText": "meta: ESCALATE",
+        "NumericValue": -100080,
+        "StringValue": "escalate",
+        "VisibleInCoda": true,
+        "Shortcut": "e"
+      },
+      {
+        "CodeID": "code-S-461bfcdf",
+        "CodeType": "Meta",
+        "MetaCode": "statement",
+        "DisplayText": "meta: statement",
+        "NumericValue": -100090,
+        "StringValue": "statement",
+        "VisibleInCoda": true,
+        "Shortcut": "s"
       },
       {
         "MetaCode": "other",
