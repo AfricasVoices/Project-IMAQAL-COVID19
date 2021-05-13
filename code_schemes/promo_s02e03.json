@@ -3,7 +3,88 @@
     "Name": "S02E03 Promo",
     "Version": "0.0.0.1",
     "Codes": [
-
+      {
+        "CodeID": "code-E-720cdb66",
+        "CodeType": "Meta",
+        "MetaCode": "escalate",
+        "DisplayText": "meta: ESCALATE",
+        "NumericValue": -100080,
+        "StringValue": "escalate",
+        "VisibleInCoda": true,
+        "Shortcut": "e"
+      },
+      {
+        "CodeID": "code-6b4e0d9c",
+        "CodeType": "Normal",
+        "DisplayText": "we should take it",
+        "NumericValue": 1,
+        "StringValue": "we_should_take_it",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0e075cd6",
+        "CodeType": "Normal",
+        "DisplayText": "negative views on vaccination",
+        "NumericValue": 2,
+        "StringValue": "negative_views_on_vaccination",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dceee47b",
+        "CodeType": "Normal",
+        "DisplayText": "it's a prevention of covid19",
+        "NumericValue": 3,
+        "StringValue": "its_a_prevention_of_covid19",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-82b37bf9",
+        "CodeType": "Normal",
+        "DisplayText": "create awareness",
+        "NumericValue": 4,
+        "StringValue": "create_awareness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-1e1bcee2",
+        "CodeType": "Normal",
+        "DisplayText": "denial (COVID-19 doesn't exist)",
+        "NumericValue": 5,
+        "StringValue": "denial_covid19_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bc803691",
+        "CodeType": "Normal",
+        "DisplayText": "the virus discriminates",
+        "NumericValue": 6,
+        "StringValue": "the_virus_discriminates",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-00d29fb5",
+        "CodeType": "Normal",
+        "DisplayText": "the vaccine doesn't exist",
+        "NumericValue": 7,
+        "StringValue": "the_vaccine_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-f5dbf38f",
+        "CodeType": "Normal",
+        "DisplayText": "government mistrust",
+        "NumericValue": 8,
+        "StringValue": "government_mistrust",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-e36f0721",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 9,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
       {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
@@ -86,6 +167,16 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-Q-a5d3700d",
+        "CodeType": "Meta",
+        "MetaCode": "question",
+        "DisplayText": "meta: question",
+        "NumericValue": -100010,
+        "StringValue": "question",
+        "VisibleInCoda": true,
+        "Shortcut": "q"
+      },
+      {
         "CodeID": "code-SQ-5e8f0122",
         "CodeType": "Meta",
         "MetaCode": "showtime_question",
@@ -138,6 +229,16 @@
         "NumericValue": -100070,
         "StringValue": "exclusion_complaint",
         "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-S-461bfcdf",
+        "CodeType": "Meta",
+        "MetaCode": "statement",
+        "DisplayText": "meta: statement",
+        "NumericValue": -100090,
+        "StringValue": "statement",
+        "VisibleInCoda": true,
+        "Shortcut": "s"
       },
       {
         "MetaCode": "other",
