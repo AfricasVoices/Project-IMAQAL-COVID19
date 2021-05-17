@@ -108,8 +108,8 @@ class AnalysisFile(object):
             user, to_be_folded, lambda td: td["uid"], fold_strategies
         )
 
-        ConsentUtils.set_stopped(user, data, consent_withdrawn_key)
-        ConsentUtils.set_stopped(user, folded_data, consent_withdrawn_key)
+        #ConsentUtils.set_stopped(user, data, consent_withdrawn_key)
+        #ConsentUtils.set_stopped(user, folded_data, consent_withdrawn_key)
 
         cls.export_to_csv(user, data, csv_by_message_output_path, export_keys, consent_withdrawn_key)
         cls.export_to_csv(user, folded_data, csv_by_individual_output_path, export_keys, consent_withdrawn_key)
