@@ -22,7 +22,8 @@
       "CodeID": "code-63dcde9a",
       "CodeType": "Normal",
       "MatchValues": [
-        "man"
+        "man",
+        "female"
       ]
     },
     {
@@ -34,7 +35,8 @@
       "CodeID": "code-86a4602c",
       "CodeType": "Normal",
       "MatchValues": [
-        "woman"
+        "woman",
+        "female"
       ]
     },
     {
