@@ -10,7 +10,9 @@
         "imaqal_covid19_promo_s02e01_activation",
         "imaqal_covid19_promo_s02e02_activation",
         "imaqal_covid19_promo_s02e03_activation",
-        "imaqal_covid19_mag_s02e04_activation"
+        "imaqal_covid19_mag_s02e04_activation",
+        "Imaqal_covid19_som_vax_sms_ad",
+        "imaqal_covid19_som_vax_catch_all"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
