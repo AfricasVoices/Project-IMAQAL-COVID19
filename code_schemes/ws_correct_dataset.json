@@ -103,6 +103,28 @@
             ]
         },
         {
+            "CodeID": "code-7423d64a",
+            "CodeType": "Normal",
+            "DisplayText": "imaqal covid19 vaccination thoughts",
+            "StringValue": "imaqal_covid19_vaccination_thoughts",
+            "NumericValue": 97,
+            "VisibleInCoda": true,
+            "MatchValues": [
+                "imaqal covid19 vaccination thoughts"
+            ]
+        },
+        {
+            "CodeID": "code-a942b32b",
+            "CodeType": "Normal",
+            "DisplayText": "imaqal covid19 vaccination thoughts other messages",
+            "StringValue": "imaqal_covid19_vaccination_thoughts_other_messages",
+            "NumericValue": 98,
+            "VisibleInCoda": true,
+            "MatchValues": [
+                "imaqal covid19 vaccination thoughts other messages"
+            ]
+        },
+        {
             "CodeID": "code-5601ee85",
             "CodeType": "Normal",
             "DisplayText": "imaqal covid19 s01e01",

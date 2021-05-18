@@ -570,6 +570,7 @@ S02_RQA_CODING_PLAN = [
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.VACCINATION_THOUGHTS, x, y)
                    )
                ],
+               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 vaccination thoughts"),
                raw_field_fold_strategy=FoldStrategies.concatenate),
 
     CodingPlan(raw_field="vaccination_thoughts_other_messages_raw",
@@ -586,6 +587,7 @@ S02_RQA_CODING_PLAN = [
                        fold_strategy=lambda x, y: FoldStrategies.list_of_labels(CodeSchemes.VACCINATION_THOUGHTS_OTHER_MESSAGES, x, y)
                    )
                ],
+               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value("imaqal covid19 vaccination thoughts other messages"),
                raw_field_fold_strategy=FoldStrategies.concatenate)
 ]
 
