@@ -14,26 +14,28 @@
       "Shortcut": "e"
     },
     {
-      "StringValue": "male",
+      "StringValue": "man",
       "Shortcut": "m",
-      "DisplayText": "male",
+      "DisplayText": "man",
       "VisibleInCoda": true,
       "NumericValue": 1,
       "CodeID": "code-63dcde9a",
       "CodeType": "Normal",
       "MatchValues": [
-        "male"
+        "man",
+        "female"
       ]
     },
     {
-      "StringValue": "female",
+      "StringValue": "woman",
       "Shortcut": "f",
-      "DisplayText": "female",
+      "DisplayText": "woman",
       "VisibleInCoda": true,
       "NumericValue": 2,
       "CodeID": "code-86a4602c",
       "CodeType": "Normal",
       "MatchValues": [
+        "woman",
         "female"
       ]
     },
