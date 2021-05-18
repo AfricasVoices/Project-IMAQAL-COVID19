@@ -42,6 +42,8 @@ class CodeSchemes(object):
     PROMO_S02E02 = _open_scheme("promo_s02e02.json")
     PROMO_S02E03 = _open_scheme("promo_s02e03.json")
     S02E04 = _open_scheme("s02e04.json")
+    VACCINATION_THOUGHTS = _open_scheme("vaccination_thoughts.json")
+    VACCINATION_THOUGHTS_OTHER_MESSAGES = _open_scheme("vaccination_thoughts_other_messages.json")
 
     AGE = _open_scheme("age.json")
     AGE_CATEGORY = _open_scheme("age_category.json")
