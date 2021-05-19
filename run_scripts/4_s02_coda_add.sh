@@ -19,6 +19,8 @@ DATASETS=(
     "IMAQAL_COVID19_promo_s02e02"
     "IMAQAL_COVID19_promo_s02e03"
     "IMAQAL_COVID19_s02e04"
+    "IMAQAL_COVID19_vaccination_thoughts"
+    "IMAQAL_COVID19_vaccination_thoughts_other_messages"
 
     "IMAQAL_gender"
     "IMAQAL_location"
