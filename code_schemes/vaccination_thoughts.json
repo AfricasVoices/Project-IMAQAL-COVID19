@@ -14,6 +14,86 @@
         "Shortcut": "e"
       },
       {
+        "CodeID": "code-55c055b4",
+        "CodeType": "Normal",
+        "DisplayText": "we should take it",
+        "NumericValue": 1,
+        "StringValue": "we_should_take_it",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-8442919f",
+        "CodeType": "Normal",
+        "DisplayText": "negative views on vaccination",
+        "NumericValue": 2,
+        "StringValue": "negative_views_on_vaccination",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-a8df08af",
+        "CodeType": "Normal",
+        "DisplayText": "it's a prevention of covid19",
+        "NumericValue": 3,
+        "StringValue": "its_a_prevention_of_covid19",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-80922d06",
+        "CodeType": "Normal",
+        "DisplayText": "create awareness",
+        "NumericValue": 4,
+        "StringValue": "create_awareness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-88adbc13",
+        "CodeType": "Normal",
+        "DisplayText": "denial (COVID-19 doesn't exist)",
+        "NumericValue": 5,
+        "StringValue": "denial_covid19_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-374cc280",
+        "CodeType": "Normal",
+        "DisplayText": "the virus discriminates",
+        "NumericValue": 6,
+        "StringValue": "the_virus_discriminates",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-00d29fb5",
+        "CodeType": "Normal",
+        "DisplayText": "the vaccine doesn't exist",
+        "NumericValue": 7,
+        "StringValue": "the_vaccine_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-bfa75153",
+        "CodeType": "Normal",
+        "DisplayText": "government mistrust",
+        "NumericValue": 8,
+        "StringValue": "government_mistrust",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-0f550fa8",
+        "CodeType": "Normal",
+        "DisplayText": "trust in Allah and his religion",
+        "NumericValue": 10,
+        "StringValue": "trust_in_allah_and_his_religion",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2277cfeb",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 9,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
+      {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
         "ControlCode": "NA",
