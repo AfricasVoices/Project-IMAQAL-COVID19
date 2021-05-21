@@ -51,6 +51,10 @@
     {"RapidProKey": "Covid19_Promo_S02E03_Raw (Run ID) - imaqal_covid19_promo_s02e03_activation", "PipelineKey": "covid19_promo_s02e03_run_id"},
     {"RapidProKey": "Covid19_Promo_S02E03_Raw (Time) - imaqal_covid19_promo_s02e03_activation", "PipelineKey": "sent_on"},
 
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Text) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "rqa_covid19_mag_s02e04_raw", "IsActivationMessage": true},
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Run ID) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "rqa_covid19_mag_s02e04_run_id"},
+    {"RapidProKey": "Rqa_Covid19_Mag_S02E04_Raw (Time) - imaqal_covid19_mag_s02e04_activation", "PipelineKey": "sent_on"},
+
     {"RapidProKey": "Vaccination_Thoughts (Text) - Imaqal_covid19_som_vax_sms_ad", "PipelineKey": "vaccination_thoughts_raw", "IsActivationMessage": true},
     {"RapidProKey": "Vaccination_Thoughts (Run ID) - Imaqal_covid19_som_vax_sms_ad", "PipelineKey": "vaccination_thoughts_run_id"},
     {"RapidProKey": "Vaccination_Thoughts (Time) - Imaqal_covid19_som_vax_sms_ad", "PipelineKey": "sent_on"},
