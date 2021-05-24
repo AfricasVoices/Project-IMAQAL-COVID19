@@ -3,7 +3,72 @@
     "Name": "S02E04",
     "Version": "0.0.0.1",
     "Codes": [
-
+      {
+        "CodeID": "code-E-720cdb66",
+        "CodeType": "Meta",
+        "MetaCode": "escalate",
+        "DisplayText": "meta: ESCALATE",
+        "NumericValue": -100080,
+        "StringValue": "escalate",
+        "VisibleInCoda": true,
+        "Shortcut": "e"
+      },
+      {
+        "CodeID": "code-a46860e8",
+        "CodeType": "Normal",
+        "DisplayText": "create awareness",
+        "NumericValue": 1,
+        "StringValue": "create_awareness",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-dbca419e",
+        "CodeType": "Normal",
+        "DisplayText": "important role",
+        "NumericValue": 2,
+        "StringValue": "important_role",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-2b9d1cbe",
+        "CodeType": "Normal",
+        "DisplayText": "follow covid19 guidelines",
+        "NumericValue": 3,
+        "StringValue": "follow_covid19_guidelines",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-51e0ffa0",
+        "CodeType": "Normal",
+        "DisplayText": "take precautions",
+        "NumericValue": 4,
+        "StringValue": "take_precautions",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-80d58cf2",
+        "CodeType": "Normal",
+        "DisplayText": "trust in Allah",
+        "NumericValue": 5,
+        "StringValue": "trust_in_allah",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-e6a6a162",
+        "CodeType": "Normal",
+        "DisplayText": "denial (COVID-19 doesn't exist)",
+        "NumericValue": 6,
+        "StringValue": "denial_covid19_doesnt_exist",
+        "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-ebc16fc7",
+        "CodeType": "Normal",
+        "DisplayText": "other theme",
+        "NumericValue": 7,
+        "StringValue": "other_theme",
+        "VisibleInCoda": true
+      },
       {
         "CodeID": "code-NA-f93d3eb7",
         "CodeType": "Control",
@@ -86,6 +151,16 @@
         "VisibleInCoda": true
       },
       {
+        "CodeID": "code-Q-a5d3700d",
+        "CodeType": "Meta",
+        "MetaCode": "question",
+        "DisplayText": "meta: question",
+        "NumericValue": -100010,
+        "StringValue": "question",
+        "VisibleInCoda": true,
+        "Shortcut": "q"
+      },
+      {
         "CodeID": "code-SQ-5e8f0122",
         "CodeType": "Meta",
         "MetaCode": "showtime_question",
@@ -138,6 +213,16 @@
         "NumericValue": -100070,
         "StringValue": "exclusion_complaint",
         "VisibleInCoda": true
+      },
+      {
+        "CodeID": "code-S-461bfcdf",
+        "CodeType": "Meta",
+        "MetaCode": "statement",
+        "DisplayText": "meta: statement",
+        "NumericValue": -100090,
+        "StringValue": "statement",
+        "VisibleInCoda": true,
+        "Shortcut": "s"
       },
       {
         "MetaCode": "other",
