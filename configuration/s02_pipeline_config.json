@@ -86,9 +86,9 @@
   "FilterTestMessages": true,
   "MoveWSMessages": true,
   "AutomatedAnalysis": {
-    "GenerateRegionThemeDistributionMaps": false,
-    "GenerateDistrictThemeDistributionMaps": false,
-    "GenerateMogadishuThemeDistributionMaps": false
+    "GenerateRegionThemeDistributionMaps": true,
+    "GenerateDistrictThemeDistributionMaps": true,
+    "GenerateMogadishuThemeDistributionMaps": true
   },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
