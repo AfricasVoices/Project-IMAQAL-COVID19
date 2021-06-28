@@ -32,8 +32,8 @@ echo "Starting run with id '$RUN_ID'"
 
 #./2_fetch_raw_data.sh "$USER" "$AVF_BUCKET_CREDENTIALS_PATH" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
-#./3_generate_outputs.sh --profile-memory "$PERFORMANCE_LOGS_DIR/memory-$RUN_ID.profile" \
-    #"$USER" "$PIPELINE_RUN_MODE" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
+./3_generate_outputs.sh --profile-memory "$PERFORMANCE_LOGS_DIR/memory-$RUN_ID.profile" \
+    "$USER" "$PIPELINE_RUN_MODE" "$PIPELINE_CONFIGURATION" "$DATA_ROOT"
 
 #./4_s02_coda_add.sh "$CODA_PUSH_CREDENTIALS_PATH" "$CODA_TOOLS_ROOT" "$DATA_ROOT"
 
