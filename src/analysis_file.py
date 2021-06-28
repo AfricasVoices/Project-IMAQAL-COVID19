@@ -111,6 +111,10 @@ class AnalysisFile(object):
         ConsentUtils.set_stopped(user, data, consent_withdrawn_key)
         ConsentUtils.set_stopped(user, folded_data, consent_withdrawn_key)
 
+        #data = [td for td in data if td["vaccination_thoughts_raw"] in td]
+
+        #folded_data = [td for td in folded_data if td["vaccination_thoughts_raw"] in td]
+
         cls.export_to_csv(user, data, csv_by_message_output_path, export_keys, consent_withdrawn_key)
         cls.export_to_csv(user, folded_data, csv_by_individual_output_path, export_keys, consent_withdrawn_key)
 
