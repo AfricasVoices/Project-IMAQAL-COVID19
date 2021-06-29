@@ -20,6 +20,9 @@ from configuration.code_schemes import CodeSchemes
 from src.lib.configuration_objects import CodingModes
 from src.lib.pipeline_configuration import PipelineConfiguration
 
+from .analysis_utils import AnalysisUtils
+
+
 log = Logger(__name__)
 
 IMG_SCALE_FACTOR = 10  # Increase this to increase the resolution of the outputted PNGs
@@ -105,6 +108,16 @@ if __name__ == "__main__":
                 )
         return analysis_configurations
 
+
+    relevant_individuals = []
+
+    for ind in individuals:
+        if AnalysisUtils.relevant(ind, CONSENT_WITHDRAWN_KEY,
+            coding_plans_to_analysis_configurations(PipelineConfiguration.RQA_CODING_PLANS)):
+            relevant_individuals.append(ind)
+
+    print(len(relevant_individuals))
+    exit()
 
     log.info("Computing engagement counts...")
     with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
