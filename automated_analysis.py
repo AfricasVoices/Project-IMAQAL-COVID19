@@ -109,12 +109,12 @@ if __name__ == "__main__":
         return analysis_configurations
 
 
-    relevant_individuals = []
+    relevant_individuals = set()
 
     for ind in individuals:
-        if AnalysisUtils.relevant(ind, CONSENT_WITHDRAWN_KEY,
-            coding_plans_to_analysis_configurations(PipelineConfiguration.RQA_CODING_PLANS)):
-            relevant_individuals.append(ind)
+        for coding_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            if AnalysisUtils.relevant(ind, CONSENT_WITHDRAWN_KEY, coding_plan):
+                relevant_individuals.add(ind)
 
     print(len(relevant_individuals))
     exit()
