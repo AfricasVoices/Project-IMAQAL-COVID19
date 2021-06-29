@@ -20,7 +20,7 @@ from configuration.code_schemes import CodeSchemes
 from src.lib.configuration_objects import CodingModes
 from src.lib.pipeline_configuration import PipelineConfiguration
 
-from .analysis_utils import AnalysisUtils
+from src.analysis_utils import AnalysisUtils
 
 
 log = Logger(__name__)
