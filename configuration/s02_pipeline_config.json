@@ -8,7 +8,6 @@
       "ContactsFileName": "imaqal_covid19_contacts",
       "ActivationFlowNames": [
         "Imaqal_covid19_som_vax_sms_ad",
-        "imaqal_covid19_som_vax_catch_all"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
@@ -76,10 +75,10 @@
   },
   "DriveUpload": {
     "DriveCredentialsFileURL": "gs://avf-credentials/pipeline-runner-service-acct-avf-data-core-64cc71459fe7.json",
-    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-test/production.csv",
-    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-test/messages.csv",
-    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine-test/individuals.csv",
-    "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/s02/vaccine-test/automated_analysis"
+    "ProductionUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine/production.csv",
+    "MessagesUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine/messages.csv",
+    "IndividualsUploadPath": "imaqal_covid19_analysis_outputs/s02/vaccine/individuals.csv",
+    "AutomatedAnalysisDir": "imaqal_covid19_analysis_outputs/s02/vaccine/automated_analysis"
   },
   "MemoryProfileUploadBucket":"gs://avf-pipeline-logs-performance-nearline",
   "DataArchiveUploadBucket": "gs://pipeline-execution-backup-archive",

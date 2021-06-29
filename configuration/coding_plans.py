@@ -505,25 +505,6 @@ S02_RQA_CODING_PLAN = [
                ],
                ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value(
                    "imaqal covid19 vaccination thoughts"),
-               raw_field_fold_strategy=FoldStrategies.concatenate),
-
-    CodingPlan(raw_field="vaccination_thoughts_other_messages_raw",
-               time_field="sent_on",
-               run_id_field="vaccination_thoughts_other_messages_run_id",
-               coda_filename="IMAQAL_COVID19_vaccination_thoughts_other_messages.json",
-               icr_filename="vaccination_thoughts_other_messages.csv",
-               coding_configurations=[
-                   CodingConfiguration(
-                       coding_mode=CodingModes.MULTIPLE,
-                       code_scheme=CodeSchemes.VACCINATION_THOUGHTS_OTHER_MESSAGES,
-                       coded_field="vaccination_thoughts_other_messages_coded",
-                       analysis_file_key="vaccination_thoughts_other_messages",
-                       fold_strategy=lambda x, y: FoldStrategies.list_of_labels(
-                           CodeSchemes.VACCINATION_THOUGHTS_OTHER_MESSAGES, x, y)
-                   )
-               ],
-               ws_code=CodeSchemes.WS_CORRECT_DATASET_SCHEME.get_code_with_match_value(
-                   "imaqal covid19 vaccination thoughts other messages"),
                raw_field_fold_strategy=FoldStrategies.concatenate)
 
 ]
