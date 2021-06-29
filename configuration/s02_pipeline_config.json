@@ -7,7 +7,7 @@
       "TokenFileURL": "gs://avf-credentials/imaqal-text-it-token.txt",
       "ContactsFileName": "imaqal_covid19_contacts",
       "ActivationFlowNames": [
-        "Imaqal_covid19_som_vax_sms_ad",
+        "Imaqal_covid19_som_vax_sms_ad"
       ],
       "SurveyFlowNames": [
         "imaqal_demog",
