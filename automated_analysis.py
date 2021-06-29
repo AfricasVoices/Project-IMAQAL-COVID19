@@ -114,7 +114,7 @@ if __name__ == "__main__":
     for ind in individuals:
         for coding_plan in PipelineConfiguration.RQA_CODING_PLANS:
             if AnalysisUtils.relevant(ind, CONSENT_WITHDRAWN_KEY, coding_plan):
-                relevant_individuals.add(ind)
+                relevant_individuals.add(ind["uid"])
 
     print(len(relevant_individuals))
     exit()
