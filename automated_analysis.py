@@ -109,15 +109,31 @@ if __name__ == "__main__":
         return analysis_configurations
 
 
-    relevant_individuals = set()
+    relevant_individual_uids = set()
 
     for ind in individuals:
         for coding_plan in PipelineConfiguration.RQA_CODING_PLANS:
             if AnalysisUtils.relevant(ind, CONSENT_WITHDRAWN_KEY, coding_plan):
-                relevant_individuals.add(ind["uid"])
+                relevant_individual_uids.add(ind["uid"])
 
-    print(len(relevant_individuals))
-    exit()
+    relevant_individuals = []
+    for ind in individuals:
+        if ind['uid'] in relevant_individual_uids:
+            relevant_individuals.append(ind)
+    print(f"no. of relevant individuals {len(relevant_individuals)}")
+
+    relevant_messages = []
+    for msg in messages:
+        for coding_plan in PipelineConfiguration.RQA_CODING_PLANS:
+            if AnalysisUtils.relevant(msg, CONSENT_WITHDRAWN_KEY, coding_plan):
+                relevant_messages.append(msg)
+    print(f"no. of relevant messages {len(relevant_messages)}")
+
+    if relevant_individuals is not None:
+        individuals = relevant_individuals
+
+    if relevant_messages is not None:
+        messages = relevant_messages
 
     log.info("Computing engagement counts...")
     with open(f"{automated_analysis_output_dir}/engagement_counts.csv", "w") as f:
